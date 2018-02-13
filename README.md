@@ -1,10 +1,6 @@
 # gruppe3
 Git-repositoryet til gruppe 3 sitt ELSYS-prosjekt
 
-# Project Title
-
-One Paragraph of project description goes here
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -14,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+Ingen ting enda hehehe
 ```
 
 ### Installing
@@ -24,13 +20,13 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-Give the example
+Life
 ```
 
 And repeat
 
 ```
-until finished
+Repeat life
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
@@ -81,7 +77,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the NTNU License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
