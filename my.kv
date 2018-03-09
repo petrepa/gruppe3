@@ -1,0 +1,54 @@
+ScreenManagement:
+	FrontScreen:
+	MainWidget:
+
+<FrontScreen>:
+	name: "front"
+
+    BoxLayout:
+    	orientation: 'vertical'
+        Label:
+            text: 'ADRESSA'
+            font_size: 150
+        Button:
+            text: 'Til menyen'
+            on_press: root.manager.current = 'main'
+
+<MainWidget>:
+	name: "main"
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "MENY"
+				font_size: 150
+				
+			
+		GridLayout:
+			size: root.size
+			cols: 2
+
+			Button:
+				text: "Klimaval"
+			Button:
+				text: "Historisk"
+			Button:
+				text: "Severdigheiter"
+			Button:
+				text: "Uhm noko anna"
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+				text:
+			Button:
+				text: "Framskjerm"
+				on_press: root.manager.current = 'front'
+
