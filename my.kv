@@ -1,22 +1,48 @@
+# Hugs å legge til dei nye klassene under ScreenManagement!
 ScreenManagement:
+	
 	FrontScreen:
 	MainWidget:
+	KlimaScreen:
+	HistorieScreen:
+	SeverdigScreen:
+	AnnaScreen:
+
 
 <FrontScreen>:
 	name: "front"
 
+
+	canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'test.jpg'
     BoxLayout:
     	orientation: 'vertical'
         Label:
             text: 'ADRESSA'
             font_size: 150
+            color: 0.03137, 0.32549, 0.46666666666, 1
         Button:
             text: 'Til menyen'
-            on_press: root.manager.current = 'main'
+            color: 0.0705882, 0.4784313725, 0.75294117647, 1
+            background_color: [1, 1, 1, 0]
+            on_release: root.manager.current = 'main'
+
+
+
 
 <MainWidget>:
 	name: "main"
-
+	
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+	
 	BoxLayout:
 		orientation: 'vertical'
 
@@ -27,6 +53,7 @@ ScreenManagement:
 			Label:
 				text: "MENY"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				
 			
 		GridLayout:
@@ -34,21 +61,144 @@ ScreenManagement:
 			cols: 2
 
 			Button:
-				text: "Klimaval"
+				text: 'Klimaval'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'klima'
 			Button:
 				text: "Historisk"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'historisk'
 			Button:
 				text: "Severdigheiter"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'severdig'
 			Button:
 				text: "Uhm noko anna"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'anna'
+				
+
 
 		GridLayout:
 			size: root.size
 			rows: 2
 
 			Label:
-				text:
+
 			Button:
 				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
+
+
+
+
+<KlimaScreen>:
+	name: "klima"
+	
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Klimaveljaren"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+		
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 4
+			rows: 2
+
+			Image:
+				source: 'klimabilde/syden.jpeg'
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				source: 'klimabilde/antarktis.jpeg'
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				source: 'klimabilde/jungel.jpeg'
+				allow_stretch: True
+				keep_ratio: False
+			Image:
+				source: 'klimabilde/hav.jpeg'
+				allow_stretch: True
+				keep_ratio: False
+			Button:
+				text: 'Syden'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.plays()
+			Button:
+				text: "Antarktis"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'historisk'
+			Button:
+				text: "Jungel"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'severdig'
+			Button:
+				text: "Hav"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'anna'
+			
+				
+			
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<HistorieScreen>:
+	name: 'historisk'
+	BoxLayout:
+    	orientation: 'vertical'
+        Button:
+            text: 'Til menyen'
+            on_press: root.manager.current = 'main'
+<SeverdigScreen>:
+	name: 'severdig'
+	BoxLayout:
+    	orientation: 'vertical'
+        Button:
+            text: 'Til menyen'
+            on_press: root.manager.current = 'main'
+<AnnaScreen>:
+	name: 'anna'
+	BoxLayout:
+    	orientation: 'vertical'
+	    Button:
+            text: 'Til menyen'
+            on_press: root.manager.current = 'main'
 
