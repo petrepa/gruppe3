@@ -41,7 +41,19 @@ class HistorieScreen(Screen):
 class SeverdigScreen(Screen):
 	pass
 
-class AnnaScreen(Screen):
+class Veibeskrivelser(Screen):
+	pass
+
+class Museum(Screen):
+	pass
+
+class HistoriskeSteder(Screen):
+	pass
+
+class Nidarosdomen(Screen):
+	pass
+
+class Kultur(Screen):
 	pass
 
 
