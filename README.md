@@ -1,86 +1,74 @@
 # gruppe3
 Git-repositoryet til gruppe 3 sitt ELSYS-prosjekt
 
-## Getting Started
+## Kom i gang
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Desse instruksjonane vil gi deg ein kopi av prosjektet, og også vise korleis du skal kunne køyre prosjektet for vidare utvikling og testing. 
 
-### Prerequisites
+### Kva treng du
 
-What things you need to install the software and how to install them
-
-```
-Ingen ting enda hehehe
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Dette er kva du treng for å køyre prosjektet
 
 ```
-Life
+Python 3
+Kivy
 ```
 
-And repeat
+### Installasjon
 
+Korleis du vel å installere dei ulike delane som er naudsynte for prosjektet er opp til deg. 
+
+[Her ligg iallfall intruksjonane for å få installert kivy](https://kivy.org/docs/gettingstarted/installation.html)
+
+#### Gjeld for mac
+Under utviklinga av prosjektet fann vi ut at det var "enklast" å installere ved hjelp av HomeBrew. Installer HomwBrew dersom du ikkje allereie har dette.
+
+1. Installer dei naudsynte pakkane til prosjektet
 ```
-Repeat life
+$ brew install pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+2. Installer Cython ved hjelp av pip
 ```
-Give an example
+$ pip install Cython==0.26.1
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
+3. Sameleis med Kivy
 ```
-Give an example
+$ pip install kivy
 ```
 
-## Deployment
+## Test om du kan køyre programmet
+Du kan bruke det utviklingsrammeverket du måtte ønske, eller du kan køyre programmet rett frå terminal.
 
-Add additional notes about how to deploy this on a live system
+1. Naviger deg til mappa der du har prosjektet
+```
+$ cd [Fil-sti]
+```
+2. Køyr programmet
+```
+$ kivy [filnamnet] (til dømes main.py)
+```
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Python](https://www.python.org/) - Hovudrammeverk for koda
+* [Kivy](https://kivy.org/#home) - Rammeverk for design av GUI
+* [Raspberry Pi](https://www.raspberrypi.org/) - Maskinvare programvara skal køyre på
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Sara Edvardsen** - *Generelt arbeid* 
+* **Ingunn Kjønås** - *Generelt arbeid* 
+* **Kristin Ottesen Steinskog** - *Generelt arbeid* 
+* **Amanda Jansen** - *Generelt arbeid* 
+* **Magnus Iben Holt** - *Generelt arbeid* 
+* **Simen Håbet Ødegård** - *Generelt arbeid* 
+* **Peter Remøy Paulsen** - *Generelt arbeid* 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+## Lisens
 
-## License
+Dette prosjektet er lisensiert under NTNU-lisens - sjå [LICENSE.md](LICENSE.md)-fila for meir detaljar
 
-This project is licensed under the NTNU License - see the [LICENSE.md](LICENSE.md) file for details
+## Merknadar
 
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Takk til Internett
