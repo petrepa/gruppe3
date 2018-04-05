@@ -45,9 +45,37 @@ class AnnaScreen(Screen):
 	pass
 
 
+class Veibeskrivelser(Screen):
+	pass
+
+
+class Museum(Screen):
+	pass
+
+class Rockheim(Screen):
+	pass
+
+class TrondelagFolkemuseum(Screen):
+	pass
+
+
+
+
+class HistoriskeSteder(Screen):
+	pass
+
+class Nidarosdomen(Screen):
+	pass
+
+class Kultur(Screen):
+	pass
+
+
 class ScreenManagement(ScreenManager):
 	pass
 
+
+#presentation2 = Builder.load_file('button.kv')
 
 
 presentation = Builder.load_file("my.kv")

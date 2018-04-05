@@ -1,13 +1,71 @@
 # Hugs å legge til dei nye klassene under ScreenManagement!
+
+
+
 ScreenManagement:
-	
+
 	FrontScreen:
 	MainWidget:
 	KlimaScreen:
 	HistorieScreen:
 	SeverdigScreen:
 	AnnaScreen:
+	Veibeskrivelser:
 
+	Museum:
+	Rockheim:
+	TrondelagFolkemuseum:
+	#RingveMuseum:
+	#Vitenskapsmuseet:
+	#Rustkammeret:
+	#NordenfjeldskeKunst:
+	#NorskeDøvemuseum:
+	#TrondheimKunstmuseum:
+	#JødiskeMuseum:
+	#TrondheimSjøfartsmuseum:
+
+	HistoriskeSteder:
+	Nidarosdomen:
+	#Stiftsgården:
+	#GamleBybro:
+	#KristianstenFestning:
+	#Erkebispegarden:
+	#Munkholmen:
+	#Bakklandet:
+	#VarFrueKirke:
+
+	Kultur:
+	#Vitensenteret:
+	#KunsthallTrondheim:
+	#LitteraturhusetTrondheim:
+	#KultursenteretISAK:
+
+	#Natur:
+	#Burmaklippen:
+	#Geitfjellet:
+	#Våttakammen:
+	#Ladestien:
+
+	#Mat/Drikke:
+	#Tyholttarnet:
+	#IlaBrannstasjon:
+	#Antikvariatet:
+	#ArvesolvetFolkekafe:
+	#CafeNim:
+	#CafeNiMuser:
+	#RosenborgDampbakeri:
+	#SellenraaBokBar:
+	#TrondheimMikrobryggeri:
+	#CafeLokka:
+	#BakklandetSkydsstasjon:
+
+	#Aktiviteter:
+	#Klatresenter:
+	#Turnhall:
+	#Bowling:
+	#Trampolinepark:
+	#GokartOgLazerx:
+	#EscapeReality:
 
 <FrontScreen>:
 	name: "front"
@@ -35,14 +93,14 @@ ScreenManagement:
 
 <MainWidget>:
 	name: "main"
-	
+
     canvas.before:
         Color:
             rgba: 0.976470588, 0.976470588, 0.976470588, 1
         Rectangle:
             pos: self.pos
             size: self.size
-	
+
 	BoxLayout:
 		orientation: 'vertical'
 
@@ -54,11 +112,11 @@ ScreenManagement:
 				text: "MENY"
 				font_size: 150
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				
-			
+
+
 		GridLayout:
 			size: root.size
-			cols: 2
+			cols: 3
 
 			Button:
 				text: 'Klimaval'
@@ -80,7 +138,17 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'anna'
-				
+            Button:
+				text: "Veibeskrivelser"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'veibeskrivelser'
+			Button:
+				text: "Noko anna 2"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'anna'
+
 
 
 		GridLayout:
@@ -100,7 +168,7 @@ ScreenManagement:
 
 <KlimaScreen>:
 	name: "klima"
-	
+
     canvas.before:
         Color:
             rgba: 0.976470588, 0.976470588, 0.976470588, 1
@@ -108,7 +176,7 @@ ScreenManagement:
             pos: self.pos
             size: self.size
 
-	
+
 	BoxLayout:
 		orientation: 'vertical'
 
@@ -121,7 +189,7 @@ ScreenManagement:
 				font_size: 150
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
-		
+
 		GridLayout:
 			orientation: 'vertical'
 			size: root.size
@@ -163,10 +231,10 @@ ScreenManagement:
 				text: "Hav"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'anna'
-			
-				
-			
+				on_press: root.manager.current = 'severdig'
+
+
+
 		GridLayout:
 			size: root.size
 			rows: 2
@@ -194,6 +262,7 @@ ScreenManagement:
         Button:
             text: 'Til menyen'
             on_press: root.manager.current = 'main'
+
 <AnnaScreen>:
 	name: 'anna'
 	BoxLayout:
@@ -201,4 +270,487 @@ ScreenManagement:
 	    Button:
             text: 'Til menyen'
             on_press: root.manager.current = 'main'
+
+<Veibeskrivelser>:
+	name: 'veibeskrivelser'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 3
+			rows: 2
+
+			Button:
+				text: 'Museum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'museum'
+			Button:
+				text: 'Historiske steder'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'historiskeSteder'
+			Button:
+				text: 'Kultur'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kultur'
+			Button:
+				text: 'Natur'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Mat/drikke'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.plays()
+			Button:
+				text: "Aktiviteter"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'historisk'
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<Museum>:
+	name: 'museum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 3
+			rows: 4
+
+			Button:
+				text: 'Rockheim'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rockheim'
+			Button:
+				text: 'Trøndelag folkemuseum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondelagFolkemuseum'
+			Button:
+				text: 'Ringve Museum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ringveMuseum'
+			Button:
+				text: 'Vitenskapsmuseet'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vitenskapsmuseet'
+			Button:
+				text: 'Rustkammeret'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rustkammeret'
+			Button:
+				text: 'Nordenfjeldske Kunstindustrimuseet'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'nordenfjeldskeKunst'
+			Button:
+				text: 'Norsk døvemuseum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'norskeDøvemuseum'
+			Button:
+				text: 'Trondheim kunstmuseum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimKunstmuseum'
+			Button:
+				text: 'Jødisk museum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'jødiskeMuseum'
+			Button:
+				text: 'Trondheim sjøfartsmuseum'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimSjøfartsmuseum'
+			Button:
+				text: ''
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: ''
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Rockheim>:
+	name: 'rockheim'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Rockheim"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+<TrondelagFolkemuseum>:
+	name: 'trondelagFolkemuseum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Trøndelag Folkemuseum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<HistoriskeSteder>:
+	name: 'historiskeSteder'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 3
+			rows: 3
+
+			Button:
+				text: 'Nidarosdomen'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'nidarosdomen'
+			Button:
+				text: 'Stiftsgården'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Gamle bybro'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Kristiansten festning'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Erkebispegården'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Munkholmen'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Bakklandet'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Vår Frue kirke'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: ''
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<Nidarosdomen>:
+	name: 'nidarosdomen'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Nidarosdomen"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<Kultur>:
+	name: 'kultur'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 2
+			rows: 2
+
+			Button:
+				text: 'Vitensenteret'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Kunsthall Trondheim'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Litteraturhuset trondheim'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
+				text: 'Kultursenteret ISAK'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
 
