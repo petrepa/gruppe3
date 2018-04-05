@@ -48,7 +48,7 @@ $ cd [Fil-sti]
 $ kivy [filnamnet] (til dømes main.py)
 ```
 
-## Built With
+## Konstruert med
 
 * [Python](https://www.python.org/) - Hovudrammeverk for koda
 * [Kivy](https://kivy.org/#home) - Rammeverk for design av GUI
