@@ -55,7 +55,7 @@ $ kivy [filnamnet] (til dømes main.py)
 * [Raspberry Pi](https://www.raspberrypi.org/) - Maskinvare programvara skal køyre på
 
 
-## Authors
+## Forfattarar
 
 * **Sara Edvardsen** - *Generelt arbeid* 
 * **Ingunn Kjønås** - *Generelt arbeid* 
