@@ -9,28 +9,32 @@ ScreenManagement:
 	AnnaScreen:
 
 
+#Framskjermen
 <FrontScreen>:
+	#namnet som vert brukt seinare til referering
 	name: "front"
 
-
+	#definerar bakgrunnsbiletet
 	canvas.before:
+		#sjølve biletet
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'test.jpg'
+        #diffust overlegg over biletet
 		Color:
 			rgba: 0.976470588,0.976470588,0.976470588,0.7
 		Rectangle:
 			pos: self.pos
 			size: self.size
 
-		
+	#definerer at sida skal vere eit boxlayout med eit bilete fyrst, så ein knapp	
     BoxLayout:
     	orientation: 'vertical'
-        Label:
-            text: 'ADRESSA'
-            font_size: 150
-            color: 0.03137, 0.32549, 0.46666666666, 1
+		Image:
+			source: 'logo.png'
+			allow_stretch: False
+			keep_ratio: False
         Button:
             text: 'Til menyen'
             font_size: 100
@@ -40,10 +44,11 @@ ScreenManagement:
 
 
 
-
+#Meny-sida
 <MainWidget>:
 	name: "main"
 	
+	#definerer bakgrunnsfarge
     canvas.before:
         Color:
             rgba: 0.976470588, 0.976470588, 0.976470588, 1
@@ -58,12 +63,13 @@ ScreenManagement:
 			size: root.size
 			rows: 1
 
+			#overskrifta til sida
 			Label:
 				text: "MENY"
 				font_size: 150
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				
-			
+		#Oppsettet for dei ulike knappane til dei ulike modulane	
 		GridLayout:
 			size: root.size
 			cols: 2
@@ -90,7 +96,7 @@ ScreenManagement:
 				on_press: root.manager.current = 'anna'
 				
 
-
+		#Knapp som tek deg tilbake til framskjermen
 		GridLayout:
 			size: root.size
 			rows: 2
@@ -105,7 +111,7 @@ ScreenManagement:
 
 
 
-
+#Klimaval-modulen
 <KlimaScreen>:
 	name: "klima"
 	
@@ -129,7 +135,7 @@ ScreenManagement:
 				font_size: 150
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
-		
+		#Knappar med tilhøyrande bilete. Vil spele av ei lydfil når trykt 
 		GridLayout:
 			orientation: 'vertical'
 			size: root.size
@@ -188,7 +194,7 @@ ScreenManagement:
 				on_press: root.stopAll()
 				on_release: root.manager.current = 'main'
 
-
+#Historie-modul
 <HistorieScreen>:
 	name: 'historisk'
 
@@ -208,6 +214,8 @@ ScreenManagement:
         	font_size: 100
         	size_hint: (1, 0.2)
         
+
+        #Ein rullbar modul der dei ulike historiske plassane er lista
         ScrollView:
 
 			GridLayout:
@@ -350,11 +358,6 @@ ScreenManagement:
 						source: 'test2.jpg'
 						allow_stretch: True
 						keep_ratio: False
-
-				
-
-
-
 
         Button:
             text: 'Til menyen'

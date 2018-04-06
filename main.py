@@ -1,4 +1,7 @@
+#definerer at vi skal bruke kivy
 import kivy
+
+#ulike bibliotek importert fra kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
@@ -74,12 +77,14 @@ class ScreenManagement(ScreenManager):
 	pass
 
 
-
+#Her definerer vi at vi henter inn den tilhøyrande kivy-fila
 presentation = Builder.load_file("my.kv")
 
+#klassa som bygger sjølve applikasjonen
 class myApp(App):
 	def build(self):
 		return presentation
 
+#noko magisk som gjer at ting fungerer
 if __name__=="__main__":
 	myApp().run()
