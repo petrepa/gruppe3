@@ -58,6 +58,30 @@ class Rockheim(Screen):
 class TrondelagFolkemuseum(Screen):
 	pass
 
+class RingveMuseum(Screen):
+	pass
+
+class Vitenskapsmuseet(Screen):
+	pass
+
+class Rustkammeret(Screen):
+	pass
+
+class NordenfjeldskeKunst(Screen):
+	pass
+
+class NorskeDovemuseum(Screen):
+	pass
+
+class TrondheimKunstmuseum(Screen):
+	pass
+
+class JodiskeMuseum(Screen):
+	pass
+
+class TrondheimSjofartsmuseum(Screen):
+	pass
+
 
 
 
@@ -67,8 +91,124 @@ class HistoriskeSteder(Screen):
 class Nidarosdomen(Screen):
 	pass
 
+class Stiftsgarden(Screen):
+	pass
+
+class GamleBybro(Screen):
+	pass
+
+class KristianstenFestning(Screen):
+	pass
+
+class Erkebispegarden(Screen):
+	pass
+
+class Munkholmen(Screen):
+	pass
+
+class Bakklandet(Screen):
+	pass
+
+class VarFrueKirke(Screen):
+	pass
+
+
+
 class Kultur(Screen):
 	pass
+
+class Vitensenteret(Screen):
+	pass
+
+class KunsthallTrondheim(Screen):
+	pass
+
+class LitteraturhusetTrondheim(Screen):
+	pass
+
+class KultursenteretISAK(Screen):
+	pass
+
+
+
+class Natur(Screen):
+	pass
+
+class Burmaklippen(Screen):
+	pass
+
+class Geitfjellet(Screen):
+	pass
+
+class Vattakammen(Screen):
+	pass
+
+class Ladestien(Screen):
+	pass
+
+
+
+class MatDrikke(Screen):
+	pass
+
+class Tyholttarnet(Screen):
+	pass
+
+class IlaBrannstasjon(Screen):
+	pass
+
+class Antikvariatet(Screen):
+	pass
+
+class ArvesolvetFolkekafe(Screen):
+	pass
+
+class CafeNim(Screen):
+	pass
+
+class CafeNiMuser(Screen):
+	pass
+
+class RosenborgDampbakeri(Screen):
+	pass
+
+class SellenraaBokBar(Screen):
+	pass
+
+class TrondheimMikrobryggeri(Screen):
+	pass
+
+class CafeLokka(Screen):
+	pass
+
+class BakklandetSkydsstasjon(Screen):
+	pass
+
+
+
+class Aktiviteter(Screen):
+	pass
+
+class Klatresenter(Screen):
+	pass
+
+class Turnhall(Screen):
+	pass
+
+class Bowling(Screen):
+	pass
+
+class Trampolinepark(Screen):
+	pass
+
+class GokartOgLazerx(Screen):
+	pass
+
+class EscapeReality(Screen):
+	pass
+
+
+
 
 
 class ScreenManagement(ScreenManager):

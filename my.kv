@@ -15,57 +15,57 @@ ScreenManagement:
 	Museum:
 	Rockheim:
 	TrondelagFolkemuseum:
-	#RingveMuseum:
-	#Vitenskapsmuseet:
-	#Rustkammeret:
-	#NordenfjeldskeKunst:
-	#NorskeDøvemuseum:
-	#TrondheimKunstmuseum:
-	#JødiskeMuseum:
-	#TrondheimSjøfartsmuseum:
+	RingveMuseum:
+	Vitenskapsmuseet:
+	Rustkammeret:
+	NordenfjeldskeKunst:
+	NorskeDovemuseum:
+	TrondheimKunstmuseum:
+	JodiskeMuseum:
+	TrondheimSjofartsmuseum:
 
 	HistoriskeSteder:
 	Nidarosdomen:
-	#Stiftsgården:
-	#GamleBybro:
-	#KristianstenFestning:
-	#Erkebispegarden:
-	#Munkholmen:
-	#Bakklandet:
-	#VarFrueKirke:
+	Stiftsgarden:
+	GamleBybro:
+	KristianstenFestning:
+	Erkebispegarden:
+	Munkholmen:
+	Bakklandet:
+	VarFrueKirke:
 
 	Kultur:
-	#Vitensenteret:
-	#KunsthallTrondheim:
-	#LitteraturhusetTrondheim:
-	#KultursenteretISAK:
+	Vitensenteret:
+	KunsthallTrondheim:
+	LitteraturhusetTrondheim:
+	KultursenteretISAK:
 
-	#Natur:
-	#Burmaklippen:
-	#Geitfjellet:
-	#Våttakammen:
-	#Ladestien:
+	Natur:
+	Burmaklippen:
+	Geitfjellet:
+	Vattakammen:
+	Ladestien:
 
-	#Mat/Drikke:
-	#Tyholttarnet:
-	#IlaBrannstasjon:
-	#Antikvariatet:
-	#ArvesolvetFolkekafe:
-	#CafeNim:
-	#CafeNiMuser:
-	#RosenborgDampbakeri:
-	#SellenraaBokBar:
-	#TrondheimMikrobryggeri:
-	#CafeLokka:
-	#BakklandetSkydsstasjon:
+	MatDrikke:
+	Tyholttarnet:
+	IlaBrannstasjon:
+	Antikvariatet:
+	ArvesolvetFolkekafe:
+	CafeNim:
+	CafeNiMuser:
+	RosenborgDampbakeri:
+	SellenraaBokBar:
+	TrondheimMikrobryggeri:
+	CafeLokka:
+	BakklandetSkydsstasjon:
 
-	#Aktiviteter:
-	#Klatresenter:
-	#Turnhall:
-	#Bowling:
-	#Trampolinepark:
-	#GokartOgLazerx:
-	#EscapeReality:
+	Aktiviteter:
+	Klatresenter:
+	Turnhall:
+	Bowling:
+	Trampolinepark:
+	GokartOgLazerx:
+	EscapeReality:
 
 <FrontScreen>:
 	name: "front"
@@ -271,6 +271,8 @@ ScreenManagement:
             text: 'Til menyen'
             on_press: root.manager.current = 'main'
 
+#-----------------------------------------------------------------------------------------------------
+
 <Veibeskrivelser>:
 	name: 'veibeskrivelser'
     canvas.before:
@@ -319,16 +321,17 @@ ScreenManagement:
 				text: 'Natur'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'natur'
 			Button:
 				text: 'Mat/drikke'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.plays()
+				on_press: root.manager.current = 'matDrikke'
 			Button:
 				text: "Aktiviteter"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'historisk'
+				on_press: root.manager.current = 'aktiviteter'
 
 
 
@@ -344,7 +347,7 @@ ScreenManagement:
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
 
-
+#-----------------------------------------------------------------------------------------------------------
 <Museum>:
 	name: 'museum'
     canvas.before:
@@ -408,7 +411,7 @@ ScreenManagement:
 				text: 'Norsk døvemuseum'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'norskeDøvemuseum'
+				on_press: root.manager.current = 'norskeDovemuseum'
 			Button:
 				text: 'Trondheim kunstmuseum'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -418,12 +421,12 @@ ScreenManagement:
 				text: 'Jødisk museum'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'jødiskeMuseum'
+				on_press: root.manager.current = 'jodiskeMuseum'
 			Button:
 				text: 'Trondheim sjøfartsmuseum'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'trondheimSjøfartsmuseum'
+				on_press: root.manager.current = 'trondheimSjofartsmuseum'
 			Button:
 				text: ''
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -547,18 +550,410 @@ ScreenManagement:
 				on_press: root.manager.current = 'front'
 
 
+<RingveMuseum>:
+	name: 'ringveMuseum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Ringve Museum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<Vitenskapsmuseet>:
+	name: 'vitenskapsmuseet'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Vitenskapsmuseet"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+<Rustkammeret>:
+	name: 'rustkammeret'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Rustkammeret"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
 
 
 
 
 
 
+<NordenfjeldskeKunst>:
+	name: 'nordenfjeldskeKunst'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Nordenfjeldske Kunstmuseum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<NorskeDovemuseum>:
+	name: 'norskeDovemuseum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "norskeDøvemuseum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<TrondheimKunstmuseum>:
+	name: 'trondheimKunstmuseum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Trondheim Kunstmuseum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+<JodiskeMuseum>:
+	name: 'jodiskeMuseum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Jødiske Museum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
 
 
 
 
 
 
+<Trondheimoartsmuseum>:
+	name: 'trondheimSjofartsmuseum'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Trondheim Sjøfartsmuseum"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+#------------------------------------------------------------------------------------------------
 
 
 
@@ -601,34 +996,42 @@ ScreenManagement:
 				text: 'Stiftsgården'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'stiftsgarden'
 			Button:
 				text: 'Gamle bybro'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'gamleBybro'
 			Button:
 				text: 'Kristiansten festning'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kristianstenFestning'
 			Button:
 				text: 'Erkebispegården'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'erkebispegarden'
 			Button:
 				text: 'Munkholmen'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'munkholmen'
 			Button:
 				text: 'Bakklandet'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bakklandet'
 			Button:
 				text: 'Vår Frue kirke'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'varFrueKirke'
 			Button:
 				text: ''
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+
 
 
 
@@ -643,6 +1046,8 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
+
+#-------------------------------------------------------------------------------------------------------
 
 
 <Nidarosdomen>:
@@ -693,6 +1098,369 @@ ScreenManagement:
 				on_press: root.manager.current = 'front'
 
 
+
+
+<Stiftsgarden>:
+	name: 'stiftsgarden'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Stiftsgården"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<GamleBybro>:
+	name: 'gamleBybro'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "GamleBybro"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<KristianstenFestning>:
+	name: 'kristianstenFestning'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Kristiansten Festning"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<Erkebispegarden>:
+	name: 'erkebispegarden'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Erkebispegarden"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<Munkholmen>:
+	name: 'munkholmen'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Munkholmen"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<Bakklandet>:
+	name: 'bakklandet'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Bakklandet"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+<VarFrueKirke>:
+	name: 'varFrueKirke'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Vår Frue Kirke"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+#---------------------------------------------------------------------------------------------------------
+
+
+
+
 <Kultur>:
 	name: 'kultur'
     canvas.before:
@@ -726,18 +1494,22 @@ ScreenManagement:
 				text: 'Vitensenteret'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vitensenteret'
 			Button:
 				text: 'Kunsthall Trondheim'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kunsthallTrondheim'
 			Button:
 				text: 'Litteraturhuset trondheim'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'litteraturhusetTrondheim'
 			Button:
 				text: 'Kultursenteret ISAK'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kultursenteretISAK'
 
 
 
@@ -753,4 +1525,1515 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
+
+#-----------------------------------------------------------------------------------------------
+
+
+
+
+<Vitensenteret>:
+	name: 'vitensenteret'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Vitensenteret"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<KunsthallTrondheim>:
+	name: 'kunsthallTrondheim'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Kunsthall Trondheim"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+<LitteraturhusetTrondheim>:
+	name: 'litteraturhusetTrondheim'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Litteraturhuset Trondheim"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+<KultursenteretISAK>:
+	name: 'kultursenteretISAK'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Kultursenteret ISAK"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+#------------------------------------------------------------------------------------------------
+
+
+
+
+<Natur>:
+	name: 'natur'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 2
+			rows: 2
+
+			Button:
+				text: 'Burmaklippen'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'burmaklippen'
+			Button:
+				text: 'Geitfjellet'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'geitfjellet'
+			Button:
+				text: 'Våttakammen'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vattakammen'
+			Button:
+				text: 'Ladestien'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ladestien'
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+#-------------------------------------------------------------------------------------------------------
+
+
+
+<Burmaklippen>:
+	name: 'burmaklippen'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Burmaklippen"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Geitfjellet>:
+	name: 'geitfjellet'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Geitfjellet"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Vattakammen>:
+	name: 'vattakammen'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Våttakammen"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Ladestien>:
+	name: 'ladestien'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Ladestien"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#------------------------------------------------------------------------------------------------
+
+
+
+
+<MatDrikke>:
+	name: 'matDrikke'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 3
+			rows: 4
+
+			Button:
+				text: 'Tyholttarnet'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'tyholttarnet'
+			Button:
+				text: 'Ila Brannstasjon'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ilaBrannstasjon'
+			Button:
+				text: 'Antikvariatet'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'antikvariatet'
+			Button:
+				text: 'Arvesølvet Folkekafe'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'arvesolvetFolkekafe'
+			Button:
+				text: 'Cafe Nim'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'cafeNim'
+			Button:
+				text: 'Cafe Ni Muser'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'cafeNiMuser'
+			Button:
+				text: 'RosenborgDampbakeri'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rosenborgDampbakeri'
+			Button:
+				text: 'Sellenraa Bok & Bar'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'sellenraaBokBar'
+            Button:
+				text: 'Trondheim Mikrobryggeri'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimMikrobryggeri'
+            Button:
+				text: 'Cafe Lokka'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'cafeLokka'
+            Button:
+				text: 'Bakklandet Skydsstasjon'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bakklandetSkydsstasjon'
+
+
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+#-------------------------------------------------------------------------------------------------------
+
+
+
+<Tyholttarnet>:
+	name: 'tyholttarnet'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Tyholttårnet"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<IlaBrannstasjon>:
+	name: 'ilaBrannstasjon'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Ila Brannstasjon"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<Antikvariatet>:
+	name: 'antikvariatet'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Antikvariatet"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<ArvesolvetFolkekafe>:
+	name: 'arvesolvetFolkekafe'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Arvesølvet Folkekafe"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<CafeNim>:
+	name: 'cafeNim'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Cafe Nim"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<CafeNiMuser>:
+	name: 'cafeNiMuser'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Cafe Ni Muser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<RosenborgDampbakeri>:
+	name: 'rosenborgDampbakeri'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Rosenborg Dampbakeri"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<SellenraaBokBar>:
+	name: 'sellenraaBokBar'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Sellenraa Bok & Bar"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<TrondheimMikrobryggeri>:
+	name: 'trondheimMikrobryggeri'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Trondheim Mikrobryggeri"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<CafeLokka>:
+	name: 'cafeLokka'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Cafe Lokka"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+<BakklandetSkydsstasjon>:
+	name: 'bakklandetSkydsstasjon'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Bakklandet Skydsstasjon"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
+
+#------------------------------------------------------------------------------------------------
+
+
+
+
+<Aktiviteter>:
+	name: 'aktiviteter'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size: root.size
+			rows: 1
+
+			Label:
+				text: "Veibeskrivelser"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			cols: 2
+			rows: 3
+
+
+			Button:
+				text: 'Klatresenter'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'klatresenter'
+			Button:
+				text: 'Turnhall'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'turnhall'
+			Button:
+				text: 'Bowling'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bowling'
+			Button:
+				text: 'Trampolinepark'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trampolinepark'
+			Button:
+				text: 'Gokart og Lazerx'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'gokartOgLazerx'
+			Button:
+				text: 'Escape Reality'
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'escapeReality'
+
+
+
+
+
+		GridLayout:
+			size: root.size
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+#-------------------------------------------------------------------------------------------------------
+
+
+
+
+<Klatresenter>:
+	name: 'klatresenter'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Klatresenter"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Turnhall>:
+	name: 'turnhall'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Turnhall"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Bowling>:
+	name: 'bowling'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Bowling"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<Trampolinepark>:
+	name: 'trampolinepark'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Trampolinepark"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<GokartOgLazerx>:
+	name: 'gokartOgLazerx'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Gokart og Lazerx"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+<EscapeReality>:
+	name: 'escapeReality'
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+    BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+			Label:
+				text: "Escape Reality"
+				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+
+
+		GridLayout:
+			orientation: 'vertical'
+			size: root.size
+			rows: 1
+
+
+			Image:
+				source: 'VeibeskrivelserBilde/NidarosDomkirke.PNG'
+				allow_stretch: True
+				keep_ratio: True
+
+
+		GridLayout:
+			size_hint: (1, 0.15)
+			rows: 2
+
+			Label:
+
+			Button:
+				text: "Framskjerm"
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0]
+				on_press: root.manager.current = 'front'
+
+
+
+
+
 
