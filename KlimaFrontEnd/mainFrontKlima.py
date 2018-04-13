@@ -39,8 +39,6 @@ timeElapsed = time.clock()
 class FrontScreen(Screen):
 	pass
 
-#PROBLEM TRYKKER MAN MANGE GANGER PÅ RAD KRASJER PROGRAMMET
-#SIDEN DET IKKE GREIER Å SENDE TIL SERVER FORT NOK
 
 class CustomParkControl(Screen):
 
