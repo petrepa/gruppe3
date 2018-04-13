@@ -37,15 +37,12 @@ BILDEadresseString = '/picture/default'
 valgtLED = 10
 valgtBILDE = 10
 valgtLYD = 10
-#timeElapsed = time.clock()
 
 #LabelBase.register(name= 'AncientMedium', fn_regular= 'AncientMedium.ttf')
 #Funksjonane til framskjerm og menyen
 class FrontScreen(Screen):
 	pass
 
-#PROBLEM TRYKKER MAN MANGE GANGER PÅ RAD KRASJER PROGRAMMET
-#SIDEN DET IKKE GREIER Å SENDE TIL SERVER FORT NOK
 
 class CustomParkControl(Screen):
 
