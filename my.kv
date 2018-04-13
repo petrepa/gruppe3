@@ -1,5 +1,7 @@
 # Hugs å legge til dei nye klassene under ScreenManagement!
 
+#: import ScreenManager kivy.uix.screenmanager.ScreenManager
+#: import Screen kivy.uix.screenmanager.ScreenManager
 
 
 ScreenManagement:
@@ -11,6 +13,9 @@ ScreenManagement:
 	SeverdigScreen:
 	AnnaScreen:
 	Veibeskrivelser:
+	SelectionScreen:
+        id: selection_screen
+        name: 'SelectionScreen'
 
 	Museum:
 	Rockheim:
@@ -132,7 +137,7 @@ ScreenManagement:
 				text: "Severdigheiter"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'severdig'
+				on_press: root.manager.current = 'SelectionScreen'
 			Button:
 				text: "Uhm noko anna"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -246,6 +251,75 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
+
+<SelectionScreen>:
+    padding: [10, 20]
+    spacing: 2
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        GridLayout:
+            size_hint: (1, 0.2)
+            rows: 1
+
+            Label:
+                text: "Kryss av for aktuelle alternativer"
+                font_size: 30
+
+        GridLayout:
+            orientation: 'vertical'
+            size_hint: (1, 1)
+
+            padding: [10, 40]
+            cols: 2
+            rows: 6
+            Label:
+                text: "Museum"
+            CheckBox:
+                on_active: root.checkbox_museum_cliked(self, self.active)
+                size_hint_x: .55
+            Label:
+                text: "Historiske steder"
+            CheckBox:
+                on_active: root.checkbox_historisk_cliked(self, self.active)
+                size_hint_x: .55
+            Label:
+                text: "Kultur"
+            CheckBox:
+                on_active: root.checkbox_kultur_cliked(self, self.active)
+                size_hint_x: .55
+            Label:
+                text: "Natur"
+            CheckBox:
+                on_active: root.checkbox_natur_cliked(self, self.active)
+                size_hint_x: .55
+            Label:
+                text: "Mat og drikke"
+            CheckBox:
+                on_active: root.checkbox_mat_cliked(self, self.active)
+                size_hint_x: .55
+            Label:
+                text: "Aktiviteter"
+            CheckBox:
+                on_active: root.checkbox_aktiviteter_cliked(self, self.active)
+                size_hint_x: .55
+
+        GridLayout:
+            orientation: 'vertical'
+            size_hint: (1, 0.11)
+            rows: 1
+            cols: 2
+
+            Button:
+                text: "Klikk når du er klar"
+                on_press: root.screenSelector()
+                on_release:
+                    root.manager.current = str(root.manager.ids.selection_screen.testScreen)
+            Button:
+                text: 'Til menyen'
+                on_press: root.manager.current = 'main'
+
 
 
 <HistorieScreen>:
