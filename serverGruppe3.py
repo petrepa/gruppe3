@@ -100,7 +100,7 @@ def sound(speaker):
 def bilde():
     pilImage = Image.open("tittel.png")
     showPIL(pilImage)
-return "OK"
+    return "OK"
 
 
 
