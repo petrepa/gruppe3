@@ -14,6 +14,8 @@ from kivy.uix.behaviors import ToggleButtonBehavior
 from kivy.properties import StringProperty
 from kivy.core.text import LabelBase
 import time
+import datetime
+import requests
 from kivy.uix.slider import Slider
 
 
