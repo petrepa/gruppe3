@@ -72,30 +72,42 @@ ScreenManagement:
 	GokartOgLazerx:
 	EscapeReality:
 
+#Framskjermen
 <FrontScreen>:
+	#namnet som vert brukt seinare til referering
 	name: "front"
 
-
+	#definerar bakgrunnsbiletet
 	canvas.before:
+		#sjølve biletet
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'test.jpg'
+        #diffust overlegg over biletet
+		Color:
+			rgba: 0.976470588,0.976470588,0.976470588,0.7
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	#definerer at sida skal vere eit boxlayout med eit bilete fyrst, så ein knapp	
     BoxLayout:
     	orientation: 'vertical'
-        Label:
-            text: 'ADRESSA'
-            font_size: 150
-            color: 0.03137, 0.32549, 0.46666666666, 1
+		Image:
+			source: 'logo.png'
+			allow_stretch: False
+			keep_ratio: False
         Button:
             text: 'Til menyen'
+            font_size: 100
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
             background_color: [1, 1, 1, 0]
             on_release: root.manager.current = 'main'
 
 
 
-
+#Meny-sida
 <MainWidget>:
 	name: "main"
 
@@ -113,6 +125,7 @@ ScreenManagement:
 			size: root.size
 			rows: 1
 
+			#overskrifta til sida
 			Label:
 				text: "MENY"
 				font_size: 150
@@ -170,7 +183,7 @@ ScreenManagement:
 
 
 
-
+#Klimaval-modulen
 <KlimaScreen>:
 	name: "klima"
 
@@ -221,17 +234,17 @@ ScreenManagement:
 				text: 'Syden'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.plays()
+				on_press: root.playsS()
 			Button:
 				text: "Antarktis"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'historisk'
+				on_press: root.playsI()
 			Button:
 				text: "Jungel"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'severdig'
+				on_press: root.playsJ()
 			Button:
 				text: "Hav"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -250,8 +263,9 @@ ScreenManagement:
 				text: "Framskjerm"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
-
+				on_press: root.stopAll()
+				on_release: root.manager.current = 'main'
+				
 <SelectionScreen>:
     padding: [10, 20]
     spacing: 2
@@ -320,15 +334,179 @@ ScreenManagement:
                 text: 'Til menyen'
                 on_press: root.manager.current = 'main'
 
-
-
+#Historie-modul
 <HistorieScreen>:
 	name: 'historisk'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 	BoxLayout:
     	orientation: 'vertical'
+    	
+        Label:
+        	text: 'Historisk'
+        	color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        	font_size: 100
+        	size_hint: (1, 0.2)
+        
+
+        #Ein rullbar modul der dei ulike historiske plassane er lista
+        ScrollView:
+
+			GridLayout:
+				cols: 2
+				size_hint_y: None
+				height: 1000
+        	
+				# -----------------------------------------------------
+				GridLayout:
+					rows: 2
+					cols: 1
+
+					Label:
+						text: 'Nidarosdomen'
+						font_size: 50
+						size_hint: (1, 1)
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+					Label: 
+						text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens største middelalderkirker. Byggingen ble påbegynt i 1070, og domen har siden stått oppreist over Olav den Helliges grav. Flere av Norges konger er både kronet, viet og gravlagt her. Her kan du delta på både gudstjenester, omvisninger og konserter.'
+						text_size: self.width, None
+						size_hint_y: None
+						height: self.texture_size[1]
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+				GridLayout:
+					cols: 1
+					rows: 1
+					size_hint: (0.2, 0.5)
+
+					Image:
+						source: 'test2.jpg'
+						allow_stretch: True
+						keep_ratio: False
+				# -----------------------------------------------------
+				GridLayout:
+					rows: 2
+					cols: 1
+
+					Label:
+						text: 'Stiftsgården'
+						font_size: 50
+						size_hint: (1, 1)
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+					Label: 
+						text: 'Stiftsgården er Trondheims kongelige residens, og nordens største trepalé. Gården ble bygget for Cecilie Christine Schøller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen på Stiftsgården ved å delta på omvisning.'
+						text_size: self.width, None
+						size_hint_y: None
+						height: self.texture_size[1]
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+				GridLayout:
+					cols: 1
+					rows: 1
+					size_hint: (0.2, 0.5)
+
+					Image:
+						source: 'test2.jpg'
+						allow_stretch: True
+						keep_ratio: False
+				# -----------------------------------------------------
+				GridLayout:
+					rows: 2
+					cols: 1
+
+					Label:
+						text: 'Gamle Bybro'
+						font_size: 50
+						size_hint: (1, 1)
+					Label: 
+						text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
+						text_size: self.width, None
+						size_hint_y: None
+						height: self.texture_size[1]
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+				GridLayout:
+					cols: 1
+					rows: 1
+					size_hint: (0.2, 0.5)
+
+					Image:
+						source: 'test2.jpg'
+						allow_stretch: True
+						keep_ratio: False
+
+				# -----------------------------------------------------
+				GridLayout:
+					rows: 2
+					cols: 1
+
+					Label:
+						text: 'Kristiansten festning'
+						font_size: 50
+						size_hint: (1, 1)
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+					Label: 
+						text: 'Kristiansten festning har siden slutten av 1600-tallet stått over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vært benyttet til militært bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
+						text_size: self.width, None
+						size_hint_y: None
+						height: self.texture_size[1]
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+				GridLayout:
+					cols: 1
+					rows: 1
+					size_hint: (0.2, 0.5)
+
+					Image:
+						source: 'test2.jpg'
+						allow_stretch: True
+						keep_ratio: False
+
+				# -----------------------------------------------------
+				GridLayout:
+					rows: 2
+					cols: 1
+
+					Label:
+						text: 'Erkebispegården'
+						font_size: 50
+						size_hint: (1, 1)
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+					Label: 
+						text: 'Erkebispegården var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegårdens historie utstilt.'
+						text_size: self.width, None
+						size_hint_y: None
+						height: self.texture_size[1]
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
+				GridLayout:
+					cols: 1
+					rows: 1
+					size_hint: (0.2, 0.5)
+
+					Image:
+						source: 'test2.jpg'
+						allow_stretch: True
+						keep_ratio: False
+
         Button:
             text: 'Til menyen'
+            color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			background_color: [1, 1, 1, 0.1]
             on_press: root.manager.current = 'main'
+            size_hint: (1, 0.2)
+
+
 <SeverdigScreen>:
 	name: 'severdig'
 	BoxLayout:
