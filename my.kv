@@ -442,16 +442,60 @@ ScreenManagement:
             text: 'Til menyen'
             on_press: root.manager.current = 'main'
 
+
+
 <AnnaScreen>:
 	name: 'anna'
+
 	BoxLayout:
-    	orientation: 'vertical'
-	    Button:
-            text: 'Til menyen'
-            on_press: root.manager.current = 'main'
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ROCKHEIM'
+    	        font_size: 70
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [10, 10]
+			    text: 'Det nasjonale museet for populærmusikk. Dra hit om du ønsker å lære mer om musikk, eller prøv deg som DJ, trommeslager og musikalsk kunstner selv!'
+			    font_size: 18
+			    text_size: self.size
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/rockheim.jpeg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+
 
 #-----------------------------------------------------------------------------------------------------
-
 <Veibeskrivelser>:
 	name: 'veibeskrivelser'
     canvas.before:
@@ -3216,3 +3260,5 @@ ScreenManagement:
 
 
 
+
+    	   
