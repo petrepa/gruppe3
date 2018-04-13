@@ -187,6 +187,16 @@ class CustomParkControl(Screen):
         adresseString = 'http://localhost:8080/192.168.1.10' + LEDadresseString + RGBstring
         #if timeElapsed
         print(adresseString)
+        klokkenNu = datetime.datetime.now() #henter va klokken er nå
+        tidStopMusikk = klokkenNu.replace(hour=12, minute=3, second=0, microsecond=0)
+        if klokkenNu > tidStopMusikk:
+            adresseString = 'http://192.168.1.10:8080' + LEDadresseString + RGBstring + BILDEadresseString
+            print(adresseString)
+            #r = requests.get(adresseString)
+        else:
+            adresseString = 'http://192.168.1.10:8080' + LEDadresseString + RGBstring + LYDadresseString + BILDEadresseString
+            print(adresseString)
+            #r = requests.get(adresseString)
 
 class ScreenManagement(ScreenManager):
 	pass
