@@ -1,5 +1,6 @@
 #definerer at vi skal bruke kivy
 import kivy
+import random
 
 #ulike bibliotek importert fra kivy
 from kivy.app import App
@@ -13,6 +14,8 @@ from kivy.core.image import Image
 from kivy.graphics import Color, Rectangle
 from kivy.clock import Clock
 from kivy.core.audio import SoundLoader,Sound
+from kivy.properties import ObjectProperty
+from kivy.properties import StringProperty
 from kivy.uix.scrollview import ScrollView
 
 #Funksjonane til framskjerm og menyen
@@ -234,7 +237,112 @@ class EscapeReality(Screen):
 	pass
 
 
+class SelectionScreen(Screen):
+    testScreen = StringProperty('Screen1')
 
+    checbox_is_active = ObjectProperty(False)
+    serverdigheter = []
+    museum = 0
+    historisk = 0
+    kultur = 0
+    natur = 0
+    mat = 0
+    aktiviteter = 0
+
+    def checkbox_museum_cliked(self, instance, value):
+        if value is True:
+            print("Checkbox 1 Checked")
+            self.museum = 1
+        else:
+            print("Checkbox 1 is Unchecked")
+            self.museum = 0
+    def checkbox_historisk_cliked(self, instance, value):
+        if value is True:
+            print("Checkbox 2 Checked")
+            self.historisk = 1
+        else:
+            print("Checkbox 2 is Unchecked")
+            self.historisk = 0
+    def checkbox_kultur_cliked(self, instance, value):
+        if value is True:
+            print("Checkbox 3 Checked")
+            self.kultur = 1
+        else:
+            print("Checkbox 3 is Unchecked")
+            self.kultur = 0
+    def checkbox_natur_cliked(self, instance, value):
+        if value is True:
+            print("Checkbox 4 Checked")
+            self.natur = 1
+        else:
+            print("Checkbox 4 is Unchecked")
+            self.natur = 0
+    def checkbox_mat_cliked(self, instance, value):
+        if value is True:
+            print("Checkbox 5 Checked")
+            self.mat = 1
+        else:
+            print("Checkbox 5 is Unchecked")
+            self.mat = 0
+    def checkbox_aktiviteter_cliked(self, instance, value):
+        if value is True:
+            print("Checkbox 6 Checked")
+            self.aktiviteter = 1
+        else:
+            print("Checkbox 6 is Unchecked")
+            self.aktiviteter = 0
+
+    def screenSelector(self):
+        liste_mu = ['rockheim', 'trondelagFolkemuseum',
+                    'ringveMuseum', 'vitenskapsmuseet', 
+                    'rustkammeret', 'nordenfjeldskeKunst',
+                    'norskeDovemuseum', 'trondheimKunstmuseum',
+                    'jodiskeMuseum', 'trondheimSjofartsmuseum']
+        liste_h = ['nidarosdomen', 'stiftsgarden',
+                   'gamleBybro', 'kristianstenFestning',
+                   'erkebispegarden', 'munkholmen',
+                   'bakklandet', 'varFrueKirke']
+        liste_k = ['vitensenteret', 'kunsthallTrondheim',
+                   'litteraturhusetTrondheim', 'kultursenteretISAK']
+        liste_n = ['burmaklippen', 'geitfjellet',
+                   'vattakammen', 'ladestien']
+        liste_ma = ['tyholttarnet', 'ilaBrannstasjon',
+                    'antikvariatet', 'arvesolvetFolkekafe',
+                    'cafeNim', 'cafeNiMuser',
+                    'rosenborgDampbakeri', 'sellenraaBokBar',
+                    'trondheimMikrobryggeri', 'cafeLokka',
+                    'bakklandetSkydsstasjon']
+        liste_a = ['klatresenter', 'turnhall',
+                   'bowling', 'trampolinepark',
+                   'gokartOgLazerx', 'escapeReality']
+        antallSkjermer = 43
+
+        if int(self.museum) == 1:
+            self.serverdigheter.extend(liste_mu)
+            print("Museum i liste")
+        if int(self.historisk) == 1:
+            self.serverdigheter.extend(liste_h)
+            print("Historisk i liste")
+        if int(self.kultur) == 1:
+            self.serverdigheter.extend(liste_k)
+            print("Kultur i liste")
+        if int(self.natur) == 1:
+            self.serverdigheter.extend(liste_n)
+            print("Natur i liste")
+        if int(self.mat) == 1:
+            self.serverdigheter.extend(liste_ma)
+            print("Mat i liste")
+        if int(self.aktiviteter) == 1:
+            self.serverdigheter.extend(liste_a)
+            print("Aktiviteter i liste")
+
+        if not self.serverdigheter:
+            number = random.randint(0, antallSkjermer)
+        else:
+            number = random.randint(0, len(self.serverdigheter))
+
+        self.testScreen = self.serverdigheter[number]
+        return self.testScreen
 
 
 class ScreenManagement(ScreenManager):
