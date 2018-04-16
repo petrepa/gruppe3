@@ -260,7 +260,7 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.stopAll()
@@ -269,6 +269,13 @@ ScreenManagement:
 <SelectionScreen>:
     padding: [10, 20]
     spacing: 2
+
+    canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
     BoxLayout:
         orientation: 'vertical'
@@ -280,6 +287,8 @@ ScreenManagement:
             Label:
                 text: "Kryss av for aktuelle alternativer"
                 font_size: 30
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
 
         GridLayout:
             orientation: 'vertical'
@@ -290,31 +299,43 @@ ScreenManagement:
             rows: 6
             Label:
                 text: "Museum"
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             CheckBox:
                 on_active: root.checkbox_museum_cliked(self, self.active)
                 size_hint_x: .55
             Label:
                 text: "Historiske steder"
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             CheckBox:
                 on_active: root.checkbox_historisk_cliked(self, self.active)
                 size_hint_x: .55
             Label:
                 text: "Kultur"
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             CheckBox:
                 on_active: root.checkbox_kultur_cliked(self, self.active)
                 size_hint_x: .55
             Label:
                 text: "Natur"
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             CheckBox:
                 on_active: root.checkbox_natur_cliked(self, self.active)
                 size_hint_x: .55
             Label:
                 text: "Mat og drikke"
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             CheckBox:
                 on_active: root.checkbox_mat_cliked(self, self.active)
                 size_hint_x: .55
             Label:
                 text: "Aktiviteter"
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             CheckBox:
                 on_active: root.checkbox_aktiviteter_cliked(self, self.active)
                 size_hint_x: .55
@@ -330,9 +351,13 @@ ScreenManagement:
                 on_press: root.screenSelector()
                 on_release:
                     root.manager.current = str(root.manager.ids.selection_screen.testScreen)
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Til menyen'
                 on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
 
 #Historie-modul
 <HistorieScreen>:
@@ -547,9 +572,9 @@ ScreenManagement:
 			rows: 1
 
 			Label:
-			    padding: [10, 10]
+			    padding: [100, 10]
 			    text: 'Det nasjonale museet for populærmusikk. Dra hit om du ønsker å lære mer om musikk, eller prøv deg som DJ, trommeslager og musikalsk kunstner selv!'
-			    font_size: 18
+			    font_size: 30
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -583,7 +608,7 @@ ScreenManagement:
                 size: root.size
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-
+				on_press: root.manager.current = 'SelectionScreen'
 
 #-----------------------------------------------------------------------------------------------------
 <Veibeskrivelser>:
@@ -655,10 +680,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'main'
 
 #-----------------------------------------------------------------------------------------------------------
 <Museum>:
@@ -758,10 +783,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -807,10 +832,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -857,10 +882,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'main'
 
 
 <RingveMuseum>:
@@ -3344,11 +3369,3 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
-
-
-
-
-
-
-
-    	   
