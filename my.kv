@@ -447,6 +447,13 @@ ScreenManagement:
 <AnnaScreen>:
 	name: 'anna'
 
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
 	BoxLayout:
 		orientation: 'vertical'
 
@@ -457,6 +464,8 @@ ScreenManagement:
     	    Label:
     	        text: 'ROCKHEIM'
     	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
 
 		GridLayout:
 			orientation: 'vertical'
@@ -469,6 +478,7 @@ ScreenManagement:
 			    text: 'Det nasjonale museet for populærmusikk. Dra hit om du ønsker å lære mer om musikk, eller prøv deg som DJ, trommeslager og musikalsk kunstner selv!'
 			    font_size: 18
 			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
 			    valign: 'middle'
 
@@ -487,12 +497,19 @@ ScreenManagement:
                 text: 'Tilbake til meny'
                 size: root.size
                 on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rockheim'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
 
 
 #-----------------------------------------------------------------------------------------------------
