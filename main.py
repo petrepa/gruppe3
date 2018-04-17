@@ -135,26 +135,42 @@ class HistoriskeSteder(Screen):
 
 class Nidarosdomen(Screen):
 	pass
+class NidarosdomenInfo(Screen):
+	pass
 
 class Stiftsgarden(Screen):
+	pass
+class StiftsgardenInfo(Screen):
 	pass
 
 class GamleBybro(Screen):
 	pass
+class GamleBybroInfo(Screen):
+	pass
 
 class KristianstenFestning(Screen):
+	pass
+class KristianstenFestningInfo(Screen):
 	pass
 
 class Erkebispegarden(Screen):
 	pass
+class ErkebispegardenInfo(Screen):
+	pass
 
 class Munkholmen(Screen):
+	pass
+class MunkholmenInfo(Screen):
 	pass
 
 class Bakklandet(Screen):
 	pass
+class BakklandetInfo(Screen):
+	pass
 
 class VarFrueKirke(Screen):
+	pass
+class VarFrueKirkeInfo(Screen):
 	pass
 
 
@@ -164,16 +180,23 @@ class Kultur(Screen):
 
 class Vitensenteret(Screen):
 	pass
+class VitensenteretInfo(Screen):
+	pass
 
 class KunsthallTrondheim(Screen):
+	pass
+class KunsthallTrondheimInfo(Screen):
 	pass
 
 class LitteraturhusetTrondheim(Screen):
 	pass
+class LitteraturhusetTrondheimInfo(Screen):
+	pass
 
 class KultursenteretISAK(Screen):
 	pass
-
+class KultursenteretISAKInfo(Screen):
+	pass
 
 
 class Natur(Screen):
@@ -314,12 +337,12 @@ class SelectionScreen(Screen):
                     'rustkammeretinfo', 'nordenfjeldskekunstinfo',
                     'norskdovemuseuminfo', 'trondheimkunstmuseuminfo',
                     'jodiskmuseuminfo', 'trondheimsjofartsmuseuminfo']
-        liste_h = ['nidarosdomen', 'stiftsgarden',
-                   'gamleBybro', 'kristianstenFestning',
-                   'erkebispegarden', 'munkholmen',
-                   'bakklandet', 'varFrueKirke']
-        liste_k = ['vitensenteret', 'kunsthallTrondheim',
-                   'litteraturhusetTrondheim', 'kultursenteretISAK']
+        liste_h = ['nidarosdomeninfo', 'stiftsgardeninfo',
+                   'gamlebybroinfo', 'kristianstenfestninginfo',
+                   'erkebispegardeninfo', 'munkholmeninfo',
+                   'bakklandetinfo', 'varfruekirkeinfo']
+        liste_k = ['vitensenteretinfo', 'kunsthalltrondheiminfo',
+                   'litteraturhusettrondheiminfo', 'kultursenteretISAKinfo']
         liste_n = ['burmaklippen', 'geitfjellet',
                    'vattakammen', 'ladestien']
         liste_ma = ['tyholttarnet', 'ilaBrannstasjon',
