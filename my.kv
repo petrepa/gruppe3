@@ -100,7 +100,7 @@ ScreenManagement:
 			keep_ratio: False
         Button:
             text: 'Til menyen'
-            font_size: 100
+            font_size: 70
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
             background_color: [1, 1, 1, 0]
             on_release: root.manager.current = 'main'
@@ -140,31 +140,37 @@ ScreenManagement:
 				text: 'Klimaval'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
+				font_size: 80
 				on_press: root.manager.current = 'klima'
 			Button:
 				text: "Historisk"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
+				font_size: 80
 				on_press: root.manager.current = 'historisk'
 			Button:
 				text: "Severdigheiter"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
+				font_size: 80
 				on_press: root.manager.current = 'SelectionScreen'
 			Button:
-				text: "Uhm noko anna"
+				text: "Styr parken"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
+				font_size: 80
 				on_press: root.manager.current = 'anna'
             Button:
 				text: "Veibeskrivelser"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
+				font_size: 80
 				on_press: root.manager.current = 'veibeskrivelser'
 			Button:
 				text: "Noko anna 2"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
+				font_size: 80
 				on_press: root.manager.current = 'anna'
 
 
@@ -177,8 +183,9 @@ ScreenManagement:
 
 			Button:
 				text: "Framskjerm"
-				color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				background_color: [1, 1, 1, 0]
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				font_size: 70
 				on_press: root.manager.current = 'front'
 
 
@@ -234,17 +241,14 @@ ScreenManagement:
 				text: 'Syden'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.playsS()
 			Button:
 				text: "Antarktis"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.playsI()
 			Button:
 				text: "Jungel"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.playsJ()
 			Button:
 				text: "Hav"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -262,8 +266,8 @@ ScreenManagement:
 			Button:
 				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				background_color: [1, 1, 1, 0]
-				on_press: root.stopAll()
+				background_color: [1, 1, 1, 0.1]
+				font_size: 70
 				on_release: root.manager.current = 'main'
 				
 <SelectionScreen>:
@@ -451,6 +455,8 @@ ScreenManagement:
 						text: 'Gamle Bybro'
 						font_size: 50
 						size_hint: (1, 1)
+						color: 0.0705882, 0.4784313725, 0.75294117647, 1
+						background_color: [1, 1, 1, 0]
 					Label: 
 						text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
 						text_size: self.width, None
@@ -528,6 +534,7 @@ ScreenManagement:
             text: 'Til menyen'
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			background_color: [1, 1, 1, 0.1]
+			font_size: 70
             on_press: root.manager.current = 'main'
             size_hint: (1, 0.2)
 
@@ -626,11 +633,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Velg katergori"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -661,7 +672,7 @@ ScreenManagement:
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'natur'
 			Button:
-				text: 'Mat/drikke'
+				text: 'Mat og drikke'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'matDrikke'
@@ -682,7 +693,8 @@ ScreenManagement:
 			Button:
 				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				background_color: [1, 1, 1, 0]
+				background_color: [1, 1, 1, 0.1]
+				font_size: 70
 				on_press: root.manager.current = 'main'
 
 #-----------------------------------------------------------------------------------------------------------
@@ -701,11 +713,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Museum"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -783,10 +799,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake til menyen"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'main'
+				on_press: root.manager.current = 'veibeskrivelser'
 
 
 
@@ -930,10 +946,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -981,10 +997,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -1031,10 +1047,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -1083,10 +1099,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -1132,10 +1148,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -1183,10 +1199,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -1233,10 +1249,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 
@@ -1285,10 +1301,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'museum'
 
 
 #------------------------------------------------------------------------------------------------
@@ -1311,11 +1327,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Historiske steder"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -1335,11 +1355,6 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'stiftsgarden'
-			Button:
-				text: 'Gamle bybro'
-				color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'gamleBybro'
 			Button:
 				text: 'Kristiansten festning'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -1380,10 +1395,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'veibeskrivelser'
 
 #-------------------------------------------------------------------------------------------------------
 
@@ -1430,10 +1445,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1480,10 +1495,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1531,10 +1546,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1582,10 +1597,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1633,10 +1648,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1684,10 +1699,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1735,10 +1750,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1786,10 +1801,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'historiskeSteder'
 
 
 
@@ -1814,11 +1829,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Kultur"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -1859,10 +1878,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'veibeskrivelser'
 
 #-----------------------------------------------------------------------------------------------
 
@@ -1911,10 +1930,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'kultur'
 
 
 
@@ -1960,10 +1979,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'kultur'
 
 
 
@@ -2010,10 +2029,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'kultur'
 
 
 
@@ -2060,10 +2079,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'kultur'
 
 
 
@@ -2089,11 +2108,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Natur"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -2133,10 +2156,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'veibeskrivelser'
 
 #-------------------------------------------------------------------------------------------------------
 
@@ -2184,10 +2207,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'natur'
 
 
 
@@ -2233,10 +2256,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'natur'
 
 
 
@@ -2282,10 +2305,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'natur'
 
 
 
@@ -2331,10 +2354,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'natur'
 
 
 
@@ -2369,11 +2392,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Mat og drikke"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -2450,10 +2477,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'veibeskrivelser'
 
 #-------------------------------------------------------------------------------------------------------
 
@@ -2501,10 +2528,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <IlaBrannstasjon>:
@@ -2549,10 +2576,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <Antikvariatet>:
@@ -2597,10 +2624,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <ArvesolvetFolkekafe>:
@@ -2645,10 +2672,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <CafeNim>:
@@ -2693,10 +2720,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <CafeNiMuser>:
@@ -2741,10 +2768,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <RosenborgDampbakeri>:
@@ -2789,10 +2816,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <SellenraaBokBar>:
@@ -2837,10 +2864,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <TrondheimMikrobryggeri>:
@@ -2885,10 +2912,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <CafeLokka>:
@@ -2933,10 +2960,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 <BakklandetSkydsstasjon>:
@@ -2981,10 +3008,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'matDrikke'
 
 
 
@@ -3011,11 +3038,15 @@ ScreenManagement:
 
 		GridLayout:
 			size: root.size
-			rows: 1
+			rows: 2
 
 			Label:
 				text: "Veibeskrivelser"
 				font_size: 150
+				color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			Label:
+				text: "Aktiviteter"
+				font_size: 30
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -3068,10 +3099,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'veibeskrivelser'
 
 #-------------------------------------------------------------------------------------------------------
 
@@ -3120,10 +3151,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'aktiviteter'
 
 
 
@@ -3169,10 +3200,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'aktiviteter'
 
 
 
@@ -3218,10 +3249,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'aktiviteter'
 
 
 
@@ -3267,10 +3298,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'aktiviteter'
 
 
 
@@ -3316,10 +3347,10 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'aktiviteter'
 
 
 
@@ -3365,7 +3396,7 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Tilbake"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'front'
+				on_press: root.manager.current = 'aktiviteter'
