@@ -40,19 +40,31 @@ ScreenManagement:
 
 	HistoriskeSteder:
 	Nidarosdomen:
+	NidarosdomenInfo:
 	Stiftsgarden:
+	StiftsgardenInfo:
 	GamleBybro:
+	GamleBybroInfo:
 	KristianstenFestning:
+	KristianstenFestningInfo:
 	Erkebispegarden:
+	ErkebispegardenInfo:
 	Munkholmen:
+	MunkholmenInfo:
 	Bakklandet:
+	BakklandetInfo:
 	VarFrueKirke:
+	VarFrueKirkeInfo:
 
 	Kultur:
 	Vitensenteret:
+	VitensenteretInfo:
 	KunsthallTrondheim:
+	KunsthallTrondheimInfo:
 	LitteraturhusetTrondheim:
+	LitteraturhusetTrondheimInfo:
 	KultursenteretISAK:
+	KultursenteretISAKInfo:
 
 	Natur:
 	Burmaklippen:
@@ -551,6 +563,8 @@ ScreenManagement:
             on_press: root.manager.current = 'main'
 
 # Severdigheter - Info ------------------------------------------------------------------------
+
+# ----------------Museum info-------------------
 
 <RockheimInfo>:
 	name: 'rockheiminfo'
@@ -1239,6 +1253,842 @@ ScreenManagement:
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
+
+
+# ----------------Historiske steder info-------------------
+
+<NidarosdomenInfo>:
+	name: 'nidarosdomeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'NIDAROSDOMEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens største middelalderkirker. Byggingen ble påbegynt i 1070, og domen har siden stått oppreist over Olav den Helliges grav. Flere av Norges konger er både kronet, viet og gravlagt her. Her kan du delta på både gudstjenester, omvisninger og konserter.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Nidarosdomen.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'nidarosdomen'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<StiftsgardenInfo>:
+	name: 'stiftsgardeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'STIFTSGÅRDEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Stiftsgården er Trondheims kongelige residens, og nordens største trepalé. Gården ble bygget for Cecilie Christine Schøller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen på Stiftsgården ved å delta på omvisning.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/stiftsgarden.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'stiftsgarden'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<GamleBybroInfo>:
+	name: 'gamlebybroinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'GAMLE BYBRO'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/GamleBybro.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'gamleBybro'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<KristianstenFestningInfo>:
+	name: 'kristianstenfestninginfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KRISTIANSTEN FESTNING'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Kristiansten festning har siden slutten av 1600-tallet stått over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vært benyttet til militært bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/KristianstenFestning.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kristianstenFestning'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<ErkebispegardenInfo>:
+	name: 'erkebispegardeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ERKEBISPEGÅRDEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Erkebispegården var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegårdens historie utstilt.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/erkebispegarden.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'erkebispegarden'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+
+<MunkholmenInfo>:
+	name: 'munkholmeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'MUNKHOLMEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Munkholmen er en holme i Trondheimsfjorden like utenfor Trondheim sentrum. Historisk ble holmen kalt Nidarholm og brukt som rettersted under vikingtiden. Da det senere ble bygget et klosteranlegg her fikk holmen navnet Munkholmen. Munkholmen har også vært brukt som festning og fengsel. I dag kan du dra ut hit for å bade, spise, delta på omvisning og nyte omgivelsene.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Munkholmen.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'munkholmen'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<BakklandetInfo>
+	name: 'bakklandetinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'BAKKLANDET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Bakklandet er Trondheims gamle bydel, som ble bebygd først på tidlig 1600-tallet. Etter bydelen brant ned i 1718, ble den raskt gjenreist i form av små trehus, bryggerekke og brosteinsbelagte gater, som står i dag. Her kan du oppleve en koselig atmosfære med shopping, kaféer, restauranter og barer.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Bakklandet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bakklandet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<VarFrueKirkeInfo>:
+	name: 'varfruekirkeinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VÅR FRUE KIRKE'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Vår Frue kirke er en åpen omsorgskirke hvor du kan tenne lys, be, ta en kopp kaffe eller te og møte andre mennesker. Den er drevet av Kirkens Bymisjon, og har stått i hjertet av Trondheim siden år 1207.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/varfruekirke.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'varFrueKirke'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+# ----------------Kultur info-------------------
+
+<VitensenteretInfo>:
+	name: 'vitensenteretinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VITENSENTERET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Vitensenteret er et populærvitenskapelig opplevelsessenter. Her kan både voksne og barn eksperimentere med matematikk, naturvitenskap og teknologi. Her kan også oppleves 360-kino og 3D-planetarium.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Vitensenteret.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vitensenteret'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+<KunsthallTrondheimInfo>:
+	name: 'kunsthalltrondheiminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KUNSTHALL TRONDHEIM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Kunsthall Trondheim er en institusjon for samtidskunst på internasjonalt nivå. Her foregår det alt fra utstillinger, konserter, performancer, video screenings, foredrag og poesiopplesninger.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/KunsthallTrondheim.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kunsthallTrondheim'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<LitteraturhusetTrondheimInfo>:
+	name: 'litteraturhusettrondheiminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'LITTERATURHUSET TRONDHEIM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Litteraturhuset i Trondheim har arrangementer innen litteratur, samfunnsdebatter og forskningsformidling. Disse foregår i form av flere faste arrangementer ved navn “Professor på kafé”, “Litterært måltid” og “Barnas teselskap”.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Litteraturhuset.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'litteraturhusetTrondheim'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<KultursenteretISAKInfo>:
+	name: 'kultursenteretISAKinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KULTURSENTERET ISAK'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Kultursenteret ISAK er Trondheims kultursenter for ungdom som vil utøve, produsere eller oppleve kultur. Her får du hjelp til å iverksette drømmen din ved å få låne lokaler og utstyr, samt å finne samarbeidspartnere og kunnskapen som trengs.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/KultursenteretISAK.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kultursenteretISAK'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+# ----------------Natur info-------------------
+
+
 #-----------------------------------------------------------------------------------------------------
 <Veibeskrivelser>:
 	name: 'veibeskrivelser'
@@ -2317,8 +3167,6 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'front'
-
-
 
 
 
