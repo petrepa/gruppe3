@@ -70,10 +70,6 @@ class HistorieScreen(Screen):
 class SeverdigScreen(Screen):
 	pass
 
-class AnnaScreen(Screen):
-	pass
-
-
 class Veibeskrivelser(Screen):
 	pass
 
@@ -83,32 +79,52 @@ class Museum(Screen):
 
 class Rockheim(Screen):
 	pass
+class RockheimInfo(Screen):
+	pass
 
 class TrondelagFolkemuseum(Screen):
 	pass
+class TrondelagFolkemuseumInfo(Screen):
+    pass
 
 class RingveMuseum(Screen):
 	pass
+class RingveMuseumInfo(Screen):
+    pass
 
 class Vitenskapsmuseet(Screen):
 	pass
+class VitenskapsmuseetInfo(Screen):
+    pass
 
 class Rustkammeret(Screen):
 	pass
+class RustkammeretInfo(Screen):
+    pass
 
 class NordenfjeldskeKunst(Screen):
+	pass
+class NordenfjeldskeKunstInfo(Screen):
 	pass
 
 class NorskeDovemuseum(Screen):
 	pass
+class NorskDovemuseumInfo(Screen):
+	pass
 
 class TrondheimKunstmuseum(Screen):
+	pass
+class TrondheimKunstmuseumInfo(Screen):
 	pass
 
 class JodiskeMuseum(Screen):
 	pass
+class JodiskMuseumInfo(Screen):
+	pass
 
 class TrondheimSjofartsmuseum(Screen):
+	pass
+class TrondheimSjofartsmuseumInfo(Screen):
 	pass
 
 
@@ -293,11 +309,11 @@ class SelectionScreen(Screen):
             self.aktiviteter = 0
 
     def screenSelector(self):
-        liste_mu = ['rockheim', 'trondelagFolkemuseum',
-                    'ringveMuseum', 'vitenskapsmuseet', 
-                    'rustkammeret', 'nordenfjeldskeKunst',
-                    'norskeDovemuseum', 'trondheimKunstmuseum',
-                    'jodiskeMuseum', 'trondheimSjofartsmuseum']
+        liste_mu = ['rockheiminfo', 'trondelagfolkemuseuminfo',
+                    'ringvemuseuminfo', 'vitenskapsmuseetinfo',
+                    'rustkammeretinfo', 'nordenfjeldskekunstinfo',
+                    'norskdovemuseuminfo', 'trondheimkunstmuseuminfo',
+                    'jodiskmuseuminfo', 'trondheimsjofartsmuseuminfo']
         liste_h = ['nidarosdomen', 'stiftsgarden',
                    'gamleBybro', 'kristianstenFestning',
                    'erkebispegarden', 'munkholmen',
@@ -338,6 +354,12 @@ class SelectionScreen(Screen):
 
         if not self.serverdigheter:
             number = random.randint(0, antallSkjermer)
+            self.serverdigheter.extend(liste_mu)
+            self.serverdigheter.extend(liste_h)
+            self.serverdigheter.extend(liste_k)
+            self.serverdigheter.extend(liste_n)
+            self.serverdigheter.extend(liste_ma)
+            self.serverdigheter.extend(liste_a)
         else:
             number = random.randint(0, len(self.serverdigheter))
 

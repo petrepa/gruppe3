@@ -11,7 +11,6 @@ ScreenManagement:
 	KlimaScreen:
 	HistorieScreen:
 	SeverdigScreen:
-	AnnaScreen:
 	Veibeskrivelser:
 	SelectionScreen:
         id: selection_screen
@@ -19,15 +18,25 @@ ScreenManagement:
 
 	Museum:
 	Rockheim:
+	RockheimInfo:
 	TrondelagFolkemuseum:
+	TrondelagFolkemuseumInfo:
 	RingveMuseum:
+	RingveMuseumInfo:
 	Vitenskapsmuseet:
+	VitenskapsmuseetInfo:
 	Rustkammeret:
+	RustkammeretInfo:
 	NordenfjeldskeKunst:
-	NorskeDovemuseum:
+	NordenfjeldskeKunstInfo:
 	TrondheimKunstmuseum:
+	TrondheimKunstmuseumInfo:
+	NorskeDovemuseum:
+	NorskDovemuseumInfo:
 	JodiskeMuseum:
+	JodiskMuseumInfo:
 	TrondheimSjofartsmuseum:
+	TrondheimSjofartsmuseumInfo:
 
 	HistoriskeSteder:
 	Nidarosdomen:
@@ -71,6 +80,7 @@ ScreenManagement:
 	Trampolinepark:
 	GokartOgLazerx:
 	EscapeReality:
+
 
 #Framskjermen
 <FrontScreen>:
@@ -347,15 +357,15 @@ ScreenManagement:
             cols: 2
 
             Button:
+                text: 'Til menyen'
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
                 text: "Klikk når du er klar"
                 on_press: root.screenSelector()
                 on_release:
                     root.manager.current = str(root.manager.ids.selection_screen.testScreen)
-                color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				background_color: [1, 1, 1, 0.1]
-            Button:
-                text: 'Til menyen'
-                on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 
@@ -540,10 +550,10 @@ ScreenManagement:
             text: 'Til menyen'
             on_press: root.manager.current = 'main'
 
+# Severdigheter - Info ------------------------------------------------------------------------
 
-
-<AnnaScreen>:
-	name: 'anna'
+<RockheimInfo>:
+	name: 'rockheiminfo'
 
 	canvas.before:
         Color:
@@ -610,6 +620,625 @@ ScreenManagement:
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
 
+
+<TrondelagFolkemuseumInfo>:
+	name: 'trondelagfolkemuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRØNDELAG FOLKEMUSEUM, SVERRESBORG'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Nysgjerrig på hvordan trønderne levde i gamle dager? I flotte historiske omgivelser kan du bli med på lefsekurs, eventyrstund eller byvandring for barn.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/trondelagfolkemuseum.png'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondelagFolkemuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<RingveMuseumInfo>:
+	name: 'ringvemuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'RINGVE MUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Det nasjonale museet for musikk og musikkinstrumenter.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/ringvemuseum.png'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ringveMuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<VitenskapsmuseetInfo>:
+	name: 'vitenskapsmuseetinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VITENSKAPSMUSEET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Vitenskapsmuseet har en rekke utstillinger, fra steinalderhistorie, til norges eldste jerv, som ble hele 20 år! Dyreliv, middelalderliv, livet i polhavet, det er ingen grense for hvor mye spennende man kan lære om ved å ta en tur til vitenskapsmuseet. Det er åpent tirsdag-fredag fra 10-16 og lørdag-søndag fra 11-16. Gratis for barn og ungdom under 18!'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/vitenskapsmuseet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vitenskapsmuseet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<RustkammeretInfo>:
+	name: 'rustkammeretinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'RUSTKAMMERET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Allerede i 1826 ble Rustkammeret først brukt som museum. Den gang het det “Historiske våbensal”. Rustkammeret er et av forsvarets museer og utstillingene viser norsk motstandskamp helt fra vikingtiden til tiden da Norge var i union med Danmark.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/rustkammeret.JPG'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rustkammeret'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<NordenfjeldskeKunstInfo>:
+	name: 'nordenfjeldskekunstinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'NORDENFJELDSKE KUNSTINDUSTRIMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Nordenfjeldske Kunstindustrimuseet ble åpnet allerede i 1893 og har vært en samling av samtidskunst helt siden den tid. Blant annet var det på 1890-tallet svært populært med japansk kunst, og Nordenfjeldske har en imponerende samling av nettopp dette. For enhver kunstinteressert er dette et naturlig sted å ta turen.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/nordenfjeldske.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'nordenfjeldskeKunst'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+<NorskDovemuseumInfo>:
+	name: 'norskdovemuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'NORSK DØVEMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Norsk døvemuseum samler kulturhistorie, viktige gjenstander og har en dyp historisk bildesamling som representerer og ivaretar kulturarven for norske døve. Museet jobber med tilrettelegging og tilgjengeliggjøring med fokus på likeverd, like muligheter, tilgjengelighet og tilrettelegging for alle i vårt samfunn.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/norskdovemuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'norskeDovemuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrondheimKunstmuseumInfo>:
+	name: 'trondheimkunstmuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRONDHEIM KUNSTMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Trondheim kunstmuseum stiller både ut en imponerende samling av internasjonal og norsk kunst, samt samtidskunst. Her forenes lokal kunsthistorie med internasjonalt relevante verker. Museet har to visningssteder, i Bispegata og i Trenerys gate ved nedre elvehavn.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/trondheimkunstmuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimKunstmuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<JodiskMuseumInfo>:
+	name: 'jodiskmuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'JØDISK MUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'I 1924 kjøpte Det Mosaiske Trossamfunn Trondheims første jernbanestasjon, og ombygde det til Europas nordligste synagoge. Museet var en gave til byen ved tusenårsjubileet i 1997, og forteller om historien og kulturen til de jødiske i det nordenfjeldske området, både før, under og etter andre verdenskrig.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/jodiskmuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'jodiskeMuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrondheimSjofartsmuseumInfo>:
+	name: 'trondheimsjofartsmuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRONDHEIM SJØFARTSMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Trondheim Sjøfartsmuseum ble etablert i 1919, og formidler den maritime historien til Trondheim og omegn. Muséet holder til i et av de eldste murhusene i Trondheim kalt “Brattørvakta”, som også er fredet. Her kan du finne alt fra bilder av skuter og mannskap, til gammelt utstyr og dagbøker.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/TrondheimSjøfartsmuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimSjofartsmuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
 #-----------------------------------------------------------------------------------------------------
 <Veibeskrivelser>:
 	name: 'veibeskrivelser'
