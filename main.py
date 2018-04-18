@@ -28,40 +28,7 @@ class MainWidget(Screen):
 
 #Funksjonane til dei ulike modulane
 class KlimaScreen(Screen):
-	S = SoundLoader.load('klimalyd/basseng.mp3')
-	def playsS(self):
-	    if KlimaScreen.S.state == 'stop':
-	        KlimaScreen.S.play()
-	    else:
-	        KlimaScreen.S.stop()
-	H = SoundLoader.load('klimalyd/hav.mp3')
-	def playsH(self):
-	    if KlimaScreen.H.state == 'stop':
-	        KlimaScreen.H.play()
-	    else:
-	        KlimaScreen.H.stop()
-	J = SoundLoader.load('klimalyd/jungel.mp3')
-	def playsJ(self):
-	    if KlimaScreen.J.state == 'stop':
-	        KlimaScreen.J.play()
-	    else:
-	        KlimaScreen.J.stop()
-	I = SoundLoader.load('klimalyd/hav.mp3')
-	def playsI(self):
-	    if KlimaScreen.I.state == 'stop':
-	        KlimaScreen.I.play()
-	    else:
-	        KlimaScreen.I.stop()
-
-	def stopAll(self):
-		if KlimaScreen.S.state == 'play':
-			KlimaScreen.S.stop()
-		if KlimaScreen.H.state == 'play':
-			KlimaScreen.H.stop()
-		if KlimaScreen.J.state == 'play':
-			KlimaScreen.J.stop()
-		if KlimaScreen.I.state == 'play':
-			KlimaScreen.I.stop()
+	pass
 	
 
 class HistorieScreen(Screen):
