@@ -25,7 +25,6 @@ import requests
 #Config.set('graphics', 'height', '950')
 #Config.write()
 
-#TODO: legge til adresse for bilde og lyd i kv fila
 
 sliderVerdier=[122,122,122]
 knappeVerdier=[0,0,255]
@@ -37,6 +36,9 @@ BILDEadresseString = '/picture/default'
 valgtLED = 10
 valgtBILDE = 10
 valgtLYD = 10
+timeNarLydSlasAv = 23
+minNarLydSlasAv = 0
+
 
 #LabelBase.register(name= 'AncientMedium', fn_regular= 'AncientMedium.ttf')
 #Funksjonane til framskjerm og menyen
@@ -52,10 +54,6 @@ class CustomParkControl(Screen):
         knappeVerdier[0] = r
         knappeVerdier[1] = g
         knappeVerdier[2] = b
-        #print(knappeVerdier[0])
-
-        #s = 'RGB verdiene: R = ' + repr(knappeVerdier[0]) + ', G = ' + repr(knappeVerdier[1]) + ' og B = ' + repr(knappeVerdier[2])
-        #print(s)
 
 
     # sliderValue tar inn RGB fra sliderene og lagrere de i en liste. id1 = rød, id2 = grønn, id3 = blå
@@ -67,32 +65,28 @@ class CustomParkControl(Screen):
         elif id == 3:
             sliderVerdier[2] = sr
 
-        #s = 'RGB slider: R = ' + repr(sliderVerdier[0]) + ', G = ' + repr(sliderVerdier[1]) + ' og B = ' + repr(sliderVerdier[2])
-        #print(s)
-
 
     #sjekker om det er RGB verdiene til knappen eller sliderene
     #som skal sendes til server. 0 = knapp og 1 = slider
     def lastButtonIneraction(self,id):
         global checkLastInteraction
         global RGBstring
+        #Sjekker om det er knappene for fargevalg som e brukt sist
         if id == 0:
             checkLastInteraction = 1
             RGBstring = '/' + str(knappeVerdier[0]) + '/' + str(knappeVerdier[1]) + '/' + str(knappeVerdier[2])
-            #print(RGBstring)
+            adresseString = 'http://192.168.1.3:8080' + LEDadresseString + RGBstring
+            #r = requests.get(adresseString)
+            print('LED: ' + adresseString)
+        #Sjekker om det er sliderene for fargevalg som e brukt sist
         elif id == 1:
-            #time.sleep(1)
-            #for loop som sjekker om verdien har endret seg de
-            #siste 10 sekundene?
             checkLastInteraction = 2
             RGBstring = '/' + str(sliderVerdier[0]) + '/' + str(sliderVerdier[1]) + '/' + str(sliderVerdier[2])
-            #print (RGBstring)
+            adresseString = 'http://192.168.1.3:8080' + LEDadresseString + RGBstring
+            # r = requests.get(adresseString)
+            print('LED: ' + adresseString)
         else:
             RGBstring = '/' + str(0) + '/' + str(0) + '/' + str(255)
-        #kaller på sendToServer og åpner nettsiden og sender infoen
-        # ved å kalle den her blir det ikke rot om man bytter LED
-        sm = CustomParkControl()
-        sm.sendToServer()
 
 
     #Siden toggle knappen reagerer på både av og på må vi filtrere ut verdien som blir sendt når
@@ -103,31 +97,24 @@ class CustomParkControl(Screen):
         if id == 1:
             if valgtLED == 1:
                 valgtLED = 10
-                #print('her' + str(valgtLED))
                 LEDadresseString = '/lightall'
-                #print(LEDadresseString)
             else:
                 valgtLED = 1
                 LEDadresseString = '/lightsingle/1'
-                #print(LEDadresseString)
         elif id == 11:
             if valgtLED == 11:
                 valgtLED = 10
                 LEDadresseString = '/lightall'
-                #print(str(id) + ' = ' + str(valgtLED))
             else:
                 valgtLED = 11
                 LEDadresseString = '/lightsingle/11'
-                #print(LEDadresseString)
         elif id == 21:
             if valgtLED == 21:
                 valgtLED = 10
                 LEDadresseString = '/lightall'
-                #print(str(id) + ' = ' + str(valgtLED))
             else:
                 valgtLED = 21
                 LEDadresseString = '/lightsingle/21'
-                #print(LEDadresseString)
         elif id == 31:
             if valgtLED == 31:
                 valgtLED = 10
@@ -185,24 +172,22 @@ class CustomParkControl(Screen):
     def selectedSound(self, id):
         global valgtLYD
         global LYDadresseString
+        global timeNarLydSlasAv
+        global minNarLydSlasAv
         if id == 1:
             if valgtLYD == 1:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
-                #print('id1 ' + str(valgtLYD))
             else:
                 valgtLYD = 1
                 LYDadresseString = '/sound/fuglekvitter1'
-                #print(LYDadresseString)
         elif id == 2:
             if valgtLYD == 2:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
-                #print('id2 ' + str(valgtLYD))
             else:
                 valgtLYD = 2
                 LYDadresseString = '/sound/fuglekvitter2'
-                #print(LYDadresseString)
         elif id == 3:
             if valgtLYD == 3:
                 valgtLYD = 10
@@ -240,9 +225,17 @@ class CustomParkControl(Screen):
                 LYDadresseString = '/sound/fuglekvitter7'
         else:
             LYDadresseString = '/sound/default'
-            #print(LYDadresseString)
-        sm = CustomParkControl()
-        sm.sendToServer()
+
+        klokkenNu = datetime.datetime.now()  # henter va klokken er nå
+        tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
+        if klokkenNu < tidStopMusikk:
+            adresseString = 'http://192.168.1.3:8080' + LYDadresseString
+            # r = requests.get(adresseString)
+            print('LYD: ' + adresseString)
+        else:
+            print('INGEN LYD!')
+
+
 
 
     def selectedPicture(self, id):
@@ -252,11 +245,9 @@ class CustomParkControl(Screen):
             if valgtBILDE == 1:
                 valgtBILDE = 10
                 BILDEadresseString = '/picture/default'
-                #print('id1 ' + str(valgtBILDE))
             else:
                 valgtBILDE = 1
                 BILDEadresseString = '/picture/orken1'
-                #print(BILDEadresseString)
         elif id == 2:
             if valgtBILDE == 2:
                 valgtBILDE = 10
@@ -301,27 +292,9 @@ class CustomParkControl(Screen):
                 BILDEadresseString = '/picture/orken7'
         else:
             BILDEadresseString = '/picture/default'
-        sm = CustomParkControl()
-        sm.sendToServer()
-
-
-    def sendToServer(self):
-        global valgtLED
-        global adresseString
-        global LEDadresseString
-        global RGBstring
-        global BILDEadresseString
-        global LYDadresseString
-        klokkenNu = datetime.datetime.now() #henter va klokken er nå
-        tidStopMusikk = klokkenNu.replace(hour=12, minute=3, second=0, microsecond=0)
-        if klokkenNu > tidStopMusikk:
-            adresseString = 'http://192.168.1.10:8080' + LEDadresseString + RGBstring + BILDEadresseString
-            print(adresseString)
-            #r = requests.get(adresseString)
-        else:
-            adresseString = 'http://192.168.1.10:8080' + LEDadresseString + RGBstring + LYDadresseString + BILDEadresseString
-            print(adresseString)
-            #r = requests.get(adresseString)
+        adresseString = 'http://192.168.1.3:8080' + BILDEadresseString
+        #r = requests.get(adresseString)
+        print('BILDE: ' + adresseString)
 
 
 class ScreenManagement(ScreenManager):

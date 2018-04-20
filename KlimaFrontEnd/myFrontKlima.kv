@@ -78,7 +78,7 @@ ScreenManagement:
                     text: "LED"
                     font_size: 40
                     color: 255/255, 255/255, 255/255, 1
-                    size_hint_x: 0.1
+                    size_hint_x: 0.08
                 Label:
                     size_hint_x: 0.02
                 Label:
@@ -92,14 +92,14 @@ ScreenManagement:
                     text: "Velg lyd"
                     font_size: 40
                     color: 255/255, 255/255, 255/255, 1
-                    size_hint_x: 0.4
+                    size_hint_x: 0.3
                 Label:
                     size_hint_x: 0.02
                 Label:
                     text: "Velg bilde"
                     font_size: 40
                     color: 255/255, 255/255, 255/255, 1
-                    size_hint_x: 0.4
+                    size_hint_x: 0.3
 
         BoxLayout:
             orientation: 'horizontal'
@@ -109,7 +109,7 @@ ScreenManagement:
 #--LED------------------------------------------------------
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_x: 0.1
+                size_hint_x: 0.08
 
                 ToggleButton:
                     id: LED # en id gjer at vi kan referere til widgeten
@@ -305,18 +305,7 @@ ScreenManagement:
                             background_color: [255, 255, 0, 1]
                             on_press: root.colorSelected(0,0,255)
                             on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
+
             #--Kolonne 2-----------
                     BoxLayout:
                         orientation: 'vertical'
@@ -336,18 +325,7 @@ ScreenManagement:
                             background_color: [255, 255, 0, 1]
                             on_press: root.colorSelected(0,0,255)
                             on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
+
             #--Kolonne 3-----------
                     BoxLayout:
                         orientation: 'vertical'
@@ -367,18 +345,7 @@ ScreenManagement:
                             background_color: [255, 255, 0, 1]
                             on_press: root.colorSelected(0,0,255)
                             on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
+
             #--Kolonne 4-----------
                     BoxLayout:
                         orientation: 'vertical'
@@ -398,80 +365,8 @@ ScreenManagement:
                             background_color: [255, 255, 0, 1]
                             on_press: root.colorSelected(0,0,255)
                             on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-            #--Kolonne 5-----------
-                    BoxLayout:
-                        orientation: 'vertical'
-                        Button:
-                            background_color: [0, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 0, 1]
-                            on_press: root.colorSelected(0,255,0)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 0, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 255, 0, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-            #--Kolonne 6-----------
-                    BoxLayout:
-                        orientation: 'vertical'
-                        Button:
-                            background_color: [0, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 0, 1]
-                            on_press: root.colorSelected(0,255,0)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 0, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 255, 0, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [255, 0, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
-                        Button:
-                            background_color: [0, 255, 255, 1]
-                            on_press: root.colorSelected(0,0,255)
-                            on_press: root.lastButtonIneraction(0)
+
+
 
 
          #--Sliders-----------
@@ -559,112 +454,118 @@ ScreenManagement:
 #--LYD------------------------------------------------------
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_x: 0.4
+                size_hint_x: 0.3
 
                 ToggleButton:
                     id: Lyd
-                    size: (min(self.width,self.height),min(self.width,self.height)) # force circl
+                    text: "Afrika"
+                    group: Lyd
+                    font_size: 20
+                    outline_width: 3
+                    outline_color: (0,0,255,1)
+                    border: 0, 0, 0, 0
+                    background_normal: 'Bilder/africa.jpg'
+                    background_down: 'Bilder/africa2.jpg'
+                    background_disabled_down: 'Bilder/africa2.jpg'
+                    background_disabled_normal: 'Bilder/africa.jpg'
+                    on_press: root.selectedSound(1)
+                Label:
+                    size_hint_y: 0.075
+                ToggleButton:
+                    id: Lyd2
+                    text: "Syden"
+                    group: Lyd
+                    font_size: 20
+                    outline_width: 3
+                    outline_color: (0,0,255,1)
+                    border: 0, 0, 0, 0
+                    background_normal: 'Bilder/syden.jpg'
+                    background_down: 'Bilder/syden2.jpg'
+                    background_disabled_down: 'Bilder/syden2.jpg'
+                    background_disabled_normal: 'Bilder/syden.jpg'
+                    on_press: root.selectedSound(2)
+                Label:
+                    size_hint_y: 0.075
+                ToggleButton:
+                    id: Lyd3
+                    text: "Bolgeskvulp"
+                    group: Lyd
+                    font_size: 20
+                    outline_width: 3
+                    outline_color: (0,0,255,1)
+                    border: 0, 0, 0, 0
+                    background_normal: 'Bilder/wave.jpg'
+                    background_down: 'Bilder/wave2.jpg'
+                    background_disabled_down: 'Bilder/wave2.jpg'
+                    background_disabled_normal: 'Bilder/wave.jpg'
+                    on_press: root.selectedSound(3)
+                Label:
+                    size_hint_y: 0.075
+                ToggleButton:
+                    id: Lyd4
+                    text: "Vind"
+                    group: Lyd
+                    font_size: 20
+                    outline_width: 3
+                    outline_color: (0,0,255,1)
+                    border: 0, 0, 0, 0
+                    background_normal: 'Bilder/vind.jpg'
+                    background_down: 'Bilder/vind2.jpg'
+                    background_disabled_down: 'Bilder/vind2.jpg'
+                    background_disabled_normal: 'Bilder/vind.jpg'
+                    on_press: root.selectedSound(4)
+                Label:
+                    size_hint_y: 0.075
+                ToggleButton:
+                    id: Lyd5
                     text: "Fuglekvitter"
                     group: Lyd
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
-                Label:
-                    size_hint_y: 0.075
-                ToggleButton:
-                    id: Lyd2
-                    text: "Sang2"
-                    group: Lyd
-                    font_size: 20
-                    outline_width: 3
-                    outline_color: (0,0,255,1)
-                    border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
-                Label:
-                    size_hint_y: 0.075
-                ToggleButton:
-                    id: Lyd3
-                    text: "Sang3"
-                    group: Lyd
-                    font_size: 20
-                    outline_width: 3
-                    outline_color: (0,0,255,1)
-                    border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
-                Label:
-                    size_hint_y: 0.075
-                ToggleButton:
-                    id: Lyd4
-                    text: "Sang4"
-                    group: Lyd
-                    font_size: 20
-                    outline_width: 3
-                    outline_color: (0,0,255,1)
-                    border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
-                Label:
-                    size_hint_y: 0.075
-                ToggleButton:
-                    id: Lyd5
-                    text: "Sang5"
-                    group: Lyd
-                    font_size: 20
-                    outline_width: 3
-                    outline_color: (0,0,255,1)
-                    border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
+                    background_normal: 'Bilder/fuglekvitter.jpg'
+                    background_down: 'Bilder/fuglekvitter2.jpg'
+                    background_disabled_down: 'Bilder/fuglekvitter2.jpg'
+                    background_disabled_normal: 'Bilder/fuglekvitter.jpg'
+                    on_press: root.selectedSound(5)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Lyd6
-                    text: "Sang6"
+                    text: "Jungellyder"
                     group: Lyd
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
+                    background_normal: 'Bilder/appe.jpg'
+                    background_down: 'Bilder/appe2.jpg'
+                    background_disabled_down: 'Bilder/appe2.jpg'
+                    background_disabled_normal: 'Bilder/appe.jpg'
+                    on_press: root.selectedSound(6)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Lyd7
-                    text: "Sang7"
+                    text: ""
                     group: Lyd
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/birds.jpg'
-                    background_down: 'Bilder/birds2.jpg'
-                    background_disabled_down: 'Bilder/birds2.jpg'
-                    background_disabled_normal: 'Bilder/birds.jpg'
+                    background_normal: 'Bilder/elsyslogoen.png'
+                    background_down: 'Bilder/elsyslogoen2.png'
+                    background_disabled_down: 'Bilder/elsyslogoen2.png'
+                    background_disabled_normal: 'Bilder/elsyslogoen.png'
+                    on_press: root.selectedSound(7)
 #--MELLOM FARGE OG LYD---------------------------------------------
             BoxLayout:
                 size_hint_x: 0.02
 #--BILDE------------------------------------------------------
             BoxLayout:
                 orientation: 'vertical'
-                size_hint_x: 0.4
+                size_hint_x: 0.3
 
                 ToggleButton:
                     id: Bilde
@@ -674,94 +575,101 @@ ScreenManagement:
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/orken.jpg'
+                    background_down: 'Bilder/orken2.jpg'
+                    background_disabled_down: 'Bilder/orken2.jpg'
+                    background_disabled_normal: 'Bilder/orken.jpg'
+                    on_press: root.selectedPicture(1)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Bilde2
-                    text: "Bilde2"
+                    text: "Strand"
                     group: Bilde
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/strand.jpg'
+                    background_down: 'Bilder/strand2.jpg'
+                    background_disabled_down: 'Bilder/strand2.jpg'
+                    background_disabled_normal: 'Bilder/strand.jpg'
+                    on_press: root.selectedPicture(2)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Bilde3
-                    text: "Bilde3"
+                    text: "Hav"
                     group: Bilde
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/hav.jpg'
+                    background_down: 'Bilder/hav2.jpg'
+                    background_disabled_down: 'Bilder/hav2.jpg'
+                    background_disabled_normal: 'Bilder/hav.jpg'
+                    on_press: root.selectedPicture(3)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Bilde4
-                    text: "Bilde4"
+                    text: "Himmel"
                     group: Bilde
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/himmel.jpg'
+                    background_down: 'Bilder/himmel2.jpg'
+                    background_disabled_down: 'Bilder/himmel2.jpg'
+                    background_disabled_normal: 'Bilder/himmel.jpg'
+                    on_press: root.selectedPicture(4)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Bilde5
-                    text: "Bilde5"
+                    text: "Fjell"
                     group: Bilde
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/fjell.jpg'
+                    background_down: 'Bilder/fjell2.jpg'
+                    background_disabled_down: 'Bilder/fjell2.jpg'
+                    background_disabled_normal: 'Bilder/fjell.jpg'
+                    on_press: root.selectedPicture(5)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Bilde6
-                    text: "Bilde6"
+                    text: "Jungel"
                     group: Bilde
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/jungel.png'
+                    background_down: 'Bilder/jungel2.png'
+                    background_disabled_down: 'Bilder/jungel2.png'
+                    background_disabled_normal: 'Bilder/jungel.png'
+                    on_press: root.selectedPicture(6)
                 Label:
                     size_hint_y: 0.075
                 ToggleButton:
                     id: Bilde7
-                    text: "Bilde7"
+                    text: ""
                     group: Bilde
                     font_size: 20
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
-                    background_normal: 'Bilder/desert.jpg'
-                    background_down: 'Bilder/desert2.jpg'
-                    background_disabled_down: 'Bilder/desert2.jpg'
-                    background_disabled_normal: 'Bilder/desert.jpg'
+                    background_normal: 'Bilder/ELSYS.PNG'
+                    background_down: 'Bilder/ELSYS5.PNG'
+                    background_disabled_down: 'Bilder/ELSYS5.PNG'
+                    background_disabled_normal: 'Bilder/ELSYS.PNG'
+                    on_press: root.selectedPicture(7)
 #--HØYREKANT---------------------------------------------
             BoxLayout:
                 size_hint_x: 0.02
