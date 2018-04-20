@@ -10,40 +10,61 @@ ScreenManagement:
 	MainWidget:
 	KlimaScreen:
 	HistorieScreen:
-	SeverdigScreen:
-	AnnaScreen:
 	Veibeskrivelser:
+	KulturScreen:
 	SelectionScreen:
         id: selection_screen
         name: 'SelectionScreen'
 
 	Museum:
 	Rockheim:
+	RockheimInfo:
 	TrondelagFolkemuseum:
+	TrondelagFolkemuseumInfo:
 	RingveMuseum:
+	RingveMuseumInfo:
 	Vitenskapsmuseet:
+	VitenskapsmuseetInfo:
 	Rustkammeret:
+	RustkammeretInfo:
 	NordenfjeldskeKunst:
-	NorskeDovemuseum:
+	NordenfjeldskeKunstInfo:
 	TrondheimKunstmuseum:
+	TrondheimKunstmuseumInfo:
+	NorskeDovemuseum:
+	NorskDovemuseumInfo:
 	JodiskeMuseum:
+	JodiskMuseumInfo:
 	TrondheimSjofartsmuseum:
+	TrondheimSjofartsmuseumInfo:
 
 	HistoriskeSteder:
 	Nidarosdomen:
+	NidarosdomenInfo:
 	Stiftsgarden:
+	StiftsgardenInfo:
 	GamleBybro:
+	GamleBybroInfo:
 	KristianstenFestning:
+	KristianstenFestningInfo:
 	Erkebispegarden:
+	ErkebispegardenInfo:
 	Munkholmen:
+	MunkholmenInfo:
 	Bakklandet:
+	BakklandetInfo:
 	VarFrueKirke:
+	VarFrueKirkeInfo:
 
 	Kultur:
 	Vitensenteret:
+	VitensenteretInfo:
 	KunsthallTrondheim:
+	KunsthallTrondheimInfo:
 	LitteraturhusetTrondheim:
+	LitteraturhusetTrondheimInfo:
 	KultursenteretISAK:
+	KultursenteretISAKInfo:
 
 	Natur:
 	Burmaklippen:
@@ -72,6 +93,7 @@ ScreenManagement:
 	GokartOgLazerx:
 	EscapeReality:
 
+
 #Framskjermen
 <FrontScreen>:
 	#namnet som vert brukt seinare til referering
@@ -83,7 +105,7 @@ ScreenManagement:
         Rectangle:
             pos: self.pos
             size: self.size
-            source: 'test.jpg'
+            source: 'framside/adressabygget.jpg'
         #diffust overlegg over biletet
 		Color:
 			rgba: 0.976470588,0.976470588,0.976470588,0.7
@@ -95,7 +117,11 @@ ScreenManagement:
     BoxLayout:
     	orientation: 'vertical'
 		Image:
-			source: 'logo.png'
+			source: 'framside/adr_logo.png'
+			allow_stretch: False
+			keep_ratio: False
+		Image:
+			source: 'framside/elsys_lite_trans.png'
 			allow_stretch: False
 			keep_ratio: False
         Button:
@@ -137,7 +163,7 @@ ScreenManagement:
 			cols: 3
 
 			Button:
-				text: 'Klimaval'
+				text: 'Klimavalg'
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				font_size: 80
@@ -149,7 +175,7 @@ ScreenManagement:
 				font_size: 80
 				on_press: root.manager.current = 'historisk'
 			Button:
-				text: "Severdigheiter"
+				text: "Severdigheter"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				font_size: 80
@@ -167,11 +193,12 @@ ScreenManagement:
 				font_size: 80
 				on_press: root.manager.current = 'veibeskrivelser'
 			Button:
-				text: "Noko anna 2"
+				text: "Kultur"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				font_size: 80
-				on_press: root.manager.current = 'anna'
+				on_press: root.manager.current = 'kultur'
+
 
 
 
@@ -210,7 +237,7 @@ ScreenManagement:
 			rows: 1
 
 			Label:
-				text: "Klimaveljaren"
+				text: "Klimavelgeren"
 				font_size: 150
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
@@ -239,21 +266,25 @@ ScreenManagement:
 				keep_ratio: False
 			Button:
 				text: 'Syden'
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 			Button:
 				text: "Antarktis"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 			Button:
 				text: "Jungel"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 			Button:
 				text: "Hav"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				on_press: root.manager.current = 'severdig'
+				
 
 
 
@@ -269,6 +300,47 @@ ScreenManagement:
 				background_color: [1, 1, 1, 0.1]
 				font_size: 70
 				on_release: root.manager.current = 'main'
+
+<KulturScreen>:
+	name: 'kultur'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+    	orientation: 'vertical'
+    	
+        Label:
+        	text: 'Kultur'
+        	color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        	font_size: 100
+        	size_hint: (1, 0.2)
+        
+
+        #Ein rullbar modul der dei ulike historiske plassane er lista
+        ScrollView:
+
+			GridLayout:
+				rows: 1
+				size_hint_y: None
+				height: 3000
+
+				Image:
+					source: 'kulturoversikt.jpg'
+					allow_stretch: False
+					keep_ratio: False
+
+        Button:
+            text: 'Til menyen'
+            color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			background_color: [1, 1, 1, 0.1]
+			font_size: 70
+            on_press: root.manager.current = 'main'
+            size_hint: (1, 0.2)
 				
 <SelectionScreen>:
     padding: [10, 20]
@@ -285,8 +357,14 @@ ScreenManagement:
         orientation: 'vertical'
 
         GridLayout:
-            size_hint: (1, 0.2)
-            rows: 1
+            size_hint: (1, 0.5)
+            rows: 2
+			
+            Label:
+                text: "Severdigheitsrulett"
+                font_size: 100
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
 
             Label:
                 text: "Kryss av for aktuelle alternativer"
@@ -296,7 +374,7 @@ ScreenManagement:
 
         GridLayout:
             orientation: 'vertical'
-            size_hint: (1, 1)
+            size_hint: (1, 0.7)
 
             padding: [10, 40]
             cols: 2
@@ -351,15 +429,15 @@ ScreenManagement:
             cols: 2
 
             Button:
+                text: 'Til menyen'
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+			Button:
                 text: "Klikk når du er klar"
                 on_press: root.screenSelector()
                 on_release:
                     root.manager.current = str(root.manager.ids.selection_screen.testScreen)
-                color: 0.0705882, 0.4784313725, 0.75294117647, 1
-				background_color: [1, 1, 1, 0.1]
-            Button:
-                text: 'Til menyen'
-                on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 
@@ -416,7 +494,7 @@ ScreenManagement:
 					size_hint: (0.2, 0.5)
 
 					Image:
-						source: 'test2.jpg'
+						source: 'severdighetsbilder/Nidarosdomen.jpg'
 						allow_stretch: True
 						keep_ratio: False
 				# -----------------------------------------------------
@@ -443,7 +521,7 @@ ScreenManagement:
 					size_hint: (0.2, 0.5)
 
 					Image:
-						source: 'test2.jpg'
+						source: 'severdighetsbilder/stiftsgarden.jpg'
 						allow_stretch: True
 						keep_ratio: False
 				# -----------------------------------------------------
@@ -470,7 +548,7 @@ ScreenManagement:
 					size_hint: (0.2, 0.5)
 
 					Image:
-						source: 'test2.jpg'
+						source: 'severdighetsbilder/GamleBybro.jpg'
 						allow_stretch: True
 						keep_ratio: False
 
@@ -498,7 +576,7 @@ ScreenManagement:
 					size_hint: (0.2, 0.5)
 
 					Image:
-						source: 'test2.jpg'
+						source: 'severdighetsbilder/KristianstenFestning.jpg'
 						allow_stretch: True
 						keep_ratio: False
 
@@ -526,7 +604,7 @@ ScreenManagement:
 					size_hint: (0.2, 0.5)
 
 					Image:
-						source: 'test2.jpg'
+						source: 'severdighetsbilder/erkebispegarden.jpg'
 						allow_stretch: True
 						keep_ratio: False
 
@@ -539,18 +617,14 @@ ScreenManagement:
             size_hint: (1, 0.2)
 
 
-<SeverdigScreen>:
-	name: 'severdig'
-	BoxLayout:
-    	orientation: 'vertical'
-        Button:
-            text: 'Til menyen'
-            on_press: root.manager.current = 'main'
 
 
+# Severdigheter - Info ------------------------------------------------------------------------
 
-<AnnaScreen>:
-	name: 'anna'
+# ----------------Museum info-------------------
+
+<RockheimInfo>:
+	name: 'rockheiminfo'
 
 	canvas.before:
         Color:
@@ -616,6 +690,1461 @@ ScreenManagement:
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrondelagFolkemuseumInfo>:
+	name: 'trondelagfolkemuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRØNDELAG FOLKEMUSEUM, SVERRESBORG'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Nysgjerrig på hvordan trønderne levde i gamle dager? I flotte historiske omgivelser kan du bli med på lefsekurs, eventyrstund eller byvandring for barn.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/trondelagfolkemuseum.png'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondelagFolkemuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<RingveMuseumInfo>:
+	name: 'ringvemuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'RINGVE MUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Det nasjonale museet for musikk og musikkinstrumenter.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/ringvemuseum.png'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ringveMuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<VitenskapsmuseetInfo>:
+	name: 'vitenskapsmuseetinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VITENSKAPSMUSEET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Vitenskapsmuseet har en rekke utstillinger, fra steinalderhistorie, til norges eldste jerv, som ble hele 20 år! Dyreliv, middelalderliv, livet i polhavet, det er ingen grense for hvor mye spennende man kan lære om ved å ta en tur til vitenskapsmuseet. Det er åpent tirsdag-fredag fra 10-16 og lørdag-søndag fra 11-16. Gratis for barn og ungdom under 18!'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/vitenskapsmuseet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vitenskapsmuseet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<RustkammeretInfo>:
+	name: 'rustkammeretinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'RUSTKAMMERET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Allerede i 1826 ble Rustkammeret først brukt som museum. Den gang het det “Historiske våbensal”. Rustkammeret er et av forsvarets museer og utstillingene viser norsk motstandskamp helt fra vikingtiden til tiden da Norge var i union med Danmark.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/rustkammeret.JPG'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rustkammeret'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<NordenfjeldskeKunstInfo>:
+	name: 'nordenfjeldskekunstinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'NORDENFJELDSKE KUNSTINDUSTRIMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Nordenfjeldske Kunstindustrimuseet ble åpnet allerede i 1893 og har vært en samling av samtidskunst helt siden den tid. Blant annet var det på 1890-tallet svært populært med japansk kunst, og Nordenfjeldske har en imponerende samling av nettopp dette. For enhver kunstinteressert er dette et naturlig sted å ta turen.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/nordenfjeldske.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'nordenfjeldskeKunst'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+<NorskDovemuseumInfo>:
+	name: 'norskdovemuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'NORSK DØVEMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Norsk døvemuseum samler kulturhistorie, viktige gjenstander og har en dyp historisk bildesamling som representerer og ivaretar kulturarven for norske døve. Museet jobber med tilrettelegging og tilgjengeliggjøring med fokus på likeverd, like muligheter, tilgjengelighet og tilrettelegging for alle i vårt samfunn.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/norskdovemuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'norskeDovemuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrondheimKunstmuseumInfo>:
+	name: 'trondheimkunstmuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRONDHEIM KUNSTMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Trondheim kunstmuseum stiller både ut en imponerende samling av internasjonal og norsk kunst, samt samtidskunst. Her forenes lokal kunsthistorie med internasjonalt relevante verker. Museet har to visningssteder, i Bispegata og i Trenerys gate ved nedre elvehavn.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/trondheimkunstmuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimKunstmuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<JodiskMuseumInfo>:
+	name: 'jodiskmuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'JØDISK MUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'I 1924 kjøpte Det Mosaiske Trossamfunn Trondheims første jernbanestasjon, og ombygde det til Europas nordligste synagoge. Museet var en gave til byen ved tusenårsjubileet i 1997, og forteller om historien og kulturen til de jødiske i det nordenfjeldske området, både før, under og etter andre verdenskrig.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/jodiskmuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'jodiskeMuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrondheimSjofartsmuseumInfo>:
+	name: 'trondheimsjofartsmuseuminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRONDHEIM SJØFARTSMUSEUM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Trondheim Sjøfartsmuseum ble etablert i 1919, og formidler den maritime historien til Trondheim og omegn. Muséet holder til i et av de eldste murhusene i Trondheim kalt “Brattørvakta”, som også er fredet. Her kan du finne alt fra bilder av skuter og mannskap, til gammelt utstyr og dagbøker.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/TrondheimSjøfartsmuseum.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimSjofartsmuseum'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+# ----------------Historiske steder info-------------------
+
+<NidarosdomenInfo>:
+	name: 'nidarosdomeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'NIDAROSDOMEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens største middelalderkirker. Byggingen ble påbegynt i 1070, og domen har siden stått oppreist over Olav den Helliges grav. Flere av Norges konger er både kronet, viet og gravlagt her. Her kan du delta på både gudstjenester, omvisninger og konserter.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Nidarosdomen.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'nidarosdomen'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<StiftsgardenInfo>:
+	name: 'stiftsgardeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'STIFTSGÅRDEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Stiftsgården er Trondheims kongelige residens, og nordens største trepalé. Gården ble bygget for Cecilie Christine Schøller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen på Stiftsgården ved å delta på omvisning.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/stiftsgarden.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'stiftsgarden'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<GamleBybroInfo>:
+	name: 'gamlebybroinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'GAMLE BYBRO'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/GamleBybro.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'gamleBybro'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<KristianstenFestningInfo>:
+	name: 'kristianstenfestninginfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KRISTIANSTEN FESTNING'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Kristiansten festning har siden slutten av 1600-tallet stått over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vært benyttet til militært bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/KristianstenFestning.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kristianstenFestning'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<ErkebispegardenInfo>:
+	name: 'erkebispegardeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ERKEBISPEGÅRDEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Erkebispegården var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegårdens historie utstilt.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/erkebispegarden.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'erkebispegarden'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+
+<MunkholmenInfo>:
+	name: 'munkholmeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'MUNKHOLMEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Munkholmen er en holme i Trondheimsfjorden like utenfor Trondheim sentrum. Historisk ble holmen kalt Nidarholm og brukt som rettersted under vikingtiden. Da det senere ble bygget et klosteranlegg her fikk holmen navnet Munkholmen. Munkholmen har også vært brukt som festning og fengsel. I dag kan du dra ut hit for å bade, spise, delta på omvisning og nyte omgivelsene.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Munkholmen.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'munkholmen'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<BakklandetInfo>
+	name: 'bakklandetinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'BAKKLANDET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Bakklandet er Trondheims gamle bydel, som ble bebygd først på tidlig 1600-tallet. Etter bydelen brant ned i 1718, ble den raskt gjenreist i form av små trehus, bryggerekke og brosteinsbelagte gater, som står i dag. Her kan du oppleve en koselig atmosfære med shopping, kaféer, restauranter og barer.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Bakklandet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bakklandet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<VarFrueKirkeInfo>:
+	name: 'varfruekirkeinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VÅR FRUE KIRKE'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Vår Frue kirke er en åpen omsorgskirke hvor du kan tenne lys, be, ta en kopp kaffe eller te og møte andre mennesker. Den er drevet av Kirkens Bymisjon, og har stått i hjertet av Trondheim siden år 1207.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/varfruekirke.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'varFrueKirke'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+# ----------------Kultur info-------------------
+
+<VitensenteretInfo>:
+	name: 'vitensenteretinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VITENSENTERET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Vitensenteret er et populærvitenskapelig opplevelsessenter. Her kan både voksne og barn eksperimentere med matematikk, naturvitenskap og teknologi. Her kan også oppleves 360-kino og 3D-planetarium.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Vitensenteret.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vitensenteret'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+<KunsthallTrondheimInfo>:
+	name: 'kunsthalltrondheiminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KUNSTHALL TRONDHEIM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Kunsthall Trondheim er en institusjon for samtidskunst på internasjonalt nivå. Her foregår det alt fra utstillinger, konserter, performancer, video screenings, foredrag og poesiopplesninger.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/KunsthallTrondheim.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kunsthallTrondheim'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<LitteraturhusetTrondheimInfo>:
+	name: 'litteraturhusettrondheiminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'LITTERATURHUSET TRONDHEIM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Litteraturhuset i Trondheim har arrangementer innen litteratur, samfunnsdebatter og forskningsformidling. Disse foregår i form av flere faste arrangementer ved navn “Professor på kafé”, “Litterært måltid” og “Barnas teselskap”.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Litteraturhuset.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'litteraturhusetTrondheim'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<KultursenteretISAKInfo>:
+	name: 'kultursenteretISAKinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KULTURSENTERET ISAK'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Kultursenteret ISAK er Trondheims kultursenter for ungdom som vil utøve, produsere eller oppleve kultur. Her får du hjelp til å iverksette drømmen din ved å få låne lokaler og utstyr, samt å finne samarbeidspartnere og kunnskapen som trengs.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/KultursenteretISAK.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'kultursenteretISAK'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+# ----------------Natur info-------------------
+
 
 #-----------------------------------------------------------------------------------------------------
 <Veibeskrivelser>:
@@ -1703,8 +3232,6 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'historiskeSteder'
-
-
 
 
 

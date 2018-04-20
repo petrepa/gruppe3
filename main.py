@@ -37,45 +37,63 @@ class HistorieScreen(Screen):
 class SeverdigScreen(Screen):
 	pass
 
-class AnnaScreen(Screen):
-	pass
-
-
 class Veibeskrivelser(Screen):
 	pass
 
+class KulturScreen(Screen):
+	pass
 
 class Museum(Screen):
 	pass
 
 class Rockheim(Screen):
 	pass
+class RockheimInfo(Screen):
+	pass
 
 class TrondelagFolkemuseum(Screen):
 	pass
+class TrondelagFolkemuseumInfo(Screen):
+    pass
 
 class RingveMuseum(Screen):
 	pass
+class RingveMuseumInfo(Screen):
+    pass
 
 class Vitenskapsmuseet(Screen):
 	pass
+class VitenskapsmuseetInfo(Screen):
+    pass
 
 class Rustkammeret(Screen):
 	pass
+class RustkammeretInfo(Screen):
+    pass
 
 class NordenfjeldskeKunst(Screen):
+	pass
+class NordenfjeldskeKunstInfo(Screen):
 	pass
 
 class NorskeDovemuseum(Screen):
 	pass
+class NorskDovemuseumInfo(Screen):
+	pass
 
 class TrondheimKunstmuseum(Screen):
+	pass
+class TrondheimKunstmuseumInfo(Screen):
 	pass
 
 class JodiskeMuseum(Screen):
 	pass
+class JodiskMuseumInfo(Screen):
+	pass
 
 class TrondheimSjofartsmuseum(Screen):
+	pass
+class TrondheimSjofartsmuseumInfo(Screen):
 	pass
 
 
@@ -86,26 +104,42 @@ class HistoriskeSteder(Screen):
 
 class Nidarosdomen(Screen):
 	pass
+class NidarosdomenInfo(Screen):
+	pass
 
 class Stiftsgarden(Screen):
+	pass
+class StiftsgardenInfo(Screen):
 	pass
 
 class GamleBybro(Screen):
 	pass
+class GamleBybroInfo(Screen):
+	pass
 
 class KristianstenFestning(Screen):
+	pass
+class KristianstenFestningInfo(Screen):
 	pass
 
 class Erkebispegarden(Screen):
 	pass
+class ErkebispegardenInfo(Screen):
+	pass
 
 class Munkholmen(Screen):
+	pass
+class MunkholmenInfo(Screen):
 	pass
 
 class Bakklandet(Screen):
 	pass
+class BakklandetInfo(Screen):
+	pass
 
 class VarFrueKirke(Screen):
+	pass
+class VarFrueKirkeInfo(Screen):
 	pass
 
 
@@ -115,16 +149,23 @@ class Kultur(Screen):
 
 class Vitensenteret(Screen):
 	pass
+class VitensenteretInfo(Screen):
+	pass
 
 class KunsthallTrondheim(Screen):
+	pass
+class KunsthallTrondheimInfo(Screen):
 	pass
 
 class LitteraturhusetTrondheim(Screen):
 	pass
+class LitteraturhusetTrondheimInfo(Screen):
+	pass
 
 class KultursenteretISAK(Screen):
 	pass
-
+class KultursenteretISAKInfo(Screen):
+	pass
 
 
 class Natur(Screen):
@@ -260,17 +301,17 @@ class SelectionScreen(Screen):
             self.aktiviteter = 0
 
     def screenSelector(self):
-        liste_mu = ['rockheim', 'trondelagFolkemuseum',
-                    'ringveMuseum', 'vitenskapsmuseet', 
-                    'rustkammeret', 'nordenfjeldskeKunst',
-                    'norskeDovemuseum', 'trondheimKunstmuseum',
-                    'jodiskeMuseum', 'trondheimSjofartsmuseum']
-        liste_h = ['nidarosdomen', 'stiftsgarden',
-                   'gamleBybro', 'kristianstenFestning',
-                   'erkebispegarden', 'munkholmen',
-                   'bakklandet', 'varFrueKirke']
-        liste_k = ['vitensenteret', 'kunsthallTrondheim',
-                   'litteraturhusetTrondheim', 'kultursenteretISAK']
+        liste_mu = ['rockheiminfo', 'trondelagfolkemuseuminfo',
+                    'ringvemuseuminfo', 'vitenskapsmuseetinfo',
+                    'rustkammeretinfo', 'nordenfjeldskekunstinfo',
+                    'norskdovemuseuminfo', 'trondheimkunstmuseuminfo',
+                    'jodiskmuseuminfo', 'trondheimsjofartsmuseuminfo']
+        liste_h = ['nidarosdomeninfo', 'stiftsgardeninfo',
+                   'gamlebybroinfo', 'kristianstenfestninginfo',
+                   'erkebispegardeninfo', 'munkholmeninfo',
+                   'bakklandetinfo', 'varfruekirkeinfo']
+        liste_k = ['vitensenteretinfo', 'kunsthalltrondheiminfo',
+                   'litteraturhusettrondheiminfo', 'kultursenteretISAKinfo']
         liste_n = ['burmaklippen', 'geitfjellet',
                    'vattakammen', 'ladestien']
         liste_ma = ['tyholttarnet', 'ilaBrannstasjon',
@@ -305,6 +346,12 @@ class SelectionScreen(Screen):
 
         if not self.serverdigheter:
             number = random.randint(0, antallSkjermer)
+            self.serverdigheter.extend(liste_mu)
+            self.serverdigheter.extend(liste_h)
+            self.serverdigheter.extend(liste_k)
+            self.serverdigheter.extend(liste_n)
+            self.serverdigheter.extend(liste_ma)
+            self.serverdigheter.extend(liste_a)
         else:
             number = random.randint(0, len(self.serverdigheter))
 
