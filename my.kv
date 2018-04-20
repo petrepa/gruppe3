@@ -67,30 +67,51 @@ ScreenManagement:
 
 	Natur:
 	Burmaklippen:
+	BurmaklippenInfo:
 	Geitfjellet:
+	GeitfjelletInfo:
 	Vattakammen:
+	VattakammenInfo:
 	Ladestien:
+	LadestienInfo:
 
 	MatDrikke:
 	Tyholttarnet:
+	TyholttarnetInfo:
 	IlaBrannstasjon:
+	IlaBrannstasjonInfo:
 	Antikvariatet:
+	AntikvariatetInfo:
 	ArvesolvetFolkekafe:
+	ArvesolvetFolkekafeInfo:
 	CafeNim:
+	CafeNimInfo:
 	CafeNiMuser:
+	CafeNiMuserInfo:
 	RosenborgDampbakeri:
+	RosenborgDampbakeriInfo:
 	SellenraaBokBar:
+	SellenraaBokBarInfo:
 	TrondheimMikrobryggeri:
+	TrondheimMikrobryggeriInfo:
 	CafeLokka:
+	CafeLokkaInfo:
 	BakklandetSkydsstasjon:
+	BakklandetSkydsstasjonInfo:
 
 	Aktiviteter:
 	Klatresenter:
+	KlatresenterInfo:
 	Turnhall:
+	TurnhallInfo:
 	Bowling:
+	BowlingInfo:
 	Trampolinepark:
+	TrampolineparkInfo:
 	GokartOgLazerx:
+	GokartOgLazerxInfo:
 	EscapeReality:
+	EscapeRealityInfo:
 
 
 #Framskjermen
@@ -2097,6 +2118,1461 @@ ScreenManagement:
 				on_press: root.manager.current = 'SelectionScreen'
 
 # ----------------Natur info-------------------
+
+<BurmaklippenInfo>:
+	name: 'burmaklippeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'BURMAKLIPPEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Burmaklippen ligger i Estenstadmarka i Trondheim, og gir utsikt ut over Dragvoll og Byåsen. Dette utsiktspunktet går også under navnet “mini-Trolltunga”, ettersom den består av en steinformasjon som strekker seg ut over en klippe.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Burmaklippen.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'burmaklippen'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+
+<GeitfjelletInfo>:
+	name: 'geitfjelletinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'GEITFJELLET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Geitfjellet et et av bymarkas fineste utsiktspunkt, hvor du kan se det meste av Trondheim. Toppen ligger 416 m.o.h. , og tar 30-60 minutter avhengig av hvor du starter turen fra.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Geitfjellet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'geitfjellet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+
+<VattakammenInfo>:
+	name: 'vattakammeninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'VÅTTAKAMMEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Våttakammen ligger 286 m.o.h. , og gir en flott utsikt over Ila og midtbyen. Denne turen byr på et variert terreng og er også fint egnet for barn. Fra gammelt av var Våttakammen en vardeplass hvor det bl tent bål for å varsle om krig og ufred.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Vattakammen.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'vattakammen'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+
+<LadestienInfo>:
+	name: 'ladestieninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'LADESTIEN'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Ladestien strekker seg 8 km i et lett terreng langs sjøen fra Ladehammerkaia til Charlottenlund. Dette er et av de mest populære utfartsområdene i Trondheim. Langs stien finnes du alt fra badestrender, kaféer og festningsverk fra krigen.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Ladestien.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ladestien'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+# ----------------Mat / Drikke info-------------------
+
+<TyholttarnetInfo>:
+	name: 'tyholttarnetinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TYHOLTTÅRNET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'I tyholttårnet kan du nyte god mat og drikke fra Egon restaurant, hele 74 meter over bakken. Med et gulv som roterer 360º ser du utover hele Trondheim by og horisont.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Tyholttarnet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'tyholttarnet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<IlaBrannstasjonInfo>:
+	name: 'ilabrannstasjoninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ILA BRANNSTASJON'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Ila brainnstasjon er en liten kulturkafe som fokuserer på det lokale. Her kan man nyte kald eller varm mat, gå på søndagsjazz eller kose seg i baren. Her er det kort mellom kulturinnslagene, og Ila brainnstasjon er en flott sted å reise for å trekke inn litt inspirasjon.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/IlaBrannstasjon.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'ilaBrannstasjoninfo'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<AntikvariatetInfo>:
+	name: 'antikvariatetinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ANTIKVARIATET'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Det årne sæ, antikvariatet elske dæ uansett, står det på veggen i dette herlige lokalet. Nydelig dekor, og en kulturstrøm som er nesten uvirkelig, antikvariatet er et av de hyggeligste stedene i byen. Hver dag i uken.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Antikvariatet.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'antikvariatet'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<ArvesolvetFolkekafeInfo>:
+	name: 'arvesolvetfolkekafeinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ARVESØLVET FOLKEKAFÈ'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Hos Arvesølvet folkekafé kan du nyte god mat laget fra bunnen av, som vekker gamle minner. I en retro atmosfære kan du få både frokost, lunsj og middag.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/ArvesolvetFolkekafe.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'arvesolvetFolkekafeinfo'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<CafeNimInfo>:
+	name: 'cafeniminfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'CAFÈ NIM'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Café Nim bringer sammen kultur fra forskjellige land, og serverer småretter sammen med drikke både med og uten alkohol. Her kan du ta med deg vorspielet og oppleve kulturelle arrangementer som karaoke, musikk, trylleshow, stand-up og mye mer.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/CafeNim.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'cafeNim'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<CafeNiMuserInfo>:
+	name: 'cafenimuserinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'CAFÈ NI MUSER'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Café Ni Muser er en uformell og trendy kunstkafe, og et av Trondheims beste konditori. Her finner du både kurs, konserter, temakvelder og utstillinger sammen med mat av lokale råvarer.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/CafeNiMuser.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'cafeNiMuser'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<RosenborgDampbakeriInfo>:
+	name: 'rosenborgdampbakeriinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ROSENBORG DAMPBAKERI'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Rosenborg Dampbakeri har vært i Trondheim siden 1902, og stiller med brød og kaker bakt på tradisjonelt håndverksvis. Dette bakeriet har gjennom fire generasjoner vært drevet av familien Helgesen.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/RosenborgDamp.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'rosenborgDampbakeri'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<SellenraaBokBarInfo>:
+	name: 'sellenraabokbarinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'SELLANRAA BOK & BAR'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Sellanraa Bok & Bar ligger i den gamle brannstasjonen som i dag er blitt en blanding av bokhandel, kafé og restaurant.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/SellanraaBokBar.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'sellenraaBokBar'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrondheimMikrobryggeriInfo>:
+	name: 'trondheimmikrobryggeriinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRONDHJEM MIKROBRYGGERI'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Trondhjem Mikrobryggeri har vært i Trondheim siden 1998, og er den andre bryggeripuben som ble etablert her til lands. Her får du hjemmelaget øl og brennevin i flere sorter, sammen med både småretter og hovedretter.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Mikrobryggeri.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trondheimMikrobryggeri'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<CafeLokkaInfo>:
+	name: 'cafelokkainfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'CAFÈ LØKKA'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'I vintage interiør og god stemning hos Café Løkka på Solsiden kan du nyte en 60-talls inspirert meny både ute og inne. I 2011 ble denne kaféen kåret til årets beste utested/bar.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/CafeLokka.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'cafeLokka'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<BakklandetSkydsstasjonInfo>:
+	name: 'bakklandetskydsstasjoninfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'BAKLANDET SKYDSSTATION'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Baklandet Skydsstation er en fredelig og idyllisk kafé, som serverer mat og drikke i gamle omgivelser. Kaféen ble i 2012 kåret til Årets Kafé av National Geographic, og er både nevnt av Andrew Evans’ i hans jordomfattende reiseblodd, og i Lonely Planet.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/BakklandetSkyds.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bakklandetSkydsstasjon'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+# ----------------Aktiviteter info-------------------
+
+
+<KlatresenterInfo>:
+	name: 'klatresenterinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'KLATRESENTER'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Trondheims Klatresenter er kåret til Norges største og beste buldresenter. Her finner du buldrevegger i alle slags vanskelighetsgrader for både liten og stor, i tillegg til en tauvegg.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Klatresenter.png'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'klatresenter'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+<TurnhallInfo>:
+	name: 'turnhallinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TURNHALL'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Turnhallen i Trondheim sentrum tilbyr turn for yngre, men også kurs for nybegynnere til litt øvede i alle aldre.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Turnhall.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'turnhall'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<BowlingInfo>:
+	name: 'bowlinginfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'BOWLING'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Centrum Bowling ligger ved Trondheim Torg og har tilbudt bowling i over 40 år. Her får du servert mat og drikke til en runde med discobowling, familiebowling, bursdagsbowling, og mer.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/CentrumBowling.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'bowling'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<TrampolineparkInfo>:
+	name: 'trampolineparkinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'TRAMPOLINEPARK'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Rush Trampolinepark ligger på Tiller og har er en innendørs aktivitetspark med trampoliner på vegger og gulv. De tilbyr frihopping, bursdager, babysprett, rush after dark (discotema), trampolinekurs og dodgeball liga.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/trampolinepark.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'trampolinepark'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<GokartOgLazerxInfo>:
+	name: 'gokartoglazerxinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'GOKART OG LAZERX'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'På Fossegrenda kan du og familien eller vennegjengen utfordre hverandre til gokart og lasermaxx hos Lazerx Gokart Senter. Gokartbanen er Trondheims lengste innendørs bane. Liker du adrenalin byr lasermaxx på en real life spillopplevelse, hvor du sniker seg rundt i røyk og jakter på motstanderen med laserpistol.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/Gokart.jpg'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'gokartOgLazerx'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
+
+
+<EscapeRealityInfo>:
+	name: 'escaperealityinfo'
+
+	canvas.before:
+        Color:
+            rgba: 0.976470588, 0.976470588, 0.976470588, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+	BoxLayout:
+		orientation: 'vertical'
+
+		GridLayout:
+			size_hint: (1, 0.3)
+			rows: 1
+
+    	    Label:
+    	        text: 'ESCAPE REALITY'
+    	        font_size: 70
+    	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
+        		size_hint: (1, 0.2)
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 1)
+			cols: 2
+			rows: 1
+
+			Label:
+			    padding: [100, 10]
+			    text: 'Escape Reality byr på intense og nervepirrende opplevelser i Trondheim sentrum. Her skal grupper på 2-6 personer ha i oppgave å komme seg ut av et rom kun ved hjelp av gjenstandene i rommet, og det på kun 60 minutter.'
+			    font_size: 30
+			    text_size: self.size
+			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
+			    halign: 'left'
+			    valign: 'middle'
+
+			Image:
+				source: 'severdighetsbilder/EscapeReality.png'
+				allow_stretch: True
+				keep_ratio: False
+
+		GridLayout:
+			orientation: 'vertical'
+			size_hint: (1, 0.11)
+			cols: 3
+			rows: 1
+
+	        Button:
+                text: 'Tilbake til meny'
+                size: root.size
+                on_press: root.manager.current = 'main'
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+            Button:
+                text: 'Finn veien!'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'escapeReality'
+            Button:
+                text: 'Ny severdighet'
+                size: root.size
+                color: 0.0705882, 0.4784313725, 0.75294117647, 1
+				background_color: [1, 1, 1, 0.1]
+				on_press: root.manager.current = 'SelectionScreen'
 
 
 #-----------------------------------------------------------------------------------------------------
