@@ -171,14 +171,22 @@ class Natur(Screen):
 
 class Burmaklippen(Screen):
 	pass
+class BurmaklippenInfo(Screen):
+	pass
 
 class Geitfjellet(Screen):
+	pass
+class GeitfjelletInfo(Screen):
 	pass
 
 class Vattakammen(Screen):
 	pass
+class VattakammenInfo(Screen):
+	pass
 
 class Ladestien(Screen):
+	pass
+class LadestienInfo(Screen):
 	pass
 
 
@@ -188,35 +196,59 @@ class MatDrikke(Screen):
 
 class Tyholttarnet(Screen):
 	pass
+class TyholttarnetInfo(Screen):
+	pass
 
 class IlaBrannstasjon(Screen):
+	pass
+class IlaBrannstasjonInfo(Screen):
 	pass
 
 class Antikvariatet(Screen):
 	pass
+class AntikvariatetInfo(Screen):
+	pass
 
 class ArvesolvetFolkekafe(Screen):
+	pass
+class ArvesolvetFolkekafeInfo(Screen):
 	pass
 
 class CafeNim(Screen):
 	pass
+class CafeNimInfo(Screen):
+	pass
+
 
 class CafeNiMuser(Screen):
+	pass
+class CafeNiMuserInfo(Screen):
 	pass
 
 class RosenborgDampbakeri(Screen):
 	pass
+class RosenborgDampbakeriInfo(Screen):
+	pass
 
 class SellenraaBokBar(Screen):
+	pass
+class SellenraaBokBarInfo(Screen):
 	pass
 
 class TrondheimMikrobryggeri(Screen):
 	pass
+class TrondheimMikrobryggeriInfo(Screen):
+	pass
 
 class CafeLokka(Screen):
 	pass
+class CafeLokkaInfo(Screen):
+	pass
+
 
 class BakklandetSkydsstasjon(Screen):
+	pass
+class BakklandetSkydsstasjonInfo(Screen):
 	pass
 
 
@@ -226,20 +258,32 @@ class Aktiviteter(Screen):
 
 class Klatresenter(Screen):
 	pass
+class KlatresenterInfo(Screen):
+	pass
 
 class Turnhall(Screen):
+	pass
+class TurnhallInfo(Screen):
 	pass
 
 class Bowling(Screen):
 	pass
+class BowlingInfo(Screen):
+	pass
 
 class Trampolinepark(Screen):
+	pass
+class TrampolineparkInfo(Screen):
 	pass
 
 class GokartOgLazerx(Screen):
 	pass
+class GokartOgLazerxInfo(Screen):
+	pass
 
 class EscapeReality(Screen):
+	pass
+class EscapeRealityInfo(Screen):
 	pass
 
 
@@ -299,6 +343,7 @@ class SelectionScreen(Screen):
             self.aktiviteter = 0
 
     def screenSelector(self):
+        self.serverdigheter = []
         liste_mu = ['rockheiminfo', 'trondelagfolkemuseuminfo',
                     'ringvemuseuminfo', 'vitenskapsmuseetinfo',
                     'rustkammeretinfo', 'nordenfjeldskekunstinfo',
@@ -310,17 +355,17 @@ class SelectionScreen(Screen):
                    'bakklandetinfo', 'varfruekirkeinfo']
         liste_k = ['vitensenteretinfo', 'kunsthalltrondheiminfo',
                    'litteraturhusettrondheiminfo', 'kultursenteretISAKinfo']
-        liste_n = ['burmaklippen', 'geitfjellet',
-                   'vattakammen', 'ladestien']
-        liste_ma = ['tyholttarnet', 'ilaBrannstasjon',
-                    'antikvariatet', 'arvesolvetFolkekafe',
-                    'cafeNim', 'cafeNiMuser',
-                    'rosenborgDampbakeri', 'sellenraaBokBar',
-                    'trondheimMikrobryggeri', 'cafeLokka',
-                    'bakklandetSkydsstasjon']
-        liste_a = ['klatresenter', 'turnhall',
-                   'bowling', 'trampolinepark',
-                   'gokartOgLazerx', 'escapeReality']
+        liste_n = ['burmaklippeninfo', 'geitfjelletinfo',
+                   'vattakammeninfo', 'ladestieninfo']
+        liste_ma = ['tyholttarnetinfo', 'ilabrannstasjoninfo',
+                    'antikvariatetinfo', 'arvesolvetfolkekafeinfo',
+                    'cafeniminfo', 'cafenimuserinfo',
+                    'rosenborgdampbakeriinfo', 'sellenraabokbarinfo',
+                    'trondheimmikrobryggeriinfo', 'cafelokkainfo',
+                    'bakklandetskydsstasjoninfo']
+        liste_a = ['klatresenterinfo', 'turnhallinfo',
+                   'bowlinginfo', 'trampolineparkinfo',
+                   'gokartoglazerxinfo', 'escaperealityinfo']
         antallSkjermer = 43
 
         if int(self.museum) == 1:
@@ -343,7 +388,7 @@ class SelectionScreen(Screen):
             print("Aktiviteter i liste")
 
         if not self.serverdigheter:
-            number = random.randint(0, antallSkjermer)
+            number = random.randint(0, antallSkjermer-1)
             self.serverdigheter.extend(liste_mu)
             self.serverdigheter.extend(liste_h)
             self.serverdigheter.extend(liste_k)
@@ -351,7 +396,7 @@ class SelectionScreen(Screen):
             self.serverdigheter.extend(liste_ma)
             self.serverdigheter.extend(liste_a)
         else:
-            number = random.randint(0, len(self.serverdigheter))
+            number = random.randint(0, len(self.serverdigheter)-1)
 
         self.testScreen = self.serverdigheter[number]
         return self.testScreen
