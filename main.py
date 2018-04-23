@@ -42,12 +42,22 @@ class KlimaScreen(Screen):
     def syden(self):
         UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
         UrlRequest('http://192.168.1.3:8080/Sound/syden') #Lyd
-        UrlRequest('http://192.168.1.3:8080/lightall/') #Lys
+        UrlRequest('http://192.168.1.3:8080/lightall/100/100/100') #Lys
 
-    syden
-    antartktis
-    jungel
-    hav
+    def antartktis(self):
+        UrlRequest('http://192.168.1.3:8080/Picture/antartktis') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/antartktis') #Lyd
+        UrlRequest('http://192.168.1.3:8080/lightall/100/100/100') #Lys
+
+    def jungel(self):
+        UrlRequest('http://192.168.1.3:8080/Picture/jungel') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/jungel') #Lyd
+        UrlRequest('http://192.168.1.3:8080/lightall/100/100/100') #Lys
+
+    def hav(self):
+        UrlRequest('http://192.168.1.3:8080/Picture/hav') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/hav') #Lyd
+        UrlRequest('http://192.168.1.3:8080/lightall/100/100/100') #Lys
 	
 
 class HistorieScreen(Screen):
