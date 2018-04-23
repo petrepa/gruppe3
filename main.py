@@ -3,7 +3,8 @@ import kivy
 import random
 import time
 import datetime
-import requests
+#import requests
+
 
 #ulike bibliotek importert fra kivy
 from kivy.app import App
@@ -25,6 +26,7 @@ from kivy.uix.behaviors import ToggleButtonBehavior
 from kivy.properties import StringProperty
 from kivy.core.text import LabelBase
 from kivy.uix.slider import Slider
+from kivy.network.urlrequest import UrlRequest
 
 
 #Funksjonane til framskjerm og menyen
@@ -37,7 +39,15 @@ class MainWidget(Screen):
 
 #Funksjonane til dei ulike modulane
 class KlimaScreen(Screen):
-	pass
+    def syden(self):
+        UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/syden') #Lyd
+        
+
+    syden
+    antartktis
+    jungel
+    hav
 	
 
 class HistorieScreen(Screen):
@@ -465,15 +475,18 @@ class CustomParkControl(Screen):
             checkLastInteraction = 1
             RGBstring = '/' + str(knappeVerdier[0]) + '/' + str(knappeVerdier[1]) + '/' + str(knappeVerdier[2])
             adresseString = 'http://192.168.1.3:8080' + LEDadresseString + RGBstring
-            r = requests.get(adresseString)
-            print('LED: ' + adresseString)
+            #r = requests.get(adresseString)
+            UrlRequest(adresseString)
+            #print('LED: ' + adresseString)
+
         #Sjekker om det er sliderene for fargevalg som e brukt sist
         elif id == 1:
             checkLastInteraction = 2
             RGBstring = '/' + str(sliderVerdier[0]) + '/' + str(sliderVerdier[1]) + '/' + str(sliderVerdier[2])
             adresseString = 'http://192.168.1.3:8080' + LEDadresseString + RGBstring
-            r = requests.get(adresseString)
-            print('LED: ' + adresseString)
+            #r = requests.get(adresseString)
+            #print('LED: ' + adresseString)
+            UrlRequest(adresseString)
         else:
             RGBstring = '/' + str(0) + '/' + str(0) + '/' + str(255)
 
@@ -619,11 +632,9 @@ class CustomParkControl(Screen):
         tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
         if klokkenNu < tidStopMusikk:
             adresseString = 'http://192.168.1.3:8080' + LYDadresseString
-            r = requests.get(adresseString)
-            print('LYD: ' + adresseString)
-        else:
-            print('INGEN LYD!')
-
+            #r = requests.get(adresseString)
+            UrlRequest(adresseString)
+            #print('LYD: ' + adresseString)
 
 
 
@@ -681,10 +692,12 @@ class CustomParkControl(Screen):
                 BILDEadresseString = '/picture/orken7'
         else:
             BILDEadresseString = '/picture/default'
+            
         adresseString = 'http://192.168.1.3:8080' + BILDEadresseString
-        r = requests.get(adresseString)
-        print('BILDE: ' + adresseString)
-
+        adresseStringMAC2 = 'http://192.168.1.4:8080' + BILDEadresseString
+        UrlRequest(adresseString)
+        UrlRequest(adresseStringMAC2)
+        #print('BILDE: ' + adresseString)
 
 
 
