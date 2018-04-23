@@ -3,7 +3,7 @@ import kivy
 import random
 import time
 import datetime
-# import requests
+import requests
 
 #ulike bibliotek importert fra kivy
 from kivy.app import App
@@ -465,14 +465,14 @@ class CustomParkControl(Screen):
             checkLastInteraction = 1
             RGBstring = '/' + str(knappeVerdier[0]) + '/' + str(knappeVerdier[1]) + '/' + str(knappeVerdier[2])
             adresseString = 'http://192.168.1.3:8080' + LEDadresseString + RGBstring
-            #r = requests.get(adresseString)
+            r = requests.get(adresseString)
             print('LED: ' + adresseString)
         #Sjekker om det er sliderene for fargevalg som e brukt sist
         elif id == 1:
             checkLastInteraction = 2
             RGBstring = '/' + str(sliderVerdier[0]) + '/' + str(sliderVerdier[1]) + '/' + str(sliderVerdier[2])
             adresseString = 'http://192.168.1.3:8080' + LEDadresseString + RGBstring
-            # r = requests.get(adresseString)
+            r = requests.get(adresseString)
             print('LED: ' + adresseString)
         else:
             RGBstring = '/' + str(0) + '/' + str(0) + '/' + str(255)
@@ -619,7 +619,7 @@ class CustomParkControl(Screen):
         tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
         if klokkenNu < tidStopMusikk:
             adresseString = 'http://192.168.1.3:8080' + LYDadresseString
-            # r = requests.get(adresseString)
+            r = requests.get(adresseString)
             print('LYD: ' + adresseString)
         else:
             print('INGEN LYD!')
@@ -682,7 +682,7 @@ class CustomParkControl(Screen):
         else:
             BILDEadresseString = '/picture/default'
         adresseString = 'http://192.168.1.3:8080' + BILDEadresseString
-        #r = requests.get(adresseString)
+        r = requests.get(adresseString)
         print('BILDE: ' + adresseString)
 
 
