@@ -492,6 +492,7 @@ ScreenManagement:
 				cols: 2
 				size_hint_y: None
 				height: 1000
+				padding: [40, 0]
         	
 				# -----------------------------------------------------
 				GridLayout:
@@ -504,7 +505,8 @@ ScreenManagement:
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
-					Label: 
+					Label:
+					    padding: [30, 5]
 						text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens største middelalderkirker. Byggingen ble påbegynt i 1070, og domen har siden stått oppreist over Olav den Helliges grav. Flere av Norges konger er både kronet, viet og gravlagt her. Her kan du delta på både gudstjenester, omvisninger og konserter.'
 						text_size: self.width, None
 						size_hint_y: None
@@ -515,6 +517,7 @@ ScreenManagement:
 					cols: 1
 					rows: 1
 					size_hint: (0.2, 0.5)
+					padding: [10, 5]
 
 					Image:
 						source: 'severdighetsbilder/Nidarosdomen.jpg'
@@ -531,7 +534,8 @@ ScreenManagement:
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
-					Label: 
+					Label:
+					    padding: [30, 5]
 						text: 'Stiftsgården er Trondheims kongelige residens, og nordens største trepalé. Gården ble bygget for Cecilie Christine Schøller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen på Stiftsgården ved å delta på omvisning.'
 						text_size: self.width, None
 						size_hint_y: None
@@ -542,6 +546,7 @@ ScreenManagement:
 					cols: 1
 					rows: 1
 					size_hint: (0.2, 0.5)
+					padding: [10, 5]
 
 					Image:
 						source: 'severdighetsbilder/stiftsgarden.jpg'
@@ -558,7 +563,8 @@ ScreenManagement:
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
-					Label: 
+					Label:
+					    padding: [30, 5]
 						text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
 						text_size: self.width, None
 						size_hint_y: None
@@ -569,6 +575,7 @@ ScreenManagement:
 					cols: 1
 					rows: 1
 					size_hint: (0.2, 0.5)
+					padding: [10, 5]
 
 					Image:
 						source: 'severdighetsbilder/GamleBybro.jpg'
@@ -586,7 +593,8 @@ ScreenManagement:
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
-					Label: 
+					Label:
+					    padding: [30, 5]
 						text: 'Kristiansten festning har siden slutten av 1600-tallet stått over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vært benyttet til militært bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
 						text_size: self.width, None
 						size_hint_y: None
@@ -597,6 +605,7 @@ ScreenManagement:
 					cols: 1
 					rows: 1
 					size_hint: (0.2, 0.5)
+					padding: [10, 5]
 
 					Image:
 						source: 'severdighetsbilder/KristianstenFestning.jpg'
@@ -614,7 +623,8 @@ ScreenManagement:
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
-					Label: 
+					Label:
+					    padding: [30, 5]
 						text: 'Erkebispegården var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegårdens historie utstilt.'
 						text_size: self.width, None
 						size_hint_y: None
@@ -625,6 +635,7 @@ ScreenManagement:
 					cols: 1
 					rows: 1
 					size_hint: (0.2, 0.5)
+					padding: [10, 5]
 
 					Image:
 						source: 'severdighetsbilder/erkebispegarden.jpg'
@@ -674,6 +685,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -685,6 +697,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 5]
 				source: 'severdighetsbilder/rockheim.jpeg'
 				allow_stretch: True
 				keep_ratio: False
@@ -743,6 +756,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -754,6 +768,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 5]
 				source: 'severdighetsbilder/trondelagfolkemuseum.png'
 				allow_stretch: True
 				keep_ratio: False
@@ -812,6 +827,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -823,6 +839,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/ringvemuseum.png'
 				allow_stretch: True
 				keep_ratio: False
@@ -881,6 +898,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -892,6 +910,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/vitenskapsmuseet.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -950,6 +969,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -961,6 +981,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/rustkammeret.JPG'
 				allow_stretch: True
 				keep_ratio: False
@@ -1019,6 +1040,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1030,6 +1052,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/nordenfjeldske.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1087,6 +1110,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1098,6 +1122,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/norskdovemuseum.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1156,6 +1181,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1167,6 +1193,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/trondheimkunstmuseum.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1225,6 +1252,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1236,6 +1264,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/jodiskmuseum.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1294,6 +1323,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1305,6 +1335,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/TrondheimSjøfartsmuseum.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1365,6 +1396,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1376,6 +1408,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Nidarosdomen.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1434,6 +1467,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1445,6 +1479,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/stiftsgarden.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1503,6 +1538,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1514,6 +1550,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/GamleBybro.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1572,6 +1609,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1583,6 +1621,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/KristianstenFestning.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1641,6 +1680,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1652,6 +1692,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/erkebispegarden.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1711,6 +1752,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1722,6 +1764,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Munkholmen.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1780,6 +1823,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1791,6 +1835,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Bakklandet.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1849,6 +1894,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1860,6 +1906,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/varfruekirke.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1920,6 +1967,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1931,6 +1979,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Vitensenteret.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -1988,6 +2037,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -1999,6 +2049,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/KunsthallTrondheim.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2057,6 +2108,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2068,6 +2120,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Litteraturhuset.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2126,6 +2179,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2137,6 +2191,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/KultursenteretISAK.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2196,6 +2251,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2207,6 +2263,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Burmaklippen.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2266,6 +2323,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2277,6 +2335,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Geitfjellet.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2336,6 +2395,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2347,6 +2407,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Vattakammen.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2406,6 +2467,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2417,6 +2479,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Ladestien.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2477,6 +2540,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2488,6 +2552,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Tyholttarnet.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2546,6 +2611,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2557,6 +2623,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/IlaBrannstasjon.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2615,6 +2682,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2626,6 +2694,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Antikvariatet.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2684,6 +2753,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2695,6 +2765,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/ArvesolvetFolkekafe.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2753,6 +2824,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2764,6 +2836,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/CafeNim.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2822,6 +2895,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2833,6 +2907,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/CafeNiMuser.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2891,6 +2966,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2902,6 +2978,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/RosenborgDamp.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -2960,6 +3037,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -2971,6 +3049,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/SellanraaBokBar.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3029,6 +3108,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3040,6 +3120,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Mikrobryggeri.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3098,6 +3179,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3109,6 +3191,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 5]
 				source: 'severdighetsbilder/CafeLokka.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3167,6 +3250,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3178,6 +3262,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/BakklandetSkyds.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3239,6 +3324,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3250,6 +3336,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Klatresenter.png'
 				allow_stretch: True
 				keep_ratio: False
@@ -3307,6 +3394,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3318,6 +3406,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Turnhall.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3376,6 +3465,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3387,6 +3477,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/CentrumBowling.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3445,6 +3536,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3456,6 +3548,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/trampolinepark.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3514,6 +3607,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3525,6 +3619,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/Gokart.jpg'
 				allow_stretch: True
 				keep_ratio: False
@@ -3583,6 +3678,7 @@ ScreenManagement:
 			size_hint: (1, 1)
 			cols: 2
 			rows: 1
+			padding: [30, 20]
 
 			Label:
 			    padding: [100, 10]
@@ -3594,6 +3690,7 @@ ScreenManagement:
 			    valign: 'middle'
 
 			Image:
+			    padding: [40, 0]
 				source: 'severdighetsbilder/EscapeReality.png'
 				allow_stretch: True
 				keep_ratio: False
