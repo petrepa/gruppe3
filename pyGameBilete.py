@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Jun 22 16:44:27 2017
-
-@author: sakurai
-"""
-
-
-import numpy as np
 import cv2
 import screeninfo
 
