@@ -2,7 +2,7 @@
 import kivy
 import random
 import time
-import datetime
+#import datetime
 #import requests
 
 
@@ -637,7 +637,7 @@ class CustomParkControl(Screen):
                 LYDadresseString = '/sound/fuglekvitter7'
         else:
             LYDadresseString = '/sound/default'
-
+'''
         klokkenNu = datetime.datetime.now()  # henter va klokken er nå
         tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
         if klokkenNu < tidStopMusikk:
@@ -645,7 +645,7 @@ class CustomParkControl(Screen):
             #r = requests.get(adresseString)
             UrlRequest(adresseString)
             #print('LYD: ' + adresseString)
-
+'''
 
 
     def selectedPicture(self, id):
