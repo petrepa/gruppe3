@@ -39,15 +39,13 @@ class MainWidget(Screen):
 
 #Funksjonane til dei ulike modulane
 class KlimaScreen(Screen):
+   pass
+'''
     def syden(self):
         UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
         UrlRequest('http://192.168.1.3:8080/Sound/syden') #Lyd
         UrlRequest('http://192.168.1.3:8080/lightall/') #Lys
-
-    syden
-    antartktis
-    jungel
-    hav
+'''
 	
 
 class HistorieScreen(Screen):
