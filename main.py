@@ -42,7 +42,7 @@ class KlimaScreen(Screen):
     def syden(self):
         UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
         UrlRequest('http://192.168.1.3:8080/Sound/syden') #Lyd
-        
+        UrlRequest('http://192.168.1.3:8080/lightall/') #Lys
 
     syden
     antartktis
