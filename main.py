@@ -707,7 +707,10 @@ class ScreenManagement(ScreenManager):
 
 
 #Her definerer vi at vi henter inn den tilhøyrande kivy-fila
-presentation = Builder.load_file("my.kv")
+#presentation = Builder.load_file("my.kv")
+with open("my.kv", encoding='utf8') as f:
+ presentation = Builder.load_string(f.read())
+
 
 #klassa som bygger sjølve applikasjonen
 class myApp(App):
