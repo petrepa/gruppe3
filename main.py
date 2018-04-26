@@ -39,13 +39,27 @@ class MainWidget(Screen):
 
 #Funksjonane til dei ulike modulane
 class KlimaScreen(Screen):
-   pass
-'''
+
     def syden(self):
-        UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
+        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
         UrlRequest('http://192.168.1.3:8080/Sound/syden') #Lyd
-        UrlRequest('http://192.168.1.3:8080/lightall/') #Lys
-'''
+        UrlRequest('http://192.168.1.3:8080/lightall/255/255/0') #Lys
+        print('sydenserver')
+    def antarktis(self):
+        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/antarktis') #Lyd
+        UrlRequest('http://192.168.1.3:8080/lightall/0/255/255') #Lys
+
+    def jungel(self):
+        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/jungle1') #Lyd
+        UrlRequest('http://192.168.1.3:8080/lightall/0/255/0') #Lys
+
+    def hav(self):
+        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
+        UrlRequest('http://192.168.1.3:8080/Sound/hav') #Lyd
+        UrlRequest('http://192.168.1.3:8080/lightall/0/0/255') #Lys
+
 	
 
 class HistorieScreen(Screen):
@@ -580,49 +594,49 @@ class CustomParkControl(Screen):
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 1
-                LYDadresseString = '/sound/fuglekvitter1'
+                LYDadresseString = '/sound/africa'
         elif id == 2:
             if valgtLYD == 2:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 2
-                LYDadresseString = '/sound/fuglekvitter2'
+                LYDadresseString = '/sound/basseng'
         elif id == 3:
             if valgtLYD == 3:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 3
-                LYDadresseString = '/sound/fuglekvitter3'
+                LYDadresseString = '/sound/syden'
         elif id == 4:
             if valgtLYD == 4:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 4
-                LYDadresseString = '/sound/fuglekvitter4'
+                LYDadresseString = '/sound/vind'
         elif id == 5:
             if valgtLYD == 5:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 5
-                LYDadresseString = '/sound/fuglekvitter5'
+                LYDadresseString = '/sound/fugl'
         elif id == 6:
             if valgtLYD == 6:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 6
-                LYDadresseString = '/sound/fuglekvitter6'
+                LYDadresseString = '/sound/jungle1'
         elif id == 7:
             if valgtLYD == 7:
                 valgtLYD = 10
                 LYDadresseString = '/sound/default'
             else:
                 valgtLYD = 7
-                LYDadresseString = '/sound/fuglekvitter7'
+                LYDadresseString = '/sound/elsys'
         else:
             LYDadresseString = '/sound/default'
 
