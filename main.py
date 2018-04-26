@@ -41,25 +41,14 @@ class MainWidget(Screen):
 class KlimaScreen(Screen):
 
     def syden(self):
-        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
-        UrlRequest('http://192.168.1.3:8080/lightall/255/255/0') #Lys
-        print('sydenserver')
+        UrlRequest('http://192.168.1.3:8080/picture/syden') #Bilde
     def antarktis(self):
-        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
-        UrlRequest('http://192.168.1.3:8080/lightall/0/255/255') #Lys
-
+        UrlRequest('http://192.168.1.3:8080/picture/antarktis') #Bilde
     def jungel(self):
-        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
-        UrlRequest('http://192.168.1.3:8080/lightall/0/255/0') #Lys
-
+        UrlRequest('http://192.168.1.3:8080/picture/jungel') #Bilde
     def hav(self):
-        #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
-        UrlRequest('http://192.168.1.3:8080/lightall/0/0/255') #Lys
-
+        UrlRequest('http://192.168.1.3:8080/picture/hav2') #Bilde
+        
 	
 
 class HistorieScreen(Screen):
@@ -591,54 +580,54 @@ class CustomParkControl(Screen):
         if id == 1:
             if valgtLYD == 1:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 1
                 LYDadresseString = '/sound/1/africa.wav'
         elif id == 2:
             if valgtLYD == 2:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 2
                 LYDadresseString = '/sound/1/basseng.wav'
         elif id == 3:
             if valgtLYD == 3:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 3
                 LYDadresseString = '/sound/1/syden.wav'
         elif id == 4:
             if valgtLYD == 4:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 4
                 LYDadresseString = '/sound/1/vind.wav'
         elif id == 5:
             if valgtLYD == 5:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 5
                 LYDadresseString = '/sound/1/fugl.wav'
         elif id == 6:
             if valgtLYD == 6:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 6
                 LYDadresseString = '/sound/1/jungle1.wav'
         elif id == 7:
             if valgtLYD == 7:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/default'
+                LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 7
                 LYDadresseString = '/sound/1/elsys.wav'
         else:
-            LYDadresseString = '/sound/1/default'
+            LYDadresseString = '/sound/1/fugl.wav'
 
         klokkenNu = datetime.datetime.now()  # henter va klokken er nå
         tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
@@ -656,54 +645,54 @@ class CustomParkControl(Screen):
         if id == 1:
             if valgtBILDE == 1:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 1
-                BILDEadresseString = '/picture/orken1'
+                BILDEadresseString = '/picture/orken'
         elif id == 2:
             if valgtBILDE == 2:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 2
-                BILDEadresseString = '/picture/orken2'
+                BILDEadresseString = '/picture/strand'
         elif id == 3:
             if valgtBILDE == 3:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 3
-                BILDEadresseString = '/picture/orken3'
+                BILDEadresseString = '/picture/hav'
         elif id == 4:
             if valgtBILDE == 4:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 4
-                BILDEadresseString = '/picture/orken4'
+                BILDEadresseString = '/picture/himmel'
         elif id == 5:
             if valgtBILDE == 5:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 5
-                BILDEadresseString = '/picture/orken5'
+                BILDEadresseString = '/picture/fjell'
         elif id == 6:
             if valgtBILDE == 6:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 6
-                BILDEadresseString = '/picture/orken6'
+                BILDEadresseString = '/picture/jungel'
         elif id == 7:
             if valgtBILDE == 7:
                 valgtBILDE = 10
-                BILDEadresseString = '/picture/default'
+                BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 7
-                BILDEadresseString = '/picture/orken7'
+                BILDEadresseString = '/picture/elsys'
         else:
-            BILDEadresseString = '/picture/default'
+            BILDEadresseString = '/picture/elsys'
             
         adresseString = 'http://192.168.1.3:8080' + BILDEadresseString
         adresseStringMAC2 = 'http://192.168.1.4:8080' + BILDEadresseString
