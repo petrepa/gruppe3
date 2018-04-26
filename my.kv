@@ -232,10 +232,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Hjem"
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
+				size_hint: (1, 0.4)
 				on_press: root.manager.current = 'front'
 
 
@@ -311,9 +312,6 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.hav()
-				
-
-
 
 		GridLayout:
 			size: root.size
@@ -325,7 +323,8 @@ ScreenManagement:
 				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
+				size_hint: (1, 0.37)
 				on_release: root.manager.current = 'main'
 
 <KulturScreen>:
@@ -365,9 +364,9 @@ ScreenManagement:
             text: 'Til menyen'
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			background_color: [1, 1, 1, 0.1]
-			font_size: 70
+			font_size: 55
             on_press: root.manager.current = 'main'
-            size_hint: (1, 0.2)
+            size_hint: (1, 0.1)
 				
 <SelectionScreen>:
     padding: [10, 20]
@@ -388,14 +387,14 @@ ScreenManagement:
             rows: 2
 			
             Label:
-                text: "Severdigheitsrulett"
-                font_size: 100
+                text: "Severdighetsrulett"
+                font_size: 110
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 
             Label:
                 text: "Kryss av for aktuelle alternativer"
-                font_size: 30
+                font_size: 50
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 
@@ -408,6 +407,7 @@ ScreenManagement:
             rows: 6
             Label:
                 text: "Museum"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -415,6 +415,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Historiske steder"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -422,6 +423,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Kultur"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -429,6 +431,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Natur"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -436,6 +439,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Mat og drikke"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -443,6 +447,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Aktiviteter"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -457,11 +462,13 @@ ScreenManagement:
 
             Button:
                 text: 'Til menyen'
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 			Button:
                 text: "Klikk naar du er klar"
+                font_size: 40
                 on_press: root.screenSelector()
                 on_release:
                     root.manager.current = str(root.manager.ids.selection_screen.testScreen)
@@ -483,7 +490,7 @@ ScreenManagement:
     	orientation: 'vertical'
     	
         Label:
-        	text: 'Historisk'
+        	text: 'HISTORISK'
         	color: 0.0705882, 0.4784313725, 0.75294117647, 1
         	font_size: 100
         	size_hint: (1, 0.2)
@@ -505,7 +512,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Nidarosdomen'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -513,6 +520,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens største middelalderkirker. Byggingen ble påbegynt i 1070, og domen har siden stått oppreist over Olav den Helliges grav. Flere av Norges konger er både kronet, viet og gravlagt her. Her kan du delta på både gudstjenester, omvisninger og konserter.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -534,7 +542,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Stiftsgaarden'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -542,6 +550,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Stiftsgården er Trondheims kongelige residens, og nordens største trepalé. Gården ble bygget for Cecilie Christine Schøller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen på Stiftsgården ved å delta på omvisning.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -563,7 +572,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Gamle Bybro'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -571,6 +580,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -593,7 +603,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Kristiansten festning'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -601,6 +611,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Kristiansten festning har siden slutten av 1600-tallet stått over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vært benyttet til militært bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -623,7 +634,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Erkebispegaarden'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -631,6 +642,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Erkebispegården var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegårdens historie utstilt.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -650,9 +662,9 @@ ScreenManagement:
             text: 'Til menyen'
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			background_color: [1, 1, 1, 0.1]
-			font_size: 70
+			font_size: 55
             on_press: root.manager.current = 'main'
-            size_hint: (1, 0.2)
+            size_hint: (1, 0.1)
 
 
 
@@ -680,7 +692,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ROCKHEIM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -694,7 +706,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Det nasjonale museet for populaermusikk. Dra hit om du Onsker aa laere mer om musikk, eller prOv deg som DJ, trommeslager og musikalsk kunstner selv!'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -715,17 +727,20 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
+                font_size: 40
                 size: root.size
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'rockheim'
             Button:
                 text: 'Ny severdighet'
+                font_size: 40
                 size: root.size
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
@@ -751,7 +766,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TRONDELAG FOLKEMUSEUM, SVERRESBORG'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -765,7 +780,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Nysgjerrig paa hvordan trOnderne levde i gamle dager? I flotte historiske omgivelser kan du bli med paa lefsekurs, eventyrstund eller byvandring for barn.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -786,18 +801,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondelagFolkemuseum'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -822,7 +840,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'RINGVE MUSEUM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -836,7 +854,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Det nasjonale museet for musikk og musikkinstrumenter.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -857,18 +875,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'ringveMuseum'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -893,7 +914,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'VITENSKAPSMUSEET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -907,7 +928,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Vitenskapsmuseet har en rekke utstillinger, fra steinalderhistorie, til norges eldste jerv, som ble hele 20 aar! Dyreliv, middelalderliv, livet i polhavet, det er ingen grense for hvor mye spennende man kan laere om ved aa ta en tur til vitenskapsmuseet. Det er aapent tirsdag-fredag fra 10-16 og lOrdag-sOndag fra 11-16. Gratis for barn og ungdom under 18!'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -928,18 +949,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'vitenskapsmuseet'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -964,7 +988,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'RUSTKAMMERET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -978,7 +1002,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Allerede i 1826 ble Rustkammeret fOrst brukt som museum. Den gang het det “Historiske vaabensal”. Rustkammeret er et av forsvarets museer og utstillingene viser norsk motstandskamp helt fra vikingtiden til tiden da Norge var i union med Danmark.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -999,18 +1023,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'rustkammeret'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1035,7 +1062,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'NORDENFJELDSKE KUNSTINDUSTRIMUSEUM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1049,7 +1076,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Nordenfjeldske Kunstindustrimuseet ble aapnet allerede i 1893 og har vaert en samling av samtidskunst helt siden den tid. Blant annet var det paa 1890-tallet svaert populaert med japansk kunst, og Nordenfjeldske har en imponerende samling av nettopp dette. For enhver kunstinteressert er dette et naturlig sted aa ta turen.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1070,18 +1097,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'nordenfjeldskeKunst'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1105,7 +1135,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'NORSK DOVEMUSEUM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1119,7 +1149,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Norsk dOvemuseum samler kulturhistorie, viktige gjenstander og har en dyp historisk bildesamling som representerer og ivaretar kulturarven for norske dOve. Museet jobber med tilrettelegging og tilgjengeliggjOring med fokus paa likeverd, like muligheter, tilgjengelighet og tilrettelegging for alle i vaart samfunn.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1140,18 +1170,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'norskeDovemuseum'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1176,7 +1209,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TRONDHEIM KUNSTMUSEUM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1190,7 +1223,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Trondheim kunstmuseum stiller baade ut en imponerende samling av internasjonal og norsk kunst, samt samtidskunst. Her forenes lokal kunsthistorie med internasjonalt relevante verker. Museet har to visningssteder, i Bispegata og i Trenerys gate ved nedre elvehavn.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1211,18 +1244,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondheimKunstmuseum'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1247,7 +1283,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'JODISK MUSEUM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1261,7 +1297,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'I 1924 kjOpte Det Mosaiske Trossamfunn Trondheims fOrste jernbanestasjon, og ombygde det til Europas nordligste synagoge. Museet var en gave til byen ved tusenaarsjubileet i 1997, og forteller om historien og kulturen til de jOdiske i det nordenfjeldske omraadet, baade fOr, under og etter andre verdenskrig.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1282,18 +1318,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'jodiskeMuseum'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1318,7 +1357,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TRONDHEIM SJOFARTSMUSEUM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1332,7 +1371,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Trondheim SjOfartsmuseum ble etablert i 1919, og formidler den maritime historien til Trondheim og omegn. Muséet holder til i et av de eldste murhusene i Trondheim kalt “BrattOrvakta”, som ogsaa er fredet. Her kan du finne alt fra bilder av skuter og mannskap, til gammelt utstyr og dagbOker.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1353,18 +1392,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondheimSjofartsmuseum'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1391,7 +1433,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'NIDAROSDOMEN'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1405,7 +1447,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens stOrste middelalderkirker. Byggingen ble paabegynt i 1070, og domen har siden staatt oppreist over Olav den Helliges grav. Flere av Norges konger er baade kronet, viet og gravlagt her. Her kan du delta paa baade gudstjenester, omvisninger og konserter.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1426,18 +1468,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'nidarosdomen'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1461,8 +1506,8 @@ ScreenManagement:
 			rows: 1
 
     	    Label:
-    	        text: 'STIFTSGaaRDEN'
-    	        font_size: 70
+    	        text: 'STIFTSGAARDEN'
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1476,7 +1521,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Stiftsgaarden er Trondheims kongelige residens, og nordens stOrste trepalé. Gaarden ble bygget for Cecilie Christine SchOller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen paa Stiftsgaarden ved aa delta paa omvisning.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1497,18 +1542,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'stiftsgarden'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1533,7 +1581,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'GAMLE BYBRO'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1547,7 +1595,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Gamle Bybro, ogsaa kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble fOrste gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskaarne portalene, hvor én av dem fortsatt staar igjen.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1568,18 +1616,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'gamleBybro'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1604,7 +1655,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'KRISTIANSTEN FESTNING'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1618,7 +1669,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Kristiansten festning har siden slutten av 1600-tallet staatt over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vaert benyttet til militaert bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1639,18 +1690,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kristianstenFestning'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1674,8 +1728,8 @@ ScreenManagement:
 			rows: 1
 
     	    Label:
-    	        text: 'ERKEBISPEGaaRDEN'
-    	        font_size: 70
+    	        text: 'ERKEBISPEGAARDEN'
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1689,7 +1743,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Erkebispegaarden var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegaardens historie utstilt.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1710,18 +1764,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'erkebispegarden'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1747,7 +1804,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'MUNKHOLMEN'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1761,7 +1818,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Munkholmen er en holme i Trondheimsfjorden like utenfor Trondheim sentrum. Historisk ble holmen kalt Nidarholm og brukt som rettersted under vikingtiden. Da det senere ble bygget et klosteranlegg her fikk holmen navnet Munkholmen. Munkholmen har ogsaa vaert brukt som festning og fengsel. I dag kan du dra ut hit for aa bade, spise, delta paa omvisning og nyte omgivelsene.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1782,18 +1839,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'munkholmen'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1818,7 +1878,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'BAKKLANDET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1832,7 +1892,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Bakklandet er Trondheims gamle bydel, som ble bebygd fOrst paa tidlig 1600-tallet. Etter bydelen brant ned i 1718, ble den raskt gjenreist i form av smaa trehus, bryggerekke og brosteinsbelagte gater, som staar i dag. Her kan du oppleve en koselig atmosfaere med shopping, kaféer, restauranter og barer.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1853,18 +1913,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'bakklandet'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1888,8 +1951,8 @@ ScreenManagement:
 			rows: 1
 
     	    Label:
-    	        text: 'VaaR FRUE KIRKE'
-    	        font_size: 70
+    	        text: 'VAAR FRUE KIRKE'
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1903,7 +1966,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Vaar Frue kirke er en aapen omsorgskirke hvor du kan tenne lys, be, ta en kopp kaffe eller te og mOte andre mennesker. Den er drevet av Kirkens Bymisjon, og har staatt i hjertet av Trondheim siden aar 1207.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1924,18 +1987,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'varFrueKirke'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -1962,7 +2028,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'VITENSENTERET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -1976,7 +2042,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Vitensenteret er et populaervitenskapelig opplevelsessenter. Her kan baade voksne og barn eksperimentere med matematikk, naturvitenskap og teknologi. Her kan ogsaa oppleves 360-kino og 3D-planetarium.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1997,18 +2063,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'vitensenteret'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2032,7 +2101,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'KUNSTHALL TRONDHEIM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2046,7 +2115,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Kunsthall Trondheim er en institusjon for samtidskunst paa internasjonalt nivaa. Her foregaar det alt fra utstillinger, konserter, performancer, video screenings, foredrag og poesiopplesninger.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2067,18 +2136,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kunsthallTrondheim'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2103,7 +2175,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'LITTERATURHUSET TRONDHEIM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2117,7 +2189,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Litteraturhuset i Trondheim har arrangementer innen litteratur, samfunnsdebatter og forskningsformidling. Disse foregaar i form av flere faste arrangementer ved navn “Professor paa kafé”, “Litteraert maaltid” og “Barnas teselskap”.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2138,18 +2210,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'litteraturhusetTrondheim'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2174,7 +2249,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'KULTURSENTERET ISAK'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2188,7 +2263,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Kultursenteret ISAK er Trondheims kultursenter for ungdom som vil utOve, produsere eller oppleve kultur. Her faar du hjelp til aa iverksette drOmmen din ved aa faa laane lokaler og utstyr, samt aa finne samarbeidspartnere og kunnskapen som trengs.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2209,18 +2284,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kultursenteretISAK'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2246,7 +2324,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'BURMAKLIPPEN'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2260,7 +2338,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Burmaklippen ligger i Estenstadmarka i Trondheim, og gir utsikt ut over Dragvoll og Byaasen. Dette utsiktspunktet gaar ogsaa under navnet “mini-Trolltunga”, ettersom den bestaar av en steinformasjon som strekker seg ut over en klippe.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2281,23 +2359,24 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'burmaklippen'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
-
-
 
 <GeitfjelletInfo>:
 	name: 'geitfjelletinfo'
@@ -2318,7 +2397,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'GEITFJELLET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2332,7 +2411,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Geitfjellet et et av bymarkas fineste utsiktspunkt, hvor du kan se det meste av Trondheim. Toppen ligger 416 m.o.h. , og tar 30-60 minutter avhengig av hvor du starter turen fra.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2353,18 +2432,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'geitfjellet'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2389,8 +2471,8 @@ ScreenManagement:
 			rows: 1
 
     	    Label:
-    	        text: 'VaaTTAKAMMEN'
-    	        font_size: 70
+    	        text: 'VAATTAKAMMEN'
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2404,7 +2486,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Vaattakammen ligger 286 m.o.h. , og gir en flott utsikt over Ila og midtbyen. Denne turen byr paa et variert terreng og er ogsaa fint egnet for barn. Fra gammelt av var Vaattakammen en vardeplass hvor det bl tent baal for aa varsle om krig og ufred.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2425,23 +2507,24 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'vattakammen'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
-
-
 
 <LadestienInfo>:
 	name: 'ladestieninfo'
@@ -2462,7 +2545,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'LADESTIEN'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2476,7 +2559,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Ladestien strekker seg 8 km i et lett terreng langs sjOen fra Ladehammerkaia til Charlottenlund. Dette er et av de mest populaere utfartsomraadene i Trondheim. Langs stien finnes du alt fra badestrender, kaféer og festningsverk fra krigen.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2497,18 +2580,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'ladestien'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2535,7 +2621,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TYHOLTTaaRNET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2549,7 +2635,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'I tyholttaarnet kan du nyte god mat og drikke fra Egon restaurant, hele 74 meter over bakken. Med et gulv som roterer 360º ser du utover hele Trondheim by og horisont.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2570,18 +2656,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'tyholttarnet'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2606,7 +2695,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ILA BRANNSTASJON'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2620,7 +2709,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Ila brainnstasjon er en liten kulturkafe som fokuserer paa det lokale. Her kan man nyte kald eller varm mat, gaa paa sOndagsjazz eller kose seg i baren. Her er det kort mellom kulturinnslagene, og Ila brainnstasjon er en flott sted aa reise for aa trekke inn litt inspirasjon.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2641,18 +2730,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'ilaBrannstasjoninfo'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2677,7 +2769,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ANTIKVARIATET'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2691,7 +2783,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Det aarne sae, antikvariatet elske dae uansett, staar det paa veggen i dette herlige lokalet. Nydelig dekor, og en kulturstrOm som er nesten uvirkelig, antikvariatet er et av de hyggeligste stedene i byen. Hver dag i uken.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2712,18 +2804,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'antikvariatet'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2748,7 +2843,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ARVESOLVET FOLKEKAFÈ'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2762,7 +2857,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Hos ArvesOlvet folkekafé kan du nyte god mat laget fra bunnen av, som vekker gamle minner. I en retro atmosfaere kan du faa baade frokost, lunsj og middag.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2783,18 +2878,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'arvesolvetFolkekafeinfo'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2819,7 +2917,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'CAFÈ NIM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2833,7 +2931,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Café Nim bringer sammen kultur fra forskjellige land, og serverer smaaretter sammen med drikke baade med og uten alkohol. Her kan du ta med deg vorspielet og oppleve kulturelle arrangementer som karaoke, musikk, trylleshow, stand-up og mye mer.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2854,18 +2952,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'cafeNim'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2890,7 +2991,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'CAFÈ NI MUSER'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2904,7 +3005,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Café Ni Muser er en uformell og trendy kunstkafe, og et av Trondheims beste konditori. Her finner du baade kurs, konserter, temakvelder og utstillinger sammen med mat av lokale raavarer.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2925,18 +3026,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'cafeNiMuser'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -2961,7 +3065,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ROSENBORG DAMPBAKERI'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -2975,7 +3079,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Rosenborg Dampbakeri har vaert i Trondheim siden 1902, og stiller med brOd og kaker bakt paa tradisjonelt haandverksvis. Dette bakeriet har gjennom fire generasjoner vaert drevet av familien Helgesen.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -2996,18 +3100,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'rosenborgDampbakeri'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3032,7 +3139,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'SELLANRAA BOK & BAR'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3046,7 +3153,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Sellanraa Bok & Bar ligger i den gamle brannstasjonen som i dag er blitt en blanding av bokhandel, kafé og restaurant.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3067,18 +3174,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'sellenraaBokBar'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3103,7 +3213,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TRONDHJEM MIKROBRYGGERI'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3117,7 +3227,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Trondhjem Mikrobryggeri har vaert i Trondheim siden 1998, og er den andre bryggeripuben som ble etablert her til lands. Her faar du hjemmelaget Ol og brennevin i flere sorter, sammen med baade smaaretter og hovedretter.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3138,18 +3248,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondheimMikrobryggeri'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3174,7 +3287,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'CAFÈ LOKKA'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3188,7 +3301,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'I vintage interiOr og god stemning hos Café LOkka paa Solsiden kan du nyte en 60-talls inspirert meny baade ute og inne. I 2011 ble denne kaféen kaaret til aarets beste utested/bar.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3209,18 +3322,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'cafeLokka'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3245,7 +3361,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'BAKLANDET SKYDSSTATION'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3259,7 +3375,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Baklandet Skydsstation er en fredelig og idyllisk kafé, som serverer mat og drikke i gamle omgivelser. Kaféen ble i 2012 kaaret til aarets Kafé av National Geographic, og er baade nevnt av Andrew Evans’ i hans jordomfattende reiseblodd, og i Lonely Planet.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3280,18 +3396,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'bakklandetSkydsstasjon'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3319,7 +3438,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'KLATRESENTER'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3333,7 +3452,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Trondheims Klatresenter er kaaret til Norges stOrste og beste buldresenter. Her finner du buldrevegger i alle slags vanskelighetsgrader for baade liten og stor, i tillegg til en tauvegg.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3354,18 +3473,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'klatresenter'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3389,7 +3511,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TURNHALL'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3403,7 +3525,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Turnhallen i Trondheim sentrum tilbyr turn for yngre, men ogsaa kurs for nybegynnere til litt Ovede i alle aldre.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3424,18 +3546,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'turnhall'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3460,7 +3585,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'BOWLING'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3474,7 +3599,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Centrum Bowling ligger ved Trondheim Torg og har tilbudt bowling i over 40 aar. Her faar du servert mat og drikke til en runde med discobowling, familiebowling, bursdagsbowling, og mer.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3495,18 +3620,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'bowling'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3531,7 +3659,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TRAMPOLINEPARK'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3545,7 +3673,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Rush Trampolinepark ligger paa Tiller og har er en innendOrs aktivitetspark med trampoliner paa vegger og gulv. De tilbyr frihopping, bursdager, babysprett, rush after dark (discotema), trampolinekurs og dodgeball liga.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3566,18 +3694,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trampolinepark'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3602,7 +3733,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'GOKART OG LAZERX'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3616,7 +3747,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Paa Fossegrenda kan du og familien eller vennegjengen utfordre hverandre til gokart og lasermaxx hos Lazerx Gokart Senter. Gokartbanen er Trondheims lengste innendOrs bane. Liker du adrenalin byr lasermaxx paa en real life spillopplevelse, hvor du sniker seg rundt i rOyk og jakter paa motstanderen med laserpistol.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3637,18 +3768,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'gokartOgLazerx'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3673,7 +3807,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ESCAPE REALITY'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -3687,7 +3821,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Escape Reality byr paa intense og nervepirrende opplevelser i Trondheim sentrum. Her skal grupper paa 2-6 personer ha i oppgave aa komme seg ut av et rom kun ved hjelp av gjenstandene i rommet, og det paa kun 60 minutter.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -3708,18 +3842,21 @@ ScreenManagement:
 	        Button:
                 text: 'Tilbake til meny'
                 size: root.size
+                font_size: 40
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             Button:
                 text: 'Finn veien!'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'escapeReality'
             Button:
                 text: 'Ny severdighet'
                 size: root.size
+                font_size: 40
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'SelectionScreen'
@@ -3749,7 +3886,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Velg katergori"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -3761,31 +3898,37 @@ ScreenManagement:
 
 			Button:
 				text: 'Museum'
+				font_size: 40
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'museum'
 			Button:
 				text: 'Historiske steder'
+				font_size: 40
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'historiskeSteder'
 			Button:
 				text: 'Kultur'
+				font_size: 40
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kultur'
 			Button:
 				text: 'Natur'
+				font_size: 40
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'natur'
 			Button:
 				text: 'Mat og drikke'
+				font_size: 40
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'matDrikke'
 			Button:
 				text: "Aktiviteter"
+				font_size: 40
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'aktiviteter'
@@ -3802,7 +3945,8 @@ ScreenManagement:
 				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
+				size_hint: (1, 0.4)
 				on_press: root.manager.current = 'main'
 
 #----------------------- Hovedscreen Museum ------------------------------------------------------------------------------------
@@ -3829,7 +3973,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Museum"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -3841,51 +3985,61 @@ ScreenManagement:
 
 			Button:
 				text: 'Rockheim'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'rockheim'
 			Button:
 				text: 'TrOndelag folkemuseum'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondelagFolkemuseum'
 			Button:
 				text: 'Ringve Museum'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'ringveMuseum'
 			Button:
 				text: 'Vitenskapsmuseet'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'vitenskapsmuseet'
 			Button:
 				text: 'Rustkammeret'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'rustkammeret'
 			Button:
 				text: 'Nordenfjeldske Kunstindustrimuseet'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'nordenfjeldskeKunst'
 			Button:
 				text: 'Norsk dOvemuseum'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'norskeDovemuseum'
 			Button:
 				text: 'Trondheim kunstmuseum'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondheimKunstmuseum'
 			Button:
 				text: 'JOdisk museum'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'jodiskeMuseum'
 			Button:
 				text: 'Trondheim sjofartsmuseum'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondheimSjofartsmuseum'
@@ -3908,6 +4062,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'veibeskrivelser'
@@ -3957,6 +4112,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'main'
@@ -4007,6 +4163,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'main'
@@ -4054,10 +4211,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4105,10 +4263,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4155,10 +4314,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4205,10 +4365,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4254,10 +4415,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4305,10 +4467,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4355,10 +4518,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4407,10 +4571,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'museum'
+				on_press: root.manager.current = 'main'
 
 
 #--------------------------- Hovedskjerm Historiske Steder ---------------------------------------------------------------------
@@ -4439,7 +4604,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Historiske steder"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -4451,36 +4616,43 @@ ScreenManagement:
 
 			Button:
 				text: 'Nidarosdomen'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'nidarosdomen'
 			Button:
 				text: 'Stiftsgaarden'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'stiftsgarden'
 			Button:
 				text: 'Kristiansten festning'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kristianstenFestning'
 			Button:
 				text: 'Erkebispegaarden'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'erkebispegarden'
 			Button:
 				text: 'Munkholmen'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'munkholmen'
 			Button:
 				text: 'Bakklandet'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'bakklandet'
 			Button:
 				text: 'Vaar Frue kirke'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'varFrueKirke'
@@ -4500,6 +4672,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'veibeskrivelser'
@@ -4548,10 +4721,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4598,13 +4772,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
-
-
-
+				on_press: root.manager.current = 'main'
 
 
 <GamleBybro>:
@@ -4649,12 +4821,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
-
-
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4700,12 +4871,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
-
-
+				on_press: root.manager.current = 'main'
 
 
 
@@ -4751,13 +4921,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
-
-
-
+				on_press: root.manager.current = 'main'
 
 
 <Munkholmen>:
@@ -4802,11 +4970,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
-
+				on_press: root.manager.current = 'main'
 
 
 <Bakklandet>:
@@ -4851,13 +5019,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
-
-
-
+				on_press: root.manager.current = 'main'
 
 
 <VarFrueKirke>:
@@ -4879,7 +5045,7 @@ ScreenManagement:
 
 			Label:
 				text: "VaaR FRUE KIRKE"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -4902,10 +5068,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'historiskeSteder'
+				on_press: root.manager.current = 'main'
 
 
 #----------------------------- Hovedskjerm - Kultur ----------------------------------------------------------------------------
@@ -4933,7 +5100,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Kultur"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -4945,21 +5112,25 @@ ScreenManagement:
 
 			Button:
 				text: 'Vitensenteret'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'vitensenteret'
 			Button:
 				text: 'Kunsthall Trondheim'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kunsthallTrondheim'
 			Button:
 				text: 'Litteraturhuset trondheim'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'litteraturhusetTrondheim'
 			Button:
 				text: 'Kultursenteret ISAK'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'kultursenteretISAK'
@@ -4975,6 +5146,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'veibeskrivelser'
@@ -5001,7 +5173,7 @@ ScreenManagement:
 
 			Label:
 				text: "VITENSENTERET"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5024,11 +5196,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'kultur'
-
+				on_press: root.manager.current = 'main'
 
 
 <KunsthallTrondheim>:
@@ -5050,7 +5222,7 @@ ScreenManagement:
 
 			Label:
 				text: "KUNSTHALL TRONDHEIM"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5073,12 +5245,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'kultur'
-
-
+				on_press: root.manager.current = 'main'
 
 
 <LitteraturhusetTrondheim>:
@@ -5100,7 +5271,7 @@ ScreenManagement:
 
 			Label:
 				text: "LITTERATURHUSET TRONDHEIM"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5123,12 +5294,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'kultur'
-
-
+				on_press: root.manager.current = 'main'
 
 
 <KultursenteretISAK>:
@@ -5150,7 +5320,7 @@ ScreenManagement:
 
 			Label:
 				text: "KULTURSENTERET ISAK"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5173,13 +5343,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'kultur'
-
-
-
+				on_press: root.manager.current = 'main'
 
 
 #----------------------------------- Hovedskjerm - Natur -------------------------------------------------------------
@@ -5208,7 +5376,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Natur"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5220,21 +5388,25 @@ ScreenManagement:
 
 			Button:
 				text: 'Burmaklippen'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'burmaklippen'
 			Button:
 				text: 'Geitfjellet'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'geitfjellet'
 			Button:
 				text: 'Vaattakammen'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'vattakammen'
 			Button:
 				text: 'Ladestien'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'ladestien'
@@ -5249,6 +5421,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'veibeskrivelser'
@@ -5275,7 +5448,7 @@ ScreenManagement:
 
 			Label:
 				text: "BURMAKLIPPEN"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5298,10 +5471,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'natur'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -5324,7 +5498,7 @@ ScreenManagement:
 
 			Label:
 				text: "GEITFJELLET"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5347,10 +5521,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'natur'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -5372,8 +5547,8 @@ ScreenManagement:
 			rows: 1
 
 			Label:
-				text: "VaaTTAKAMMEN"
-				font_size: 150
+				text: "VAATTAKAMMEN"
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5396,11 +5571,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'natur'
-
+				on_press: root.manager.current = 'main'
 
 
 <Ladestien>:
@@ -5422,7 +5597,7 @@ ScreenManagement:
 
 			Label:
 				text: "LADESTIEN"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5445,10 +5620,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til menyen"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'natur'
+				on_press: root.manager.current = 'main'
 
 
 #---------------------------- Hovedskjerm - Mat og Drikke --------------------------------------------------------------------
@@ -5476,7 +5652,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Mat og drikke"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5488,62 +5664,70 @@ ScreenManagement:
 
 			Button:
 				text: 'Tyholttarnet'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'tyholttarnet'
 			Button:
 				text: 'Ila Brannstasjon'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'ilaBrannstasjon'
 			Button:
 				text: 'Antikvariatet'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'antikvariatet'
 			Button:
 				text: 'ArvesOlvet Folkekafe'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'arvesolvetFolkekafe'
 			Button:
 				text: 'Cafe Nim'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'cafeNim'
 			Button:
 				text: 'Cafe Ni Muser'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'cafeNiMuser'
 			Button:
 				text: 'RosenborgDampbakeri'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'rosenborgDampbakeri'
 			Button:
 				text: 'Sellenraa Bok & Bar'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'sellenraaBokBar'
             Button:
 				text: 'Trondheim Mikrobryggeri'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trondheimMikrobryggeri'
             Button:
 				text: 'Cafe Lokka'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'cafeLokka'
             Button:
 				text: 'Bakklandet Skydsstasjon'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'bakklandetSkydsstasjon'
-
-
-
 
 
 		GridLayout:
@@ -5554,6 +5738,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'veibeskrivelser'
@@ -5579,8 +5764,8 @@ ScreenManagement:
 			rows: 1
 
 			Label:
-				text: "TYHOLTTaaRNET"
-				font_size: 150
+				text: "TYHOLTTAARNET"
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5603,10 +5788,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <IlaBrannstasjon>:
@@ -5628,7 +5814,7 @@ ScreenManagement:
 
 			Label:
 				text: "ILA BRANNSTASJON"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5651,10 +5837,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <Antikvariatet>:
@@ -5676,7 +5863,7 @@ ScreenManagement:
 
 			Label:
 				text: "ANTIKVARIATET"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5699,10 +5886,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <ArvesolvetFolkekafe>:
@@ -5724,7 +5912,7 @@ ScreenManagement:
 
 			Label:
 				text: "ARVESOLVET FOLKEKAFE"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5747,10 +5935,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <CafeNim>:
@@ -5772,7 +5961,7 @@ ScreenManagement:
 
 			Label:
 				text: "CAFÉ NIM"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5795,10 +5984,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <CafeNiMuser>:
@@ -5820,7 +6010,7 @@ ScreenManagement:
 
 			Label:
 				text: "CAFÉ NI MUSER"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5843,10 +6033,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <RosenborgDampbakeri>:
@@ -5868,7 +6059,7 @@ ScreenManagement:
 
 			Label:
 				text: "ROSENBORG DAMPBAKERI"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5891,10 +6082,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <SellenraaBokBar>:
@@ -5916,7 +6108,7 @@ ScreenManagement:
 
 			Label:
 				text: "SELLANRAA BOK & BAR"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5939,10 +6131,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <TrondheimMikrobryggeri>:
@@ -5964,7 +6157,7 @@ ScreenManagement:
 
 			Label:
 				text: "TRONDHJEM MIKROBRYGGERI"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5987,10 +6180,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <CafeLokka>:
@@ -6012,7 +6206,7 @@ ScreenManagement:
 
 			Label:
 				text: "CAFÈ LOKKA"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6035,10 +6229,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 
 <BakklandetSkydsstasjon>:
@@ -6060,7 +6255,7 @@ ScreenManagement:
 
 			Label:
 				text: "BAKLANDET SKYDSSTATION"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6083,10 +6278,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'matDrikke'
+				on_press: root.manager.current = 'main'
 
 #-------------------------- Hovedskjerm - Aktiviteter ----------------------------------------------------------------------
 
@@ -6114,7 +6310,7 @@ ScreenManagement:
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			Label:
 				text: "Aktiviteter"
-				font_size: 30
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6127,31 +6323,37 @@ ScreenManagement:
 
 			Button:
 				text: 'Klatresenter'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'klatresenter'
 			Button:
 				text: 'Turnhall'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'turnhall'
 			Button:
 				text: 'Bowling'
+			    font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'bowling'
 			Button:
 				text: 'Trampolinepark'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'trampolinepark'
 			Button:
 				text: 'Gokart og Lazerx'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'gokartOgLazerx'
 			Button:
 				text: 'Escape Reality'
+				font_size: 32
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 				on_press: root.manager.current = 'escapeReality'
@@ -6168,6 +6370,7 @@ ScreenManagement:
 
 			Button:
 				text: "Tilbake"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
 				on_press: root.manager.current = 'veibeskrivelser'
@@ -6194,7 +6397,7 @@ ScreenManagement:
 
 			Label:
 				text: "KLATRESENTER"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6217,10 +6420,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'aktiviteter'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -6243,7 +6447,7 @@ ScreenManagement:
 
 			Label:
 				text: "TURNHALL"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6266,10 +6470,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'aktiviteter'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -6292,7 +6497,7 @@ ScreenManagement:
 
 			Label:
 				text: "BOWLING"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6315,10 +6520,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'aktiviteter'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -6341,7 +6547,7 @@ ScreenManagement:
 
 			Label:
 				text: "TRAMPOLINEPARK"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6364,10 +6570,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'aktiviteter'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -6390,7 +6597,7 @@ ScreenManagement:
 
 			Label:
 				text: "GOKART OG LAZERX"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6413,10 +6620,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'aktiviteter'
+				on_press: root.manager.current = 'main'
 
 
 
@@ -6439,7 +6647,7 @@ ScreenManagement:
 
 			Label:
 				text: "ESCAPE REALITY"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6462,10 +6670,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Tilbake"
+				text: "Tilbake til meny"
+				font_size: 50
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0]
-				on_press: root.manager.current = 'aktiviteter'
+				on_press: root.manager.current = 'main'
 
 
 # ----------------------- Parkkontroll ---------------------------------------------
@@ -6495,9 +6704,9 @@ ScreenManagement:
             cols: 1
             rows: 1
             Label:
-                text: "Tilpass parken selv"
+                text: "TILPASS   PARKEN   SELV"
                 #font_name: AncientMedium
-                font_size: 100
+                font_size: 90
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 #--OVERSKRIFTER------------------------------------------------------
         BoxLayout:
@@ -6897,7 +7106,8 @@ ScreenManagement:
                             pos: self.pos
                             size: self.size
                     Label:
-                        text: "Valgt farge - en kombinasjon av rod, gronn og bla"
+                        text: "Din valgte farge - en kombinasjon av rod, gronn og blaa"
+                        font_size: 25
 #--MELLOM FARGE OG LYD---------------------------------------------
             BoxLayout:
                 size_hint_x: 0.02
@@ -6910,7 +7120,7 @@ ScreenManagement:
                     id: Lyd
                     text: "Afrika"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6925,7 +7135,7 @@ ScreenManagement:
                     id: Lyd2
                     text: "Syden"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6940,7 +7150,7 @@ ScreenManagement:
                     id: Lyd3
                     text: "Bolgeskvulp"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6955,7 +7165,7 @@ ScreenManagement:
                     id: Lyd4
                     text: "Vind"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6970,7 +7180,7 @@ ScreenManagement:
                     id: Lyd5
                     text: "Fuglekvitter"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6985,7 +7195,7 @@ ScreenManagement:
                     id: Lyd6
                     text: "Jungel"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -7000,7 +7210,7 @@ ScreenManagement:
                     id: Lyd7
                     text: ""
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -7136,7 +7346,7 @@ ScreenManagement:
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
 
 
 

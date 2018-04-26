@@ -583,49 +583,49 @@ class CustomParkControl(Screen):
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 1
-                LYDadresseString = '/sound/1/africa.wav'
+                LYDadresseString = '/sound/1/africa'
         elif id == 2:
             if valgtLYD == 2:
                 valgtLYD = 10
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 2
-                LYDadresseString = '/sound/1/basseng.wav'
+                LYDadresseString = '/sound/1/basseng'
         elif id == 3:
             if valgtLYD == 3:
                 valgtLYD = 10
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 3
-                LYDadresseString = '/sound/1/syden.wav'
+                LYDadresseString = '/sound/1/syden3'
         elif id == 4:
             if valgtLYD == 4:
                 valgtLYD = 10
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 4
-                LYDadresseString = '/sound/1/vind.wav'
+                LYDadresseString = '/sound/1/vind'
         elif id == 5:
             if valgtLYD == 5:
                 valgtLYD = 10
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 5
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl'
         elif id == 6:
             if valgtLYD == 6:
                 valgtLYD = 10
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 6
-                LYDadresseString = '/sound/1/jungle1.wav'
+                LYDadresseString = '/sound/1/jungle1'
         elif id == 7:
             if valgtLYD == 7:
                 valgtLYD = 10
                 LYDadresseString = '/sound/1/fugl.wav'
             else:
                 valgtLYD = 7
-                LYDadresseString = '/sound/1/elsys.wav'
+                LYDadresseString = '/sound/1/elsys'
         else:
             LYDadresseString = '/sound/1/fugl.wav'
 
