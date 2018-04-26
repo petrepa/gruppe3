@@ -608,7 +608,7 @@ class CustomParkControl(Screen):
                 LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 3
-                LYDadresseString = '/sound/1/syden'
+                LYDadresseString = '/sound/1/syden3'
         elif id == 4:
             if valgtLYD == 4:
                 valgtLYD = 10
