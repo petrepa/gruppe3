@@ -1,0 +1,40 @@
+ScreenManager:
+
+	FrontScreen:
+
+
+#Framskjermen
+<FrontScreen>:
+	#namnet som vert brukt seinare til referering
+	name: "front"
+
+	#definerar bakgrunnsbiletet
+	canvas.before:
+		#sjOlve biletet
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'framside/adressabygget.jpg'
+        #diffust overlegg over biletet
+		Color:
+			rgba: 0.976470588,0.976470588,0.976470588,0.7
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	#definerer at sida skal vere eit boxlayout med eit bilete fyrst, saa ein knapp	
+    BoxLayout:
+    	orientation: 'vertical'
+		Image:
+			source: 'framside/adr_logo.png'
+			allow_stretch: False
+			keep_ratio: False
+		Image:
+			source: 'framside/elsys_lite_trans.png'
+			allow_stretch: False
+			keep_ratio: False
+        Button:
+            text: 'Til menyen'
+            font_size: 70
+            color: 0.0705882, 0.4784313725, 0.75294117647, 1
+            background_color: [1, 1, 1, 0]
