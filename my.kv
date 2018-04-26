@@ -232,10 +232,11 @@ ScreenManagement:
 			Label:
 
 			Button:
-				text: "Framskjerm"
+				text: "Hjem"
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
+				size_hint: (1, 0.4)
 				on_press: root.manager.current = 'front'
 
 
@@ -325,7 +326,8 @@ ScreenManagement:
 				text: "Tilbake til menyen"
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
+				size_hint: (1, 0.37)
 				on_release: root.manager.current = 'main'
 
 <KulturScreen>:
@@ -365,9 +367,9 @@ ScreenManagement:
             text: 'Til menyen'
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			background_color: [1, 1, 1, 0.1]
-			font_size: 70
+			font_size: 55
             on_press: root.manager.current = 'main'
-            size_hint: (1, 0.2)
+            size_hint: (1, 0.1)
 				
 <SelectionScreen>:
     padding: [10, 20]
@@ -388,14 +390,14 @@ ScreenManagement:
             rows: 2
 			
             Label:
-                text: "Severdigheitsrulett"
-                font_size: 100
+                text: "Severdighetsrulett"
+                font_size: 110
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 
             Label:
                 text: "Kryss av for aktuelle alternativer"
-                font_size: 30
+                font_size: 50
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 
@@ -408,6 +410,7 @@ ScreenManagement:
             rows: 6
             Label:
                 text: "Museum"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -415,6 +418,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Historiske steder"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -422,6 +426,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Kultur"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -429,6 +434,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Natur"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -436,6 +442,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Mat og drikke"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -443,6 +450,7 @@ ScreenManagement:
                 size_hint_x: .55
             Label:
                 text: "Aktiviteter"
+                font_size: 42
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
             CheckBox:
@@ -457,11 +465,13 @@ ScreenManagement:
 
             Button:
                 text: 'Til menyen'
+                font_size: 55
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
 			Button:
                 text: "Klikk naar du er klar"
+                font_size: 55
                 on_press: root.screenSelector()
                 on_release:
                     root.manager.current = str(root.manager.ids.selection_screen.testScreen)
@@ -483,7 +493,7 @@ ScreenManagement:
     	orientation: 'vertical'
     	
         Label:
-        	text: 'Historisk'
+        	text: 'HISTORISK'
         	color: 0.0705882, 0.4784313725, 0.75294117647, 1
         	font_size: 100
         	size_hint: (1, 0.2)
@@ -505,7 +515,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Nidarosdomen'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -513,6 +523,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Den praktfulle Nidarosdomen er Norges opprinnelige erkebiskopkirke, og en av nordens største middelalderkirker. Byggingen ble påbegynt i 1070, og domen har siden stått oppreist over Olav den Helliges grav. Flere av Norges konger er både kronet, viet og gravlagt her. Her kan du delta på både gudstjenester, omvisninger og konserter.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -534,7 +545,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Stiftsgaarden'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -542,6 +553,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Stiftsgården er Trondheims kongelige residens, og nordens største trepalé. Gården ble bygget for Cecilie Christine Schøller i 1774-1778. Du kan oppleve den barokk-klassisistiske stilen på Stiftsgården ved å delta på omvisning.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -563,7 +575,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Gamle Bybro'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -571,6 +583,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Gamle Bybro, også kalt “Lykkens Portal”, strekker seg over nidelven ved Bakklandet. Den ble første gang bygget i forbindelse med Kristiansten festning i 1681, og skulle erstatte den tidligere bybroen. Dagens versjon av broen er fra 1861, og hadde opprinnelig broklapper som kunne heises opp og holdes oppe av to utskårne portalene, hvor én av dem fortsatt står igjen.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -593,7 +606,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Kristiansten festning'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -601,6 +614,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Kristiansten festning har siden slutten av 1600-tallet stått over Bakklandet i Trondheim, og voktet over Gamle Bybro. Frem til 2001 har Kristiansten blant annet vært benyttet til militært bruk, treningsanlegg, brannvakt og rettersted. I dag er Kristiansten festning administrativt fredet og et av Norges 14 nasjonale festningsverk.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -623,7 +637,7 @@ ScreenManagement:
 
 					Label:
 						text: 'Erkebispegaarden'
-						font_size: 50
+						font_size: 53
 						size_hint: (1, 1)
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
 						background_color: [1, 1, 1, 0]
@@ -631,6 +645,7 @@ ScreenManagement:
 					    padding: [30, 5]
 						text: 'Erkebispegården var fra gammelt av erkebiskopens bolig og administrative sentrum i Norge. Her er Norges riksregalier, orginalskulpturer fra Nidarosdomen og arkeologiske funn fra Erkebispegårdens historie utstilt.'
 						text_size: self.width, None
+						font_size: 30
 						size_hint_y: None
 						height: self.texture_size[1]
 						color: 0.0705882, 0.4784313725, 0.75294117647, 1
@@ -650,9 +665,9 @@ ScreenManagement:
             text: 'Til menyen'
             color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			background_color: [1, 1, 1, 0.1]
-			font_size: 70
+			font_size: 55
             on_press: root.manager.current = 'main'
-            size_hint: (1, 0.2)
+            size_hint: (1, 0.1)
 
 
 
@@ -680,7 +695,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'ROCKHEIM'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -694,7 +709,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Det nasjonale museet for populaermusikk. Dra hit om du Onsker aa laere mer om musikk, eller prOv deg som DJ, trommeslager og musikalsk kunstner selv!'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -751,7 +766,7 @@ ScreenManagement:
 
     	    Label:
     	        text: 'TRONDELAG FOLKEMUSEUM, SVERRESBORG'
-    	        font_size: 70
+    	        font_size: 90
     	        color: 0.0705882, 0.4784313725, 0.75294117647, 1
         		size_hint: (1, 0.2)
 
@@ -765,7 +780,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Nysgjerrig paa hvordan trOnderne levde i gamle dager? I flotte historiske omgivelser kan du bli med paa lefsekurs, eventyrstund eller byvandring for barn.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -836,7 +851,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Det nasjonale museet for musikk og musikkinstrumenter.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -907,7 +922,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Vitenskapsmuseet har en rekke utstillinger, fra steinalderhistorie, til norges eldste jerv, som ble hele 20 aar! Dyreliv, middelalderliv, livet i polhavet, det er ingen grense for hvor mye spennende man kan laere om ved aa ta en tur til vitenskapsmuseet. Det er aapent tirsdag-fredag fra 10-16 og lOrdag-sOndag fra 11-16. Gratis for barn og ungdom under 18!'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -978,7 +993,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Allerede i 1826 ble Rustkammeret fOrst brukt som museum. Den gang het det “Historiske vaabensal”. Rustkammeret er et av forsvarets museer og utstillingene viser norsk motstandskamp helt fra vikingtiden til tiden da Norge var i union med Danmark.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1049,7 +1064,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Nordenfjeldske Kunstindustrimuseet ble aapnet allerede i 1893 og har vaert en samling av samtidskunst helt siden den tid. Blant annet var det paa 1890-tallet svaert populaert med japansk kunst, og Nordenfjeldske har en imponerende samling av nettopp dette. For enhver kunstinteressert er dette et naturlig sted aa ta turen.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1119,7 +1134,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Norsk dOvemuseum samler kulturhistorie, viktige gjenstander og har en dyp historisk bildesamling som representerer og ivaretar kulturarven for norske dOve. Museet jobber med tilrettelegging og tilgjengeliggjOring med fokus paa likeverd, like muligheter, tilgjengelighet og tilrettelegging for alle i vaart samfunn.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1190,7 +1205,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Trondheim kunstmuseum stiller baade ut en imponerende samling av internasjonal og norsk kunst, samt samtidskunst. Her forenes lokal kunsthistorie med internasjonalt relevante verker. Museet har to visningssteder, i Bispegata og i Trenerys gate ved nedre elvehavn.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1261,7 +1276,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'I 1924 kjOpte Det Mosaiske Trossamfunn Trondheims fOrste jernbanestasjon, og ombygde det til Europas nordligste synagoge. Museet var en gave til byen ved tusenaarsjubileet i 1997, og forteller om historien og kulturen til de jOdiske i det nordenfjeldske omraadet, baade fOr, under og etter andre verdenskrig.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -1332,7 +1347,7 @@ ScreenManagement:
 			Label:
 			    padding: [100, 10]
 			    text: 'Trondheim SjOfartsmuseum ble etablert i 1919, og formidler den maritime historien til Trondheim og omegn. Muséet holder til i et av de eldste murhusene i Trondheim kalt “BrattOrvakta”, som ogsaa er fredet. Her kan du finne alt fra bilder av skuter og mannskap, til gammelt utstyr og dagbOker.'
-			    font_size: 30
+			    font_size: 40
 			    text_size: self.size
 			    color: 0.0705882, 0.4784313725, 0.75294117647, 1
 			    halign: 'left'
@@ -4879,7 +4894,7 @@ ScreenManagement:
 
 			Label:
 				text: "VaaR FRUE KIRKE"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5001,7 +5016,7 @@ ScreenManagement:
 
 			Label:
 				text: "VITENSENTERET"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5050,7 +5065,7 @@ ScreenManagement:
 
 			Label:
 				text: "KUNSTHALL TRONDHEIM"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5100,7 +5115,7 @@ ScreenManagement:
 
 			Label:
 				text: "LITTERATURHUSET TRONDHEIM"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5150,7 +5165,7 @@ ScreenManagement:
 
 			Label:
 				text: "KULTURSENTERET ISAK"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5275,7 +5290,7 @@ ScreenManagement:
 
 			Label:
 				text: "BURMAKLIPPEN"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5324,7 +5339,7 @@ ScreenManagement:
 
 			Label:
 				text: "GEITFJELLET"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5372,8 +5387,8 @@ ScreenManagement:
 			rows: 1
 
 			Label:
-				text: "VaaTTAKAMMEN"
-				font_size: 150
+				text: "VAATTAKAMMEN"
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5422,7 +5437,7 @@ ScreenManagement:
 
 			Label:
 				text: "LADESTIEN"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5579,8 +5594,8 @@ ScreenManagement:
 			rows: 1
 
 			Label:
-				text: "TYHOLTTaaRNET"
-				font_size: 150
+				text: "TYHOLTTAARNET"
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5628,7 +5643,7 @@ ScreenManagement:
 
 			Label:
 				text: "ILA BRANNSTASJON"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5676,7 +5691,7 @@ ScreenManagement:
 
 			Label:
 				text: "ANTIKVARIATET"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5724,7 +5739,7 @@ ScreenManagement:
 
 			Label:
 				text: "ARVESOLVET FOLKEKAFE"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5772,7 +5787,7 @@ ScreenManagement:
 
 			Label:
 				text: "CAFÉ NIM"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5820,7 +5835,7 @@ ScreenManagement:
 
 			Label:
 				text: "CAFÉ NI MUSER"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5868,7 +5883,7 @@ ScreenManagement:
 
 			Label:
 				text: "ROSENBORG DAMPBAKERI"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5916,7 +5931,7 @@ ScreenManagement:
 
 			Label:
 				text: "SELLANRAA BOK & BAR"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -5964,7 +5979,7 @@ ScreenManagement:
 
 			Label:
 				text: "TRONDHJEM MIKROBRYGGERI"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6012,7 +6027,7 @@ ScreenManagement:
 
 			Label:
 				text: "CAFÈ LOKKA"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6060,7 +6075,7 @@ ScreenManagement:
 
 			Label:
 				text: "BAKLANDET SKYDSSTATION"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6194,7 +6209,7 @@ ScreenManagement:
 
 			Label:
 				text: "KLATRESENTER"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6243,7 +6258,7 @@ ScreenManagement:
 
 			Label:
 				text: "TURNHALL"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6292,7 +6307,7 @@ ScreenManagement:
 
 			Label:
 				text: "BOWLING"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6341,7 +6356,7 @@ ScreenManagement:
 
 			Label:
 				text: "TRAMPOLINEPARK"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6390,7 +6405,7 @@ ScreenManagement:
 
 			Label:
 				text: "GOKART OG LAZERX"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6439,7 +6454,7 @@ ScreenManagement:
 
 			Label:
 				text: "ESCAPE REALITY"
-				font_size: 150
+				font_size: 110
 				color: 0.0705882, 0.4784313725, 0.75294117647, 1
 
 
@@ -6495,9 +6510,9 @@ ScreenManagement:
             cols: 1
             rows: 1
             Label:
-                text: "Tilpass parken selv"
+                text: "TILPASS   PARKEN   SELV"
                 #font_name: AncientMedium
-                font_size: 100
+                font_size: 90
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 #--OVERSKRIFTER------------------------------------------------------
         BoxLayout:
@@ -6897,7 +6912,8 @@ ScreenManagement:
                             pos: self.pos
                             size: self.size
                     Label:
-                        text: "Valgt farge - en kombinasjon av rod, gronn og bla"
+                        text: "Din valgte farge - en kombinasjon av rod, gronn og blaa"
+                        font_size: 25
 #--MELLOM FARGE OG LYD---------------------------------------------
             BoxLayout:
                 size_hint_x: 0.02
@@ -6910,7 +6926,7 @@ ScreenManagement:
                     id: Lyd
                     text: "Afrika"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6925,7 +6941,7 @@ ScreenManagement:
                     id: Lyd2
                     text: "Syden"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6940,7 +6956,7 @@ ScreenManagement:
                     id: Lyd3
                     text: "Bolgeskvulp"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6955,7 +6971,7 @@ ScreenManagement:
                     id: Lyd4
                     text: "Vind"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6970,7 +6986,7 @@ ScreenManagement:
                     id: Lyd5
                     text: "Fuglekvitter"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -6985,7 +7001,7 @@ ScreenManagement:
                     id: Lyd6
                     text: "Jungel"
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -7000,7 +7016,7 @@ ScreenManagement:
                     id: Lyd7
                     text: ""
                     group: Lyd
-                    font_size: 20
+                    font_size: 25
                     outline_width: 3
                     outline_color: (0,0,255,1)
                     border: 0, 0, 0, 0
@@ -7136,7 +7152,7 @@ ScreenManagement:
                 on_press: root.manager.current = 'main'
                 color: 0.0705882, 0.4784313725, 0.75294117647, 1
 				background_color: [1, 1, 1, 0.1]
-				font_size: 70
+				font_size: 55
 
 
 
