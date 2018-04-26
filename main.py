@@ -42,22 +42,22 @@ class KlimaScreen(Screen):
 
     def syden(self):
         #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/Sound/syden') #Lyd
+        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
         UrlRequest('http://192.168.1.3:8080/lightall/255/255/0') #Lys
         print('sydenserver')
     def antarktis(self):
         #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/Sound/antarktis') #Lyd
+        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
         UrlRequest('http://192.168.1.3:8080/lightall/0/255/255') #Lys
 
     def jungel(self):
         #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/Sound/jungle1') #Lyd
+        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
         UrlRequest('http://192.168.1.3:8080/lightall/0/255/0') #Lys
 
     def hav(self):
         #UrlRequest('http://192.168.1.3:8080/Picture/syden') #Bilde
-        UrlRequest('http://192.168.1.3:8080/Sound/hav') #Lyd
+        UrlRequest('http://192.168.1.3:8080/sound/1/elsys.wav') #Lyd
         UrlRequest('http://192.168.1.3:8080/lightall/0/0/255') #Lys
 
 	
@@ -591,54 +591,54 @@ class CustomParkControl(Screen):
         if id == 1:
             if valgtLYD == 1:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 1
-                LYDadresseString = '/sound/africa'
+                LYDadresseString = '/sound/1/africa.wav'
         elif id == 2:
             if valgtLYD == 2:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 2
-                LYDadresseString = '/sound/basseng'
+                LYDadresseString = '/sound/1/basseng.wav'
         elif id == 3:
             if valgtLYD == 3:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 3
-                LYDadresseString = '/sound/syden'
+                LYDadresseString = '/sound/1/syden.wav'
         elif id == 4:
             if valgtLYD == 4:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 4
-                LYDadresseString = '/sound/vind'
+                LYDadresseString = '/sound/1/vind.wav'
         elif id == 5:
             if valgtLYD == 5:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 5
-                LYDadresseString = '/sound/fugl'
+                LYDadresseString = '/sound/1/fugl.wav'
         elif id == 6:
             if valgtLYD == 6:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 6
-                LYDadresseString = '/sound/jungle1'
+                LYDadresseString = '/sound/1/jungle1.wav'
         elif id == 7:
             if valgtLYD == 7:
                 valgtLYD = 10
-                LYDadresseString = '/sound/default'
+                LYDadresseString = '/sound/1/default'
             else:
                 valgtLYD = 7
-                LYDadresseString = '/sound/elsys'
+                LYDadresseString = '/sound/1/elsys.wav'
         else:
-            LYDadresseString = '/sound/default'
+            LYDadresseString = '/sound/1/default'
 
         klokkenNu = datetime.datetime.now()  # henter va klokken er nå
         tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
