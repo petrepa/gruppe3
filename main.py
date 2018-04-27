@@ -41,13 +41,21 @@ class MainWidget(Screen):
 class KlimaScreen(Screen):
 
     def syden(self):
-        UrlRequest('http://192.168.1.3:8080/picture/syden') #Bilde
+        UrlRequest('http://192.168.1.3:8080/lightall/255/255/0') #Bilde
+        UrlRequest('http://192.168.1.3:8080/picture/syden')
+        UrlRequest('http://192.168.1.3:8080/sound/1/basseng3')
     def antarktis(self):
+        UrlRequest('http://192.168.1.3:8080/lightall/0/238/255')
         UrlRequest('http://192.168.1.3:8080/picture/antarktis') #Bilde
+        UrlRequest('http://192.168.1.3:8080/sound/1/vind3')
     def jungel(self):
+        UrlRequest('http://192.168.1.3:8080/lightall/0/232/72')
         UrlRequest('http://192.168.1.3:8080/picture/jungel') #Bilde
+        UrlRequest('http://192.168.1.3:8080/sound/1/jungel3')
     def hav(self):
+        UrlRequest('http://192.168.1.3:8080/lightall/0/131/255')
         UrlRequest('http://192.168.1.3:8080/picture/hav2') #Bilde
+        UrlRequest('http://192.168.1.3:8080/sound/1/syden3')
         
 	
 
@@ -580,54 +588,54 @@ class CustomParkControl(Screen):
         if id == 1:
             if valgtLYD == 1:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 1
-                LYDadresseString = '/sound/1/africa'
+                LYDadresseString = '/sound/1/africa3'
         elif id == 2:
             if valgtLYD == 2:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 2
-                LYDadresseString = '/sound/1/basseng'
+                LYDadresseString = '/sound/1/basseng3'
         elif id == 3:
             if valgtLYD == 3:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 3
                 LYDadresseString = '/sound/1/syden3'
         elif id == 4:
             if valgtLYD == 4:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 4
-                LYDadresseString = '/sound/1/vind'
+                LYDadresseString = '/sound/1/vind3'
         elif id == 5:
             if valgtLYD == 5:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 5
-                LYDadresseString = '/sound/1/fugl'
+                LYDadresseString = '/sound/1/fugl3'
         elif id == 6:
             if valgtLYD == 6:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 6
-                LYDadresseString = '/sound/1/jungle1'
+                LYDadresseString = '/sound/1/jungle13'
         elif id == 7:
             if valgtLYD == 7:
                 valgtLYD = 10
-                LYDadresseString = '/sound/1/fugl.wav'
+                LYDadresseString = '/sound/1/fugl3'
             else:
                 valgtLYD = 7
                 LYDadresseString = '/sound/1/elsys'
         else:
-            LYDadresseString = '/sound/1/fugl.wav'
+            LYDadresseString = '/sound/1/fugl'
 
         klokkenNu = datetime.datetime.now()  # henter va klokken er nå
         tidStopMusikk = klokkenNu.replace(hour=timeNarLydSlasAv, minute=minNarLydSlasAv, second=0, microsecond=0)
@@ -662,7 +670,7 @@ class CustomParkControl(Screen):
                 BILDEadresseString = '/picture/elsys'
             else:
                 valgtBILDE = 3
-                BILDEadresseString = '/picture/hav'
+                BILDEadresseString = '/picture/hav2'
         elif id == 4:
             if valgtBILDE == 4:
                 valgtBILDE = 10
