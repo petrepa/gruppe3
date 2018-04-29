@@ -51,7 +51,7 @@ class KlimaScreen(Screen):
     def jungel(self):
         UrlRequest('http://192.168.1.3:8080/lightall/0/232/72')
         UrlRequest('http://192.168.1.3:8080/picture/jungel') #Bilde
-        UrlRequest('http://192.168.1.3:8080/sound/1/jungel3')
+        UrlRequest('http://192.168.1.3:8080/sound/1/jungle13')
     def hav(self):
         UrlRequest('http://192.168.1.3:8080/lightall/0/131/255')
         UrlRequest('http://192.168.1.3:8080/picture/hav2') #Bilde
